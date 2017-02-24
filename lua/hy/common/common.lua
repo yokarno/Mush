@@ -18,15 +18,21 @@ end
 
 function RefreshStatus()
 	local msg = "经验 "..GetVariable("experi") .. " 潜能 "..GetVariable("pot").. "/"..GetVariable("pot_max").." 死亡 "..tostring(_G.deadtimes).."次"
+	if _G.jobsite ~= "" then
+		msg = msg .. " 任务地点：" .. _G.jobsite
+	end
+	if _G.jobstatus ~= "" then
+		msg = msg .. " 任务状态：" .. _G.jobstatus
+	end
 	SetStatus (msg)
 end
 
 function RandomEmote(name1,name2,name3)
 	local obj= {"",name1,name2,name3}
-	local i = math.random(1,table.getn(Emotes))
+	local i = math.random(1,table.getn(Emote_tbl))
 	local j = math.random(1,table.getn(obj))
 	
-	world.Execute(Emotes[i] .. " " .. obj[j])
+	world.Execute(Emote_tbl[i] .. " " .. obj[j])
 end
 
 function AddCustomerTrigger(TriggerName,GroupName,MatchText,SendText,TriggerSetting)

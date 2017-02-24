@@ -1,6 +1,6 @@
 --module (..., package.seeall)
 
-Paths = {
+Path_tbl = {
 ["1s"]="give 1 silver to ma fu",
 ["хавЃ"]="#8 s;#2 e;s;#2 w",
 ["хавЃ/"]="#4 e;n;w;#8 n",

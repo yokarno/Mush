@@ -16,27 +16,27 @@ function send_cmd(str)
 		return
 	end
 
-	local path = Paths[str]
+	local path = Path_tbl[str]
 	if path == nil then
 		path = str
 	end
 
 	local temp_tbl = utils.split(path,";")
 	for k,v in pairs(temp_tbl) do	
-	  	if Paths[v] == nil then
+	  	if Path_tbl[v] == nil then
 		  	send_cmd_to_world(v)
 		else
-			local tmpPaths = utils.split(Paths[v],";")
+			local tmpPath_tbl = utils.split(Path_tbl[v],";")
 			local tmpdeadloopflag = false
-			for k1,v1 in pairs(tmpPaths) do
+			for k1,v1 in pairs(tmpPath_tbl) do
 				if v1 == v then
 					tmpdeadloopflag = true
 				end
 			end
 			if tmpdeadloopflag == false then
-				send_cmd(Paths[v])
+				send_cmd(Path_tbl[v])
 			else
-				send_cmd_to_world(Paths[v])
+				send_cmd_to_world(Path_tbl[v])
 			end
 	  	end
 	end		
