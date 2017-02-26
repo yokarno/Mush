@@ -1,4 +1,5 @@
 require("hy.common.common")
+require("hy.common.cmd")
 
 --=================================================================
 --连接上后自动Robot
