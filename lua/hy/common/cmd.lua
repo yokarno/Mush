@@ -41,21 +41,26 @@ end
 function send_cmd_to_world(cmd)
 	local s,e,reg = string.find (cmd, "^#(%d+) ")
 	if reg == nil then
-		world.Execute(cmd)
+		Common_SendToWorld(cmd)
 		return
 	else
 		local times = tonumber(string.sub(cmd,2,e))
 		if times == 0 then 
-			world.Execute(cmd)
+			Common_SendToWorld(cmd)
 			return
 		end
 	
 		local str = string.sub(cmd,e+1,string.len(cmd))
 		--expanded repeat cmd
 		--wait.time(world.SpeedWalkDelay)
+		local delay = GetSpeedWalkDelay()
+		if delay == 0 then
+			delay = 20
+			SetSpeedWalkDelay(delay)
+		end
 		for i =1,times do
-			world.Execute(str)
-			wait.time(GetSpeedWalkDelay()/ 1000)
+			Common_SendToWorld(str)
+			wait.time(delay/ 1000)
 		end
 		return
 	end 

@@ -123,26 +123,26 @@ function liaotian_DisableAll()
 end
 
 function liaotian_sayjiedu()
-	world.Execute("say "..objname.."的毒已经解了。")
+	Common_SendToWorld("say "..objname.."的毒已经解了。")
 	EnableTriggerGroup("liaotian8",true)
 	EnableTimer("liaotian1", true)
 end
 
 function liaotian_sayheal()
-	world.Execute("say "..objname.."的伤好了")
+	Common_SendToWorld("say "..objname.."的伤好了")
 	EnableTriggerGroup("liaotian8",true)
 	EnableTimer("liaotian1", true)
 end
 
 function liaotian_sayjiehandu()
-	world.Execute("say "..objname.."的寒毒已经解了。")
+	Common_SendToWorld("say "..objname.."的寒毒已经解了。")
 	EnableTriggerGroup("liaotian8",true)
 	EnableTimer("liaotian1", true)
 end
 
 function liaotian_saynoheal()
-	world.Execute("say "..objname.."没有受伤，不需要接受治疗。")
-	--world.Execute ("remove all;enable force biyun-xinfa;wear all")
+	Common_SendToWorld("say "..objname.."没有受伤，不需要接受治疗。")
+	--Common_SendToWorld ("remove all;enable force biyun-xinfa;wear all")
 	DoAfterSpecial (1,"/liaotian_start()",10)
 end
 
@@ -158,7 +158,7 @@ function liaotian_get(txt)
 	if txt == "你" then
 		return
 	end
-	world.Execute("get all")
+	Common_SendToWorld("get all")
 end
 
 function liaotian_jiedugetname(name)
@@ -171,17 +171,17 @@ function liaotian_jiedugetname(name)
 	end
 	
 	liaotian_DisableAll()
-	--world.Execute("sorry;say 暂时不提供此解毒服务")
+	--Common_SendToWorld("sorry;say 暂时不提供此解毒服务")
 	objname = name
 	jiedu = "jiedu"
-	world.Execute("id here;bai "..WorldName())
+	Common_SendToWorld("id here;bai "..WorldName())
 	EnableTriggerGroup("liaotian2",true)
 --	DoAfterSpecial (8,"/liaotian_start()",10)
 end
 
 function liaotian_killlong()
 	liaotian_DisableAll()
-	world.Execute("bjtime;bai "..WorldName())
+	Common_SendToWorld("bjtime;bai "..WorldName())
 	EnableTriggerGroup("liaotian4",true)
 end
 
@@ -199,8 +199,8 @@ function liaotian_asklong(name)
 		return
 	end 
 	liaotian_DisableAll()
-	world.Execute("bow")
-	world.Execute("say 上次杀龙时间：北京时间"..GetVariable("killlongbjtime").."；海洋时间"..GetVariable("killlonghytime"))
+	Common_SendToWorld("bow")
+	Common_SendToWorld("say 上次杀龙时间：北京时间"..GetVariable("killlongbjtime").."；海洋时间"..GetVariable("killlonghytime"))
 	DoAfterSpecial (1,"/liaotian_start()",10)
 end
 
@@ -213,10 +213,10 @@ function liaotian_jiehandugetname(name)
 	end
 	
 	liaotian_DisableAll()
-	--world.Execute("sorry;say 暂时不提供此解毒服务")
+	--Common_SendToWorld("sorry;say 暂时不提供此解毒服务")
 	objname = name
 	jiedu = "jiehandu"
-	world.Execute("id here;bai "..WorldName())
+	Common_SendToWorld("id here;bai "..WorldName())
 	EnableTriggerGroup("liaotian2",true)
 --	DoAfterSpecial (8,"/liaotian_start()",10)
 end
@@ -232,7 +232,7 @@ function liaotian_healgetname(name)
 	liaotian_DisableAll()
 	objname = name
 	jiedu = "heal"
-	world.Execute("id here;bai "..WorldName())
+	Common_SendToWorld("id here;bai "..WorldName())
 	EnableTriggerGroup("liaotian2",true)
 --	DoAfterSpecial (8,"/liaotian_start()",10)
 end
@@ -244,17 +244,17 @@ function liaotian_getid(name,id)
 	if npcname == objname then
 		liaotian_DisableAll()
 		if jiedu == "jiedu" then
-			world.Execute("remove all;enable force biyun-xinfa;wear all;exert jiedu "..npcid)
+			Common_SendToWorld("remove all;enable force biyun-xinfa;wear all;exert jiedu "..npcid)
 		elseif jiedu == "jiehandu" then
-			world.Execute("remove all;enable force jiuyang-shengong;wear all;".."exert jingheal "..npcid)
+			Common_SendToWorld("remove all;enable force jiuyang-shengong;wear all;".."exert jingheal "..npcid)
 --			DoAfterSpecial (4,"remove all;enable force biyun-xinfa;wear all",10)
 		elseif jiedu == "heal" then
-			--world.Execute("perform finger.heal "..npcid)
-			world.Execute("remove all;enable force kurong-changong;wear all;".."perform finger.heal "..npcid)
+			--Common_SendToWorld("perform finger.heal "..npcid)
+			Common_SendToWorld("remove all;enable force kurong-changong;wear all;".."perform finger.heal "..npcid)
 --			DoAfterSpecial (6,"remove all;enable force biyun-xinfa;wear all",10)
 		else
-			world.Execute("exert guiyuanfa "..npcid)
-			world.Execute("exert guiyuanfa "..npcid)
+			Common_SendToWorld("exert guiyuanfa "..npcid)
+			Common_SendToWorld("exert guiyuanfa "..npcid)
 		end
 		--DoAfterSpecial (2,"ok "..npcid,10)
 	end
@@ -263,31 +263,31 @@ end
 function liaotian_asmekall()
 	liaotian_DisableAll()
 	if _G.JieduId == nil then
-		world.Execute("say 你可以向我询问关于 龙 long 的消息。")
+		Common_SendToWorld("say 你可以向我询问关于 龙 long 的消息。")
 	else
-		world.Execute("say 你可以向我询问关于 龙 解毒 解寒毒 疗伤 long jiedu jiehandu heal 的消息。")
-		--world.Execute("say 你可以向我询问关于 龙 解毒 解寒毒 long jiedu jiehandu 的消息。")
+		Common_SendToWorld("say 你可以向我询问关于 龙 解毒 解寒毒 疗伤 long jiedu jiehandu heal 的消息。")
+		--Common_SendToWorld("say 你可以向我询问关于 龙 解毒 解寒毒 long jiedu jiehandu 的消息。")
 	end
 	DoAfterSpecial (1,"/liaotian_start()",10)
 end
 
 function liaotian_noneili()
-	world.Execute("say 没内力了，要等一会恢复。")
+	Common_SendToWorld("say 没内力了，要等一会恢复。")
 	DoAfterSpecial (1,"/liaotian_start()",10)
 end
 
 function liaotian_targetnoneili()
-	world.Execute("say "..objname.."没内力了，不能解寒毒。")	
-	--world.Execute ("remove all;enable force biyun-xinfa;wear all")
+	Common_SendToWorld("say "..objname.."没内力了，不能解寒毒。")	
+	--Common_SendToWorld ("remove all;enable force biyun-xinfa;wear all")
 	DoAfterSpecial (1,"/liaotian_start()",10)
 end
 
 function liaotian_notarget(txt)
 	if txt == "这个人。" then
-		world.Execute("sigh;put jin dan in budai")
+		Common_SendToWorld("sigh;put jin dan in budai")
 		return
 	end
-	--world.Execute("sigh;put jin dan in budai")
+	--Common_SendToWorld("sigh;put jin dan in budai")
 	DoAfterSpecial (1,"/liaotian_start()",10)
 end
 
@@ -299,7 +299,7 @@ function liaotian_saveobj(txt,obj)
 		end 
 		for k,v in pairs(liaotian_putitem_tbl) do
 		 	if string.find(obj,k) then
-				world.Execute(liaotian_putitem_tbl[k])
+				Common_SendToWorld(liaotian_putitem_tbl[k])
 				break
 			end
 		end
@@ -312,7 +312,7 @@ function liaotian_putjindan(txt)
 	end 
 	
 	-- if _G.eatjindanid_tbl[WorldName()] == nil then
-		-- world.Execute("put jin dan in budai")
+		-- Common_SendToWorld("put jin dan in budai")
 	-- else
 		-- Common_eatjindan()
 	-- end
@@ -328,14 +328,14 @@ function liaotian_checkjindan(obj,objid)
 	-- end
 	
 	targetid = objid
-	world.Execute("l budai;bai "..WorldName())
+	Common_SendToWorld("l budai;bai "..WorldName())
 	EnableTriggerGroup("liaotian6",true)
 end
 
 function liaotian_hasjindan()
 	hasjindan = 1
 --	liaotian_DisableAll()
---	world.Execute("tell "..targetid.." eat jin dan")
+--	Common_SendToWorld("tell "..targetid.." eat jin dan")
 --	EnableTriggerGroup("liaotian1",true)
 end
 
@@ -349,20 +349,20 @@ function liaotian_givejindan(obj,objid)
 
 	targetid = objid
 	liaotian_DisableAll()
-	world.Execute("get jin dan from budai;give jin dan to "..objid)
+	Common_SendToWorld("get jin dan from budai;give jin dan to "..objid)
 	EnableTriggerGroup("liaotian7",true)
 end
 
 function liaotian_nojindan()
 	liaotian_DisableAll()
-	world.Execute("tell "..targetid.." no jin dan")
+	Common_SendToWorld("tell "..targetid.." no jin dan")
 	EnableTriggerGroup("liaotian1",true)
 end
 
 function liaotian_hasnojindan()
 	liaotian_DisableAll()
 	if hasjindan == 1 then
-		world.Execute("tell "..targetid.." eat jin dan")
+		Common_SendToWorld("tell "..targetid.." eat jin dan")
 		hasjindan = 0
 	end
 	EnableTriggerGroup("liaotian1",true)
@@ -384,12 +384,12 @@ end
 --连接上后自动Robot
 function liaotian_OnConnect()
 	liaotian_DisableAll()
-	world.Execute("e;s;s")
+	Common_SendToWorld("e;s;s")
 	if _G.ChatId ~= nil then
-		world.Execute("e;s;buy budai;n;w")
+		Common_SendToWorld("e;s;buy budai;n;w")
 	end
-	world.Execute("s;e;e;chd")
-	world.Execute("/liaotian_start()")
+	Common_SendToWorld("s;e;e;chd")
+	Common_SendToWorld("/liaotian_start()")
 	--DoAfterSpecial (10,"/liaotian_min()",10)
 end
 
