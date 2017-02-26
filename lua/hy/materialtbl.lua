@@ -1,4 +1,4 @@
-module (..., package.seeall)
+--module (..., package.seeall)
 
 Jindan_tbl = {
 ["�챦ʯ"] ="ruby",

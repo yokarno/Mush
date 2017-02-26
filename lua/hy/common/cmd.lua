@@ -1,15 +1,11 @@
 require("wait")
 require("hy.common.pathtbl")
 
-module (..., package.seeall)
-
-
-function SendToWorld(str)
+function Common_SendToWorld(str)
 	wait.make(function()
 		send_cmd(str)
 	end)
 end
-
 
 function send_cmd(str)
 	if str == nil then 
@@ -59,7 +55,7 @@ function send_cmd_to_world(cmd)
 		--wait.time(world.SpeedWalkDelay)
 		for i =1,times do
 			world.Execute(str)
-			wait.time(world.SpeedWalkDelay)
+			wait.time(GetSpeedWalkDelay()/ 1000)
 		end
 		return
 	end 
