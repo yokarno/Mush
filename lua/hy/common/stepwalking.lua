@@ -326,7 +326,7 @@ function stepwalking_DisableAll()
 end
 
 function stepwalking_stepnofight()
-	if FilterTxt(txt) == nil then
+	if Common_FilterTxt(txt) == nil then
 		return
 	end 
 	EnableTriggerGroup("stepwalking1", false)
