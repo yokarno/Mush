@@ -49,26 +49,44 @@ end
 function Common_Gag()
 end
 
-function Common_AddCustomerTrigger(TriggerName,GroupName,MatchText,SendText,TriggerSetting)
+function Common_AddCustomerTrigger(TriggerName,GroupName,MatchText,SendText,TriggerSetting,SendTo)
 	if TriggerSetting == nil then
-		AddTriggerEx(TriggerName, MatchText, SendText, 17440 , -1, 0, "", "",10 , 10)
+		if	SendTo == nil then
+			AddTriggerEx(TriggerName, MatchText, SendText, 17440 , -1, 0, "", "",10 , 10)
+		else
+			AddTriggerEx(TriggerName, MatchText, SendText, 17440 , -1, 0, "", "",SendTo , 10)
+		end
+		
 	else
-		AddTriggerEx(TriggerName, MatchText, SendText, TriggerSetting , -1, 0, "", "",10 , 10)
+		if	SendTo == nil then
+			AddTriggerEx(TriggerName, MatchText, SendText, TriggerSetting , -1, 0, "", "",10 , 10)
+		else
+			AddTriggerEx(TriggerName, MatchText, SendText, 17440 , -1, 0, "", "",SendTo , 10)
+		end
+		
 	end
 	SetTriggerOption(TriggerName, "group", GroupName)
 end
 
-function Common_AddCustomerTimer(TimerName, TimerGroup,TimerHour, TimerMinute, TimerSecond, SendText,TimerSetting)
+function Common_AddCustomerTimer(TimerName, TimerGroup,TimerHour, TimerMinute, TimerSecond, SendText,TimerSetting,SendTo)
 	if TimerSetting == nil then
 		AddTimer(TimerName, TimerHour, TimerMinute, TimerSecond, SendText, 17408, "")
 	else
 		AddTimer(TimerName, TimerHour, TimerMinute, TimerSecond, SendText, TimerSetting, "")
 	end
-	SetTimerOption(TimerName,"send_to",10)
+	if	SendTo == nil then
+		SetTimerOption(TimerName,"send_to",10)
+	else
+		SetTimerOption(TimerName,"send_to",SendTo)
+	end
 	SetTimerOption(TimerName, "group", TimerGroup)
 end
 
-function Common_AddCustomerAlias(AliasName,AliasText,SendText)
+function Common_AddCustomerAlias(AliasName,AliasText,SendText,SendTo)
 	AddAlias(AliasName, AliasText, SendText, alias_flag.Enabled, "")
-	SetAliasOption(AliasName,"send_to",10)
+	if	SendTo == nil then
+		SetAliasOption(AliasName,"send_to",10)
+	else
+		SetAliasOption(AliasName,"send_to",SendTo)
+	end
 end

@@ -85,6 +85,7 @@ function World_Triggers()
 	Common_AddCustomerTrigger("common601", "common7","^(?P<chan>.*) £º(.*?)Öì¾¦±ùó¸ÓÍ(.*?)", "/World_redeemchan(\"%<chan>\")")
 	Common_AddCustomerTrigger("common602", "common7","^¸æËß×Ô¼º£¿", "/World_chancomplete()")
 	
+	Common_AddCustomerTimer("autoconnect", "autoconnect",0, 0, 2, "world.Connect()",17440,12)
 	
 	Common_AddCustomerTimer("autoemote", "autoemote",0, 3, 0, "/World_RandomEmote(\""..WorldName().."\",\"xiangling\",\"\")")
 	Common_AddCustomerTimer("chahp", "chahp",0, 21, 0, "/World_Idle()", 17409)
@@ -124,7 +125,7 @@ function World_OnReconnect()
 end
 
 function World_OnDisconnect()
-	DoAfterSpecial(1, "world.Connect()", 12)
+	EnableTimer("autoconnect", true)
 end
 
 function World_OnEvent()
