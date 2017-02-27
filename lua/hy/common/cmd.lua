@@ -53,9 +53,14 @@ function send_cmd_to_world(cmd)
 		local str = string.sub(cmd,e+1,string.len(cmd))
 		--expanded repeat cmd
 		--wait.time(world.SpeedWalkDelay)
+		local delay = GetSpeedWalkDelay()
+		if delay == 0 then
+			delay = 20
+			SetSpeedWalkDelay(delay)
+		end
 		for i =1,times do
 			world.Execute(str)
-			wait.time(GetSpeedWalkDelay()/ 1000)
+			wait.time(delay/ 1000)
 		end
 		return
 	end 

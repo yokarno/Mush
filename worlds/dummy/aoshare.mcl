@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
-<!-- Saved on ÐÇÆÚÈÕ, ¶þÔÂ 26, 2017, 10:43 ÏÂÎç -->
+<!-- Saved on ÐÇÆÚÈÕ, ¶þÔÂ 26, 2017, 10:38 ÏÂÎç -->
 <!-- MuClient version 4.94 -->
 <!-- Written by Nick Gammon -->
 <!-- Home Page: http://www.mushclient.com/ -->
@@ -8,24 +8,25 @@
 <world
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:43:15"
+   date_saved="2017-02-26 22:38:13"
 
-   auto_log_file_name="D:\MUSHclient\log\zhm.txt"
+   auto_log_file_name="D:\MUSHclient\log\aoshare.txt"
    auto_say_override_prefix="-"
    auto_say_string="say "
    chat_name="Name-not-set"
    command_stack_character=";"
-   id="35af76e8d9e3521b8cfdecd4"
+   id="e4ce055515af4445062a8ecb"
    input_font_name="ËÎÌå"
    mapping_failure="Alas, you cannot go that way."
-   name="zhm"
+   name="aoshare"
    new_activity_sound="(No sound)"
    on_world_connect="World_Triggers"
    on_world_disconnect="World_OnDisconnect"
    output_font_name="ËÎÌå"
    password_base64="y"
-   password="em1razgwMDIwOA=="
-   player="zhm"
+   password="c2hhcmU4MDAyMDg="
+   player="aoshare"
+   proxy_server="121.8.124.42"
    script_editor="notepad"
    script_filename="lua\hy\robot.lua"
    script_language="Lua"
@@ -108,9 +109,7 @@
    unpause_on_send="y"
    use_custom_link_colour="y"
    warn_if_scripting_inactive="y"
-   wrap="y"
    wrap_column="120"
-   write_world_name_to_log="y"
    > <!-- end of general world attributes -->
   <connect_text>g
 %name%
@@ -123,7 +122,7 @@
 <triggers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:43:15"
+   date_saved="2017-02-26 22:38:13"
   >
 </triggers>
 
@@ -132,7 +131,7 @@
 <aliases
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:43:15"
+   date_saved="2017-02-26 22:38:13"
   >
   <alias
    name="chd_alias"
@@ -142,7 +141,6 @@
    sequence="100"
   >
   <send>drop cloth
-drop pi xue
 wear all</send>
   </alias>
   <alias
@@ -152,7 +150,9 @@ wear all</send>
    send_to="10"
    sequence="100"
   >
-  <send> </send>
+  <send>remove ring
+jifa force huagong-dafa
+wear ring</send>
   </alias>
   <alias
    name="dushu_alias"
@@ -161,109 +161,14 @@ wear all</send>
    send_to="10"
    sequence="100"
   >
-  <send>du book 30
-yj</send>
+  <send>du zhengqi_book 1
+yj
+abandon zhengqijue
+y</send>
   </alias>
   <alias
    name="dushuxiuxi_alias"
    match="dushu-xiuxi"
-   enabled="y"
-   send_to="10"
-   sequence="100"
-  >
-  <send>w
-sleep</send>
-  </alias>
-  <alias
-   name="findbook_alias"
-   match="f *"
-   enabled="y"
-   send_to="10"
-   sequence="100"
-  >
-  <send>findbook %1</send>
-  </alias>
-  <alias
-   name="getbook_alias"
-   match="g *"
-   enabled="y"
-   send_to="10"
-   sequence="100"
-  >
-  <send>get %1 from corpse</send>
-  </alias>
-  <alias
-   name="huifuneili_alias"
-   match="huifuneili"
-   enabled="y"
-   send_to="10"
-   sequence="100"
-  >
-  <send>remove ring
-enable force biyun-xinfa
-wear ring</send>
-  </alias>
-  <alias
-   name="huigc_alias"
-   match="huigc"
-   enabled="y"
-   send_to="10"
-   sequence="100"
-  >
-  <send>whistle
-rr
-fastmove gc
-unride</send>
-  </alias>
-  <alias
-   name="jf_alias"
-   match="jf"
-   enabled="y"
-   send_to="10"
-   sequence="100"
-  >
-  <send>jifa unarmed chousui-zhang;jifa parry douzhuan-xingyi;jifa strike yinyang-shiertian;bei yinyang-shiertian</send>
-  </alias>
-  <alias
-   name="jn_alias"
-   match="jn"
-   enabled="y"
-   send_to="10"
-   sequence="100"
-  >
-  <send>jifa unarmed none;jifa parry none;jifa strike none;bei none</send>
-  </alias>
-  <alias
-   name="kill_alias"
-   match="k *"
-   enabled="y"
-   send_to="10"
-   sequence="100"
-  >
-  <send>kill %1</send>
-  </alias>
-  <alias
-   name="look_alias"
-   match="lc"
-   enabled="y"
-   send_to="10"
-   sequence="100"
-  >
-  <send>look corpse</send>
-  </alias>
-  <alias
-   name="lianxi_alias"
-   match="lianxi"
-   enabled="y"
-   send_to="10"
-   sequence="100"
-  >
-  <send>lian unarmed 30
-yq</send>
-  </alias>
-  <alias
-   name="lianxixiuxi_alias"
-   match="lianxi-xiuxi"
    enabled="y"
    send_to="10"
    sequence="100"
@@ -278,21 +183,33 @@ sleep</send>
    send_to="10"
    sequence="100"
   >
-  <send>uwi
-wield whip
-lian whip 30
-lian whip 30
-lian whip 30
-lian whip 30
-lian whip 30
-lian whip 30
-lian whip 30
-lian whip 30
-unwield whip</send>
+  <send>wield whip\nlian whip 30\nlian whip 30\nunwield whip</send>
+  </alias>
+  <alias
+   name="loc_alias"
+   match="loc"
+   enabled="y"
+   sequence="100"
+  >
+  <send>exert regenerate
+exert regenerate
+exert recover
+location aqing sao</send>
   </alias>
   <alias
    name="pfm_alias"
    match="pfm"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>exert regenerate
+exert recover
+perform zhe</send>
+  </alias>
+  <alias
+   name="pfmkill_alias"
+   match="pfmkill"
    enabled="y"
    send_to="10"
    sequence="100"
@@ -306,29 +223,12 @@ unwield whip</send>
    send_to="10"
    sequence="100"
   >
-  <send>exert wanfaguizong</send>
-  </alias>
-  <alias
-   name="teach_alias"
-   match="teachid"
-   enabled="y"
-   send_to="10"
-   sequence="100"
-  >
-  <send>learn</send>
+  <send>perform huanyinbu
+exert zongjue</send>
   </alias>
   <alias
    name="xiuxidushu_alias"
    match="xiuxi-dushu"
-   enabled="y"
-   send_to="10"
-   sequence="100"
-  >
-  <send>e</send>
-  </alias>
-  <alias
-   name="xiuxilianxi_alias"
-   match="xiuxi-lianxi"
    enabled="y"
    send_to="10"
    sequence="100"
@@ -342,11 +242,12 @@ unwield whip</send>
    send_to="10"
    sequence="100"
   >
-  <send>e
-e
-s
-s
-e
+  <send>n
+w
+n
+n
+n
+ne
 n</send>
   </alias>
   <alias
@@ -356,7 +257,9 @@ n</send>
    send_to="10"
    sequence="100"
   >
-  <send>learn</send>
+  <send>learn savignyy parry 20
+exert regenerate
+exert regenerate</send>
   </alias>
   <alias
    name="xuexixiuxi_alias"
@@ -366,11 +269,12 @@ n</send>
    sequence="100"
   >
   <send>s
-w
-n
-n
-w
-w
+sw
+s
+s
+s
+e
+s
 sleep</send>
   </alias>
   <alias
@@ -380,9 +284,7 @@ sleep</send>
    send_to="10"
    sequence="100"
   >
-  <send>yanjiu biguan 20
-exert regenerate
-exert regenerate</send>
+  <send>yanjiu</send>
   </alias>
 </aliases>
 
@@ -391,7 +293,7 @@ exert regenerate</send>
 <timers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:43:15"
+   date_saved="2017-02-26 22:38:13"
   >
 </timers>
 
@@ -400,7 +302,7 @@ exert regenerate</send>
 <macros
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:43:15"
+   date_saved="2017-02-26 22:38:13"
   >
 
   <macro name="up" type="send_now" >
@@ -504,20 +406,39 @@ exert regenerate</send>
 <variables
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:43:15"
+   date_saved="2017-02-26 22:38:13"
   >
-  <variable name="age">Ê®ËÄËêÎåÔÂ</variable>
-  <variable name="currstats">liaotian</variable>
-  <variable name="experi">1564822</variable>
-  <variable name="food">500</variable>
-  <variable name="food_max">500</variable>
-  <variable name="member">1</variable>
-  <variable name="pot">33494</variable>
-  <variable name="pot_max">838000</variable>
-  <variable name="shimen">åÐÒ£ÅÉ</variable>
-  <variable name="water">500</variable>
-  <variable name="water_max">500</variable>
+  <variable name="age">Ê®ËÄËêÒ»ÔÂ</variable>
+  <variable name="currstats">liandan</variable>
+  <variable name="experi">1154409</variable>
+  <variable name="food">320</variable>
+  <variable name="food_max">320</variable>
+  <variable name="jing">422</variable>
+  <variable name="jing_max">502</variable>
+  <variable name="jingli">0</variable>
+  <variable name="jingli_max">33</variable>
+  <variable name="jobpath"></variable>
+  <variable name="jobstep">1</variable>
+  <variable name="killlongbjtime">¶þÁãÁã¾ÅÄêÎåÔÂ¶þÊ®¶þÈÕÊ®ÁùÊ±Áù·Ö¶þÊ®ÆßÃë</variable>
+  <variable name="killlonghytime">¾ÅÐ¡Ê±Ê®Îå·Ö¶þÊ®¶þÃë</variable>
+  <variable name="liandanpath">7</variable>
+  <variable name="liandanstep">7</variable>
+  <variable name="lingyao">ÎÞ       </variable>
+  <variable name="member">0</variable>
+  <variable name="neili">2028</variable>
+  <variable name="neili_max">2028</variable>
+  <variable name="pot">27319</variable>
+  <variable name="pot_max">738500</variable>
+  <variable name="putongyao">ÎÞ        </variable>
+  <variable name="qi">1466</variable>
+  <variable name="qi_max">1466</variable>
+  <variable name="searchcmd">wayao</variable>
+  <variable name="searchstep">6</variable>
+  <variable name="shimen">ÆÕÍ¨°ÙÐÕ</variable>
+  <variable name="water">320</variable>
+  <variable name="water_max">320</variable>
   <variable name="xingbie">ÄÐ</variable>
+  <variable name="yabiaostep">0</variable>
   <variable name="yaoxing">ÎÞÓÐ</variable>
   <variable name="zhengqi">0</variable>
 </variables>
@@ -527,7 +448,7 @@ exert regenerate</send>
 <colours
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:43:15"
+   date_saved="2017-02-26 22:38:13"
   >
 
 <ansi>
@@ -584,7 +505,7 @@ exert regenerate</send>
 <keypad
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:43:15"
+   date_saved="2017-02-26 22:38:13"
   >
 
   <key name="0" >
@@ -698,7 +619,7 @@ exert regenerate</send>
 <printing
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:43:15"
+   date_saved="2017-02-26 22:38:13"
   >
 
 <ansi>

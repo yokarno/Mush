@@ -1,7 +1,9 @@
 require("hy.common.common")
+require("hy.common.cmd")
 require("hy.materialtbl")
 require("hy.job.liaotian")
 require("hy.skill.xuexi")
+require("hy.job.liandan")
 
 EndRobot = 0
 DeadTimes = 0
@@ -24,6 +26,13 @@ function xuexi()
 	World_CloseAll()
 	_G.EndRobot = 0
 	xuexi_start()
+end
+
+--炼丹
+function liandan()
+	World_CloseAll()
+	_G.EndRobot = 0
+	liandan_start()
 end
 
 --=================================================================
@@ -85,7 +94,7 @@ function World_Triggers()
 	EnableTriggerGroup("common6", false)
 	EnableTriggerGroup("common7", false)
 	
-	Accelerator ("F1+Ctrl", "/World_EndRobot()")
+	Accelerator ("F1+Ctrl", "/World_OnEndRobot()")
 	Accelerator ("F1+Alt", "/World_ContinueRobot()")
 	Accelerator ("Alt+S", "/liaotian()")
 	Accelerator ("F1+Shift", "/World_StopAll()")
@@ -100,7 +109,7 @@ function World_OnConnect()
 	_G.EndRobot = 0
 	_G.ReplaceLogin = 1
 	EnableTriggerGroup("common6", true)
-	world.Execute("sc;id;tell "..WorldName().." aa")
+	Common_SendToWorld("hp;sc;id;tell "..WorldName().." aa")
 end
 
 function World_OnReconnect()
@@ -111,7 +120,7 @@ function World_OnReconnect()
 	if currstats == "" then
 		return
 	end
-	world.Execute("/"..currstats.."_OnReconnect()")
+	Common_SendToWorld("/"..currstats.."_OnReconnect()")
 end
 
 function World_OnDisconnect()
@@ -127,7 +136,7 @@ function World_OnEvent()
 		return
 	end
 	
-	world.Execute("/"..currstats.."_OnEvent()")
+	Common_SendToWorld("/"..currstats.."_OnEvent()")
 end
 
 function World_OnEndRobot()
@@ -141,7 +150,7 @@ end
 function World_OnJindan()
 	local yaoxing = GetVariable("yaoxing")
 	if yaoxing == "无有" then
-		world.Execute("eat jin dan")
+		Common_SendToWorld("eat jin dan")
 	end
 end
 
@@ -149,7 +158,7 @@ function World_OnNewbie()
 	if _G.Newbie ~= nil then
 		return
 	end
-	world.Execute("ask lao about 出村;w;ask hua about 出村;w;n;w")
+	Common_SendToWorld("ask lao about 出村;w;ask hua about 出村;w;n;w")
 end
 
 function World_CloseAll()
@@ -253,7 +262,7 @@ end
 
 function World_ReplaceLogin()
 	if _G.ReplaceLogin == 1 then
-		world.Execute("y")
+		Common_SendToWorld("y")
 	end
 end
 
@@ -268,7 +277,7 @@ function World_OnDead()
 	World_StopAll()
 	World_Triggers()
 	_G.Deaded = 1
-	world.Execute("hp;#8 yj;yq;cry")
+	Common_SendToWorld("hp;#8 yj;yq;cry")
 	World_RefreshStatus()
 	DoAfterSpecial(10,"quit",10)
 end
@@ -281,13 +290,13 @@ function World_getdaoju(txt)
 	txt = Trim(txt)
 	if txt == "朱睛冰蟾油" then
 		_G.MemberChan = 1
-		world.Execute("mpawn chan")
+		Common_SendToWorld("mpawn chan")
 	elseif txt == "汲取勋章" then
 		_G.MemberDaoju = 1
-		world.Execute("mpawn emblem")
+		Common_SendToWorld("mpawn emblem")
 	elseif txt == "学习勋章" then
 		_G.MemberDaoju = 1
-		world.Execute("mpawn emblem")
+		Common_SendToWorld("mpawn emblem")
 	end
 end
 
@@ -304,9 +313,14 @@ function World_daojucomplete()
 		SetVariable("currstats","liaotian")
 	end
 
+	local member = tonumber(GetVariable("member"))
+	if member == 1 then
+		Common_SendToWorld("chen dache;ask bei chou about membergift;w;n;w")
+	end
+	
 	if _G.Deaded == 1 then
 		_G.Deaded = 0
-		world.Execute("e;s;w;u;apply card;takeout 99 silver")
+		Common_SendToWorld("e;s;w;u;apply card;takeout 99 silver")
 		DoAfterSpecial(3,"takeout 10 gold",10)
 		DoAfterSpecial(5,"d;e;s;".."/"..currstats.."_OnConnect()",10)
 		return
@@ -314,20 +328,21 @@ function World_daojucomplete()
 		if _G.Poison == "1" then
 			if _G.MemberChan == 1 then
 				EnableTriggerGroup("common7", true)
-				world.Execute("id;tell "..WorldName().." aa")
+				Common_SendToWorld("id;tell "..WorldName().." aa")
+				
+				DoAfterSpecial(1,"e;s;s;".."/"..currstats.."_OnConnect()",10)
+				return
 			end
-
-			DoAfterSpecial(1,"e;s;s;".."/"..currstats.."_OnConnect()",10)
-			return
 		end
+		
 		if _G.Poison == "1" then
 			_G.Poison = ""
-			world.Execute("e;s;s;s;e;e;ask ".._G.ChatID.." about jiedu")
+			Common_SendToWorld("e;s;s;s;e;e;ask ".._G.ChatID.." about jiedu")
 			DoAfterSpecial(3,"eat chan",10)
 			DoAfterSpecial(7,"w;w;n;".."/"..currstats.."_OnConnect()",10)
 			return
 		else
-			world.Execute("/"..currstats.."_OnConnect()")
+			Common_SendToWorld("/"..currstats.."_OnConnect()")
 		end
 		
 	end
@@ -335,7 +350,7 @@ end
 
 function World_redeemchan(chan)
 	EnableTriggerGroup("common7", false)
-	world.Execute("redeem "..tonumber(chan)..";use chan;mpawn chan")
+	Common_SendToWorld("redeem "..tonumber(chan)..";use chan;mpawn chan")
 	_G.Poison = ""
 end
 
@@ -344,7 +359,7 @@ function World_chancomplete()
 end
 
 function World_Idle()
-	world.Execute("hp")
+	Common_SendToWorld("hp")
 	world.Connect()
 end
 

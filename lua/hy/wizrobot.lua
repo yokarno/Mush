@@ -1,4 +1,5 @@
 require("hy.common.common")
+require("hy.common.cmd")
 
 --=================================================================
 --连接上后自动Robot
@@ -25,11 +26,11 @@ function World_Triggers()
 end
 
 function World_OnConnect()
-	world.Execute("home")
+	Common_SendToWorld("home")
 end
 
 function World_OnReconnect()
-	world.Execute("home")
+	Common_SendToWorld("home")
 end
 
 function World_OnDisconnect()
@@ -39,7 +40,7 @@ end
 function World_OnJindan()
 	local yaoxing = GetVariable("yaoxing")
 	if yaoxing == "无有" then
-		world.Execute("eat jin dan")
+		Common_SendToWorld("eat jin dan")
 	end
 end
 
@@ -106,7 +107,7 @@ function World_SetV8(age)
 end
 
 function World_Idle()
-	world.Execute("xfull")
+	Common_SendToWorld("xfull")
 	world.Connect()
 end
 
