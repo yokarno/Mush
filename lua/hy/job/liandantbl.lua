@@ -600,7 +600,7 @@ liandanpath_tbl = {
 			"#6 w;#3 w;nw;#6 w;#7 w;#2 n;nw;#6 n;#5 e;se;su;su;eu;eu;su;eu;eu;su;su;su;su;ask gao genming about all;/StepWalking_GoStep(\"huashan\")",
 			"sw",
 		},
-		["StepPath"] = "ask gao genming about all;/AutoSearch_GoStep(\"huashan\",\"sw\")",
+		["StepPath"] = "ask gao genming about all;/autosearch_GoStep(\"huashan\",\"sw\")",
 		["ReturnPath"] = {
 			"ne;#4 nd;#2 wd;nd;#2 wd;#2 nd;nw;#5 w;#6 s;se;#2 s;#6 e;#7 e;se;#6 e;#3 e",
 		},
@@ -620,7 +620,7 @@ liandanpath_tbl = {
 			"#6 w;#3 w;nw;#6 w;#7 w;#2 n;nw;#6 n;#5 e;se;su;su;eu;eu;su;eu;eu;su;su;su;su;ask gao genming about all;/StepWalking_GoStep(\"huashan\")",
 			"eu",
 		},
-		["StepPath"] = "#3 ed;ne;ask gao genming about all;/AutoSearch_GoStep(\"huashan\",\"eu\")",
+		["StepPath"] = "#3 ed;ne;ask gao genming about all;/autosearch_GoStep(\"huashan\",\"eu\")",
 		["ReturnPath"] = {
 			"wd;#4 nd;#2 wd;nd;#2 wd;#2 nd;nw;#5 w;#6 s;se;#2 s;#6 e;#7 e;se;#6 e;#3 e",
 		},
@@ -903,151 +903,151 @@ liandanpath_tbl = {
 		},	
 	},
 },
--- sy
-{
-	{
-		["GoPath"] = {
-			"enter dong;say 天堂有路你不走呀;d;4;w;w;w;w;s;ne",
-		},
-		["StepPath"] = "",
-		["ReturnPath"] = {
-			"ne;s;nw;ne;n;ne;s;w;w;nw;w;nw;nw;n;1s;rideyz;w;w;s",
-		},	
-	},
-	{
-		["GoPath"] = {
-			"enter dong;say 天堂有路你不走呀;d;4;w;w;w;w;s;ne;n",
-		},
-		["StepPath"] = "n",
-		["ReturnPath"] = {
-			"s;ne;s;nw;ne;n;ne;s;w;w;nw;w;nw;nw;n;1s;rideyz;w;w;s",
-		},	
-	},
-	{
-		["GoPath"] = {
-			"enter dong;say 天堂有路你不走呀;d;4;w;w;w;w;s;ne;ne",
-		},
-		["StepPath"] = "s;sw",
-		["ReturnPath"] = {
-			"ne;ne;s;nw;ne;n;ne;s;w;w;nw;w;nw;nw;n;1s;rideyz;w;w;s",
-		},	
-	},
-},
+sy
+-- {
+	-- {
+		-- ["GoPath"] = {
+			-- "enter dong;say 天堂有路你不走呀;d;4;w;w;w;w;s;ne",
+		-- },
+		-- ["StepPath"] = "",
+		-- ["ReturnPath"] = {
+			-- "ne;s;nw;ne;n;ne;s;w;w;nw;w;nw;nw;n;1s;rideyz;w;w;s",
+		-- },	
+	-- },
+	-- {
+		-- ["GoPath"] = {
+			-- "enter dong;say 天堂有路你不走呀;d;4;w;w;w;w;s;ne;n",
+		-- },
+		-- ["StepPath"] = "n",
+		-- ["ReturnPath"] = {
+			-- "s;ne;s;nw;ne;n;ne;s;w;w;nw;w;nw;nw;n;1s;rideyz;w;w;s",
+		-- },	
+	-- },
+	-- {
+		-- ["GoPath"] = {
+			-- "enter dong;say 天堂有路你不走呀;d;4;w;w;w;w;s;ne;ne",
+		-- },
+		-- ["StepPath"] = "s;sw",
+		-- ["ReturnPath"] = {
+			-- "ne;ne;s;nw;ne;n;ne;s;w;w;nw;w;nw;nw;n;1s;rideyz;w;w;s",
+		-- },	
+	-- },
+-- },
 
 --dx 1
-{
-	{
-		["GoPath"] = {
-			"enter dong;say 天堂有路你不走呀;d;4;w;w;w;w;s;ne;s;n",
-		},
-		["StepPath"] = "",
-		["ReturnPath"] = {
-			"s;s;nw;ne;n;ne;s;w;w;nw;w;nw;nw;n;1s;rideyz;w;w;s",
-		},	
-	},
-	{
-		["GoPath"] = {
-			"enter dong;say 天堂有路你不走呀;d;4;w;w;w;w;s;ne;s;n;nw;w",
-		},
-		["StepPath"] = "nw;w",
-		["ReturnPath"] = {
-			"e;se;s;s;nw;ne;n;ne;s;w;w;nw;w;nw;nw;n;1s;rideyz;w;w;s",
-		},	
-	},
-	{
-		["GoPath"] = {
-			"enter dong;say 天堂有路你不走呀;d;4;w;w;w;w;s;ne;s;n;nw;w;w;nw;nw;nw;n;n;n;n;n;n;n",
-		},
-		["StepPath"] = "w;w;nw;nw;nw;n;n;n;n;n;n;n",
-		["ReturnPath"] = {
-			"s;s;s;s;s;s;s;se;se;se;e;e;se;s;s;nw;ne;n;ne;s;w;w;nw;w;nw;nw;n;1s;rideyz;w;w;s",
-		},	
-	},	
-	{
-		["GoPath"] = {
-			"n;e;e;1s;rideyl;s;se;n;nw;nw;nw;wd;wu;wd;wu;nw;nw;w;w;n;n;ne;nw;n;n;n;nu;u;e;ed;e",
-		},
-		["StepPath"] = "n;n;n;w;w;w",
-		["ReturnPath"] = {
-			"w;nu;w;d;sd;s;s;s;se;sw;s;s;e;e;se;se;ed;eu;ed;eu;se;se;se;s;nw;n;1s;rideyz;w;w;s",
-		},	
-	},	
-	{
-		["GoPath"] = {
-			"n;e;e;1s;rideyl;s;se;n;nw;nw;nw;wd;wu;wd;wu;nw;nw;w;w;n;n;ne;nw;n;n;n;nu;u;e;ed",
-		},
-		["StepPath"] = "w",
-		["ReturnPath"] = {
-			"nu;w;d;sd;s;s;s;se;sw;s;s;e;e;se;se;ed;eu;ed;eu;se;se;se;s;nw;n;1s;rideyz;w;w;s",
-		},	
-	},	
-	{
-		["GoPath"] = {
-			"n;e;e;1s;rideyl;s;se;n;nw;nw;nw;wd;wu;wd;wu;nw;nw;w;w;n;n;ne;nw;n;n;n;nu;u;e;nw",
-		},
-		["StepPath"] = "#7 e;ne",
-		["ReturnPath"] = {
-			"se;w;d;sd;s;s;s;se;sw;s;s;e;e;se;se;ed;eu;ed;eu;se;se;se;s;nw;n;1s;rideyz;w;w;s",
-		},	
-	},	
-},
+-- {
+	-- {
+		-- ["GoPath"] = {
+			-- "enter dong;say 天堂有路你不走呀;d;4;w;w;w;w;s;ne;s;n",
+		-- },
+		-- ["StepPath"] = "",
+		-- ["ReturnPath"] = {
+			-- "s;s;nw;ne;n;ne;s;w;w;nw;w;nw;nw;n;1s;rideyz;w;w;s",
+		-- },	
+	-- },
+	-- {
+		-- ["GoPath"] = {
+			-- "enter dong;say 天堂有路你不走呀;d;4;w;w;w;w;s;ne;s;n;nw;w",
+		-- },
+		-- ["StepPath"] = "nw;w",
+		-- ["ReturnPath"] = {
+			-- "e;se;s;s;nw;ne;n;ne;s;w;w;nw;w;nw;nw;n;1s;rideyz;w;w;s",
+		-- },	
+	-- },
+	-- {
+		-- ["GoPath"] = {
+			-- "enter dong;say 天堂有路你不走呀;d;4;w;w;w;w;s;ne;s;n;nw;w;w;nw;nw;nw;n;n;n;n;n;n;n",
+		-- },
+		-- ["StepPath"] = "w;w;nw;nw;nw;n;n;n;n;n;n;n",
+		-- ["ReturnPath"] = {
+			-- "s;s;s;s;s;s;s;se;se;se;e;e;se;s;s;nw;ne;n;ne;s;w;w;nw;w;nw;nw;n;1s;rideyz;w;w;s",
+		-- },	
+	-- },	
+	-- {
+		-- ["GoPath"] = {
+			-- "n;e;e;1s;rideyl;s;se;n;nw;nw;nw;wd;wu;wd;wu;nw;nw;w;w;n;n;ne;nw;n;n;n;nu;u;e;ed;e",
+		-- },
+		-- ["StepPath"] = "n;n;n;w;w;w",
+		-- ["ReturnPath"] = {
+			-- "w;nu;w;d;sd;s;s;s;se;sw;s;s;e;e;se;se;ed;eu;ed;eu;se;se;se;s;nw;n;1s;rideyz;w;w;s",
+		-- },	
+	-- },	
+	-- {
+		-- ["GoPath"] = {
+			-- "n;e;e;1s;rideyl;s;se;n;nw;nw;nw;wd;wu;wd;wu;nw;nw;w;w;n;n;ne;nw;n;n;n;nu;u;e;ed",
+		-- },
+		-- ["StepPath"] = "w",
+		-- ["ReturnPath"] = {
+			-- "nu;w;d;sd;s;s;s;se;sw;s;s;e;e;se;se;ed;eu;ed;eu;se;se;se;s;nw;n;1s;rideyz;w;w;s",
+		-- },	
+	-- },	
+	-- {
+		-- ["GoPath"] = {
+			-- "n;e;e;1s;rideyl;s;se;n;nw;nw;nw;wd;wu;wd;wu;nw;nw;w;w;n;n;ne;nw;n;n;n;nu;u;e;nw",
+		-- },
+		-- ["StepPath"] = "#7 e;ne",
+		-- ["ReturnPath"] = {
+			-- "se;w;d;sd;s;s;s;se;sw;s;s;e;e;se;se;ed;eu;ed;eu;se;se;se;s;nw;n;1s;rideyz;w;w;s",
+		-- },	
+	-- },	
+-- },
 -- qls
-{
-	{
-		["GoPath"] = {
-			"enter dong;say 天堂有路你不走呀;d;4;w;w;w;e;se;e;e;su;eu",
-		},
-		["StepPath"] = "",
-		["ReturnPath"] = {
-			"wd;nd;w;w;nw;w;nw;nw;n;1s;rideyz;w;w;s",
-		},	
-	},
-	{
-		["GoPath"] = {
-			"enter dong;say 天堂有路你不走呀;d;4;w;w;w;e;se;e;e;su;eu;ed;ne",
-		},
-		["StepPath"] = "ed;ne",
-		["ReturnPath"] = {
-			"sw;wu;wd;nd;w;w;nw;w;nw;nw;n;1s;rideyz;w;w;s",
-		},	
-	},
-	{
-		["GoPath"] = {
-			"enter dong;say 天堂有路你不走呀;d;4;w;w;w;e;se;e;e;su;eu;ed;e;e",
-		},
-		["StepPath"] = "sw;e;e",
-		["ReturnPath"] = {
-			"se;ed;se;sd;s;ed;e;e;e;e;e;e;e;n;1s;rideyz;w;w;s",
-		},	
-	},
-	{
-		["GoPath"] = {
-			"n;e;e;1s;rideca;1s;ridelanzhou;s;w;w;w;w;w;w;wu;n;nu",
-		},
-		["StepPath"] = "se;ed;se",
-		["ReturnPath"] = {
-			"sd;s;ed;e;e;e;e;e;e;e;n;1s;rideyz;w;w;s",
-		},	
-	},
-	{
-		["GoPath"] = {
-			"n;e;e;1s;rideca;1s;ridelanzhou;s;w;w;w;w;w;w;wu;n",
-		},
-		["StepPath"] = "sd",
-		["ReturnPath"] = {
-			"s;ed;e;e;e;e;e;e;e;n;1s;rideyz;w;w;s",
-		},	
-	},
-	{
-		["GoPath"] = {
-			"n;e;e;1s;rideca;1s;ridelanzhou;s;w;w;w;w;w;w;wu;n;nu;nw;ne",
-		},
-		["StepPath"] = "nu;nw;ne",
-		["ReturnPath"] = {
-			"sw;se;sd;s;ed;e;e;e;e;e;e;e;n;1s;rideyz;w;w;s",
-		},	
-	},
-},
+-- {
+	-- {
+		-- ["GoPath"] = {
+			-- "enter dong;say 天堂有路你不走呀;d;4;w;w;w;e;se;e;e;su;eu",
+		-- },
+		-- ["StepPath"] = "",
+		-- ["ReturnPath"] = {
+			-- "wd;nd;w;w;nw;w;nw;nw;n;1s;rideyz;w;w;s",
+		-- },	
+	-- },
+	-- {
+		-- ["GoPath"] = {
+			-- "enter dong;say 天堂有路你不走呀;d;4;w;w;w;e;se;e;e;su;eu;ed;ne",
+		-- },
+		-- ["StepPath"] = "ed;ne",
+		-- ["ReturnPath"] = {
+			-- "sw;wu;wd;nd;w;w;nw;w;nw;nw;n;1s;rideyz;w;w;s",
+		-- },	
+	-- },
+	-- {
+		-- ["GoPath"] = {
+			-- "enter dong;say 天堂有路你不走呀;d;4;w;w;w;e;se;e;e;su;eu;ed;e;e",
+		-- },
+		-- ["StepPath"] = "sw;e;e",
+		-- ["ReturnPath"] = {
+			-- "se;ed;se;sd;s;ed;e;e;e;e;e;e;e;n;1s;rideyz;w;w;s",
+		-- },	
+	-- },
+	-- {
+		-- ["GoPath"] = {
+			-- "n;e;e;1s;rideca;1s;ridelanzhou;s;w;w;w;w;w;w;wu;n;nu",
+		-- },
+		-- ["StepPath"] = "se;ed;se",
+		-- ["ReturnPath"] = {
+			-- "sd;s;ed;e;e;e;e;e;e;e;n;1s;rideyz;w;w;s",
+		-- },	
+	-- },
+	-- {
+		-- ["GoPath"] = {
+			-- "n;e;e;1s;rideca;1s;ridelanzhou;s;w;w;w;w;w;w;wu;n",
+		-- },
+		-- ["StepPath"] = "sd",
+		-- ["ReturnPath"] = {
+			-- "s;ed;e;e;e;e;e;e;e;n;1s;rideyz;w;w;s",
+		-- },	
+	-- },
+	-- {
+		-- ["GoPath"] = {
+			-- "n;e;e;1s;rideca;1s;ridelanzhou;s;w;w;w;w;w;w;wu;n;nu;nw;ne",
+		-- },
+		-- ["StepPath"] = "nu;nw;ne",
+		-- ["ReturnPath"] = {
+			-- "sw;se;sd;s;ed;e;e;e;e;e;e;e;n;1s;rideyz;w;w;s",
+		-- },	
+	-- },
+-- },
 }
 
 liandan_dan_tbl = {
