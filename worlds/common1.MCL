@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
-<!-- Saved on ÐÇÆÚÈý, ¶þÔÂ 22, 2017, 10:27 ÏÂÎç -->
+<!-- Saved on ÐÇÆÚ¶þ, ¶þÔÂ 28, 2017, 6:54 ÏÂÎç -->
 <!-- MuClient version 4.94 -->
 <!-- Written by Nick Gammon -->
 <!-- Home Page: http://www.mushclient.com/ -->
@@ -8,7 +8,7 @@
 <world
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-22 22:27:03"
+   date_saved="2017-02-28 18:54:55"
 
    auto_say_override_prefix="-"
    auto_say_string="say "
@@ -19,7 +19,7 @@
    mapping_failure="Alas, you cannot go that way."
    name="common1"
    new_activity_sound="(No sound)"
-   on_world_connect="CommonTriggers"
+   on_world_connect="World_Triggers"
    output_font_name="ËÎÌå"
    proxy_server="210.51.50.188"
    script_editor="notepad"
@@ -88,6 +88,7 @@
    show_italic="y"
    show_underline="y"
    spam_line_count="20"
+   speed_walk_delay="20"
    tab_completion_lines="200"
    timestamp_input_text_colour="maroon"
    timestamp_notes_text_colour="blue"
@@ -113,7 +114,7 @@
 <triggers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-22 22:27:03"
+   date_saved="2017-02-28 18:54:55"
   >
 </triggers>
 
@@ -122,7 +123,7 @@
 <aliases
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-22 22:27:03"
+   date_saved="2017-02-28 18:54:55"
   >
   <alias
    name="chd_alias"
@@ -305,7 +306,7 @@ sleep</send>
 <timers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-22 22:27:03"
+   date_saved="2017-02-28 18:54:55"
   >
 </timers>
 
@@ -314,7 +315,7 @@ sleep</send>
 <macros
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-22 22:27:03"
+   date_saved="2017-02-28 18:54:55"
   >
 
   <macro name="up" type="send_now" >
@@ -413,7 +414,7 @@ sleep</send>
 <variables
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-22 22:27:03"
+   date_saved="2017-02-28 18:54:55"
   >
   <variable name="age"></variable>
   <variable name="currstats">tasks</variable>
@@ -446,7 +447,7 @@ sleep</send>
 <colours
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-22 22:27:03"
+   date_saved="2017-02-28 18:54:55"
   >
 
 <ansi>
@@ -503,7 +504,7 @@ sleep</send>
 <keypad
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-22 22:27:03"
+   date_saved="2017-02-28 18:54:55"
   >
 
   <key name="0" >
@@ -617,7 +618,7 @@ sleep</send>
 <printing
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-22 22:27:03"
+   date_saved="2017-02-28 18:54:55"
   >
 
 <ansi>
@@ -642,5 +643,6 @@ sleep</send>
 </printing>
 
 <!-- plugins -->
-<include name="ZmudCommand.xml" plugin="y" />
+<include name="AutoConnect.xml" plugin="y" />
+<include name="CommonCommand.xml" plugin="y" />
 </muclient>

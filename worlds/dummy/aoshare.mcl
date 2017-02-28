@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
-<!-- Saved on ÐÇÆÚÈÕ, ¶þÔÂ 26, 2017, 10:38 ÏÂÎç -->
+<!-- Saved on ÐÇÆÚ¶þ, ¶þÔÂ 28, 2017, 6:54 ÏÂÎç -->
 <!-- MuClient version 4.94 -->
 <!-- Written by Nick Gammon -->
 <!-- Home Page: http://www.mushclient.com/ -->
@@ -8,9 +8,9 @@
 <world
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:38:13"
+   date_saved="2017-02-28 18:54:56"
 
-   auto_log_file_name="D:\MUSHclient\log\aoshare.txt"
+   auto_log_file_name="D:\MUSHclient\logs\aoshare.txt"
    auto_say_override_prefix="-"
    auto_say_string="say "
    chat_name="Name-not-set"
@@ -21,7 +21,6 @@
    name="aoshare"
    new_activity_sound="(No sound)"
    on_world_connect="World_Triggers"
-   on_world_disconnect="World_OnDisconnect"
    output_font_name="ËÎÌå"
    password_base64="y"
    password="c2hhcmU4MDAyMDg="
@@ -122,7 +121,7 @@
 <triggers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:38:13"
+   date_saved="2017-02-28 18:54:56"
   >
 </triggers>
 
@@ -131,7 +130,7 @@
 <aliases
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:38:13"
+   date_saved="2017-02-28 18:54:56"
   >
   <alias
    name="chd_alias"
@@ -293,7 +292,7 @@ sleep</send>
 <timers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:38:13"
+   date_saved="2017-02-28 18:54:56"
   >
 </timers>
 
@@ -302,7 +301,7 @@ sleep</send>
 <macros
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:38:13"
+   date_saved="2017-02-28 18:54:56"
   >
 
   <macro name="up" type="send_now" >
@@ -406,12 +405,12 @@ sleep</send>
 <variables
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:38:13"
+   date_saved="2017-02-28 18:54:56"
   >
-  <variable name="age">Ê®ËÄËêÒ»ÔÂ</variable>
+  <variable name="age">Ê®ËÄËêÊ®Ò»ÔÂ</variable>
   <variable name="currstats">liandan</variable>
-  <variable name="experi">1154409</variable>
-  <variable name="food">320</variable>
+  <variable name="experi">1178449</variable>
+  <variable name="food">168</variable>
   <variable name="food_max">320</variable>
   <variable name="jing">422</variable>
   <variable name="jing_max">502</variable>
@@ -421,21 +420,21 @@ sleep</send>
   <variable name="jobstep">1</variable>
   <variable name="killlongbjtime">¶þÁãÁã¾ÅÄêÎåÔÂ¶þÊ®¶þÈÕÊ®ÁùÊ±Áù·Ö¶þÊ®ÆßÃë</variable>
   <variable name="killlonghytime">¾ÅÐ¡Ê±Ê®Îå·Ö¶þÊ®¶þÃë</variable>
-  <variable name="liandanpath">7</variable>
-  <variable name="liandanstep">7</variable>
+  <variable name="liandanpath">1</variable>
+  <variable name="liandanstep">12</variable>
   <variable name="lingyao">ÎÞ       </variable>
   <variable name="member">0</variable>
   <variable name="neili">2028</variable>
   <variable name="neili_max">2028</variable>
-  <variable name="pot">27319</variable>
-  <variable name="pot_max">738500</variable>
+  <variable name="pot">40923</variable>
+  <variable name="pot_max">745000</variable>
   <variable name="putongyao">ÎÞ        </variable>
   <variable name="qi">1466</variable>
   <variable name="qi_max">1466</variable>
   <variable name="searchcmd">wayao</variable>
-  <variable name="searchstep">6</variable>
+  <variable name="searchstep">11</variable>
   <variable name="shimen">ÆÕÍ¨°ÙÐÕ</variable>
-  <variable name="water">320</variable>
+  <variable name="water">133</variable>
   <variable name="water_max">320</variable>
   <variable name="xingbie">ÄÐ</variable>
   <variable name="yabiaostep">0</variable>
@@ -448,7 +447,7 @@ sleep</send>
 <colours
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:38:13"
+   date_saved="2017-02-28 18:54:56"
   >
 
 <ansi>
@@ -505,7 +504,7 @@ sleep</send>
 <keypad
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:38:13"
+   date_saved="2017-02-28 18:54:56"
   >
 
   <key name="0" >
@@ -619,7 +618,7 @@ sleep</send>
 <printing
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:38:13"
+   date_saved="2017-02-28 18:54:56"
   >
 
 <ansi>
@@ -645,4 +644,5 @@ sleep</send>
 
 <!-- plugins -->
 <include name="CommonCommand.xml" plugin="y" />
+<include name="AutoConnect.xml" plugin="y" />
 </muclient>

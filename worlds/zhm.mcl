@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
-<!-- Saved on ÐÇÆÚÈÕ, ¶þÔÂ 26, 2017, 10:43 ÏÂÎç -->
+<!-- Saved on ÐÇÆÚ¶þ, ¶þÔÂ 28, 2017, 6:55 ÏÂÎç -->
 <!-- MuClient version 4.94 -->
 <!-- Written by Nick Gammon -->
 <!-- Home Page: http://www.mushclient.com/ -->
@@ -8,9 +8,9 @@
 <world
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:43:15"
+   date_saved="2017-02-28 18:55:16"
 
-   auto_log_file_name="D:\MUSHclient\log\zhm.txt"
+   auto_log_file_name="D:\MUSHclient\logs\zhm.txt"
    auto_say_override_prefix="-"
    auto_say_string="say "
    chat_name="Name-not-set"
@@ -21,7 +21,6 @@
    name="zhm"
    new_activity_sound="(No sound)"
    on_world_connect="World_Triggers"
-   on_world_disconnect="World_OnDisconnect"
    output_font_name="ËÎÌå"
    password_base64="y"
    password="em1razgwMDIwOA=="
@@ -123,7 +122,7 @@
 <triggers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:43:15"
+   date_saved="2017-02-28 18:55:16"
   >
 </triggers>
 
@@ -132,7 +131,7 @@
 <aliases
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:43:15"
+   date_saved="2017-02-28 18:55:16"
   >
   <alias
    name="chd_alias"
@@ -142,7 +141,7 @@
    sequence="100"
   >
   <send>drop cloth
-drop pi xue
+drop xie
 wear all</send>
   </alias>
   <alias
@@ -391,7 +390,7 @@ exert regenerate</send>
 <timers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:43:15"
+   date_saved="2017-02-28 18:55:16"
   >
 </timers>
 
@@ -400,7 +399,7 @@ exert regenerate</send>
 <macros
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:43:15"
+   date_saved="2017-02-28 18:55:16"
   >
 
   <macro name="up" type="send_now" >
@@ -504,16 +503,16 @@ exert regenerate</send>
 <variables
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:43:15"
+   date_saved="2017-02-28 18:55:16"
   >
-  <variable name="age">Ê®ËÄËêÎåÔÂ</variable>
+  <variable name="age">Ê®ÎåËê°ËÔÂ</variable>
   <variable name="currstats">liaotian</variable>
-  <variable name="experi">1564822</variable>
+  <variable name="experi">1715642</variable>
   <variable name="food">500</variable>
   <variable name="food_max">500</variable>
   <variable name="member">1</variable>
-  <variable name="pot">33494</variable>
-  <variable name="pot_max">838000</variable>
+  <variable name="pot">172147</variable>
+  <variable name="pot_max">871000</variable>
   <variable name="shimen">åÐÒ£ÅÉ</variable>
   <variable name="water">500</variable>
   <variable name="water_max">500</variable>
@@ -527,7 +526,7 @@ exert regenerate</send>
 <colours
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:43:15"
+   date_saved="2017-02-28 18:55:16"
   >
 
 <ansi>
@@ -584,7 +583,7 @@ exert regenerate</send>
 <keypad
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:43:15"
+   date_saved="2017-02-28 18:55:16"
   >
 
   <key name="0" >
@@ -698,7 +697,7 @@ exert regenerate</send>
 <printing
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-02-26 22:43:15"
+   date_saved="2017-02-28 18:55:16"
   >
 
 <ansi>
@@ -724,4 +723,5 @@ exert regenerate</send>
 
 <!-- plugins -->
 <include name="CommonCommand.xml" plugin="y" />
+<include name="AutoConnect.xml" plugin="y" />
 </muclient>
