@@ -81,7 +81,7 @@ function autosearch_StepFail()
 end
 
 function autosearch_stepnofight(txt)
-	if FilterTxt(txt) == nil then
+	if Common_FilterTxt(txt) == nil then
 		return
 	end 
 	EnableTriggerGroup("autosearch_fight", false)
