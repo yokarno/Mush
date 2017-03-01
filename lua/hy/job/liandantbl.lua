@@ -412,20 +412,20 @@ liandanpath_tbl = {
 			"wd;w;#4 s;w;s;w;give 1 silver to ma fu;rideyz;w;w;s",
 		},
 	},
-	{
-		["GoPath"] = {
-			"n;e;e;give 1 silver to ma fu;ridedl;e;n;e;#4 n;e;eu;n",
-		},
-		["StepPath"] = "n",
-		["ReturnPath"] = {
-			"s;wd;w;#4 s;w;s;w;give 1 silver to ma fu;rideyz;w;w;s",
-		},
-	},
+	-- {
+		-- ["GoPath"] = {
+			-- "n;e;e;give 1 silver to ma fu;ridedl;e;n;e;#4 n;e;eu;n",
+		-- },
+		-- ["StepPath"] = "n",
+		-- ["ReturnPath"] = {
+			-- "s;wd;w;#4 s;w;s;w;give 1 silver to ma fu;rideyz;w;w;s",
+		-- },
+	-- },
 	{
 		["GoPath"] = {
 			"n;e;e;give 1 silver to ma fu;ridedl;e;n;e;#4 n;e;eu;s",
 		},
-		["StepPath"] = "s;s",
+		["StepPath"] = "s",
 		["ReturnPath"] = {
 			"n;wd;w;#4 s;w;s;w;give 1 silver to ma fu;rideyz;w;w;s",
 		},
