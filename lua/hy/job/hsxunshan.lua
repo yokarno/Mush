@@ -7,6 +7,8 @@ hsxunshanpausetimes = 0
 mengmianstep = 1
 mengmianpfmtimes = 0
 myname = ""
+hsxunshantimeok = 0;
+
 
 mengmian_tbl = {
 {"s;sw","ne;n"},
@@ -46,14 +48,14 @@ function hsxunshan_start()
 	
 	
 	Common_AddCustomerTrigger("hsxunshan51", "hsxunshan2","^看起来(?P<target>.*)想杀死你", "/hsxunshan_kill(\"%<target>\")")
-	Common_AddCustomerTrigger("hsxunshan52", "hsxunshan2","^(?P<target>.*)倒地而亡", "/hsxunshan_killok(\"%<target>\")")
 	Common_AddCustomerTrigger("hsxunshan53", "hsxunshan2","^你的巡山任务的时间结束了。", "/hsxunshan_timerok()")
-	Common_AddCustomerTrigger("hsxunshan54", "hsxunshan2","^岳不群自幼执掌华山派，乃当今武林中一等一的高手。", "/hsxunshan_gohusun()")
-	Common_AddCustomerTrigger("hsxunshan55", "hsxunshan2","^你要看什么", "/hsxunshan_athusun()")
 
-	Common_AddCustomerTrigger("hsxunshan101", "hsxunshan3","^你现在不忙。", "/dohsxunshan()")
-	Common_AddCustomerTrigger("hsxunshan102", "hsxunshan3","^(?P<name>.*)的信箱(.*?)box", "/hsxunshan_getname(\"%<name>\")")
-
+	--Common_AddCustomerTrigger("hsxunshan101", "hsxunshan3","^你现在不忙。", "/dohsxunshan()")
+	Common_AddCustomerTrigger("hsxunshan102", "hsxunshan3","^(?P<front>.*)只能对战斗中的对手使用", "/hsxunshan_nofight(\"%<front>\")")
+	Common_AddCustomerTrigger("hsxunshan103", "hsxunshan3","^(?P<front>.*)只能在战斗中使用", "/hsxunshan_nofight(\"%<front>\")")
+	Common_AddCustomerTrigger("hsxunshan104", "hsxunshan3","^(?P<front>.*)只能在战斗中对对手使用", "/hsxunshan_nofight(\"%<front>\")")
+	Common_AddCustomerTrigger("hsxunshan105", "hsxunshan3","^(?P<front>.*)只能对对手使用", "/hsxunshan_nofight(\"%<front>\")")
+	
 	Common_AddCustomerTrigger("hsxunshan151", "hsxunshan4","^你要看什么？", "/hsxunshan_chaoyang2()")
 	Common_AddCustomerTrigger("hsxunshan152", "hsxunshan4","^施戴子是岳不群的第四位弟子", "kill shi")
 	Common_AddCustomerTrigger("hsxunshan153", "hsxunshan4","^施戴子「啪」地一声倒在地上，嘴角溢出几丝鲜血，痛苦的挣扎了几下就死了。", "/hsxunshan_chaoyang2()")
@@ -77,6 +79,7 @@ function hsxunshan_start()
 	world.Execute("yj")
 	world.Execute("chd")
 	world.Execute("pw")
+	world.Execute("wi")
 	world.Execute("ask yue about job")
 end 
 
@@ -92,14 +95,8 @@ function hsxunshan_DisableAll()
 	EnableTimerGroup("hsxunshan", false)
 end
 
-function hsxunshan_dushu()
-	EnableTimer("hsxunshan1", false)
-	world.Execute("hp")
-	DoAfterSpecial (1,"/hsxunshan_Randushu()",10)
-	EnableTimer("hsxunshan1", true)
-end
-
--- function hsxunshan_Randushu()
+function hsxunshan_Randushu()
+	world.Execute("dazuo 100")
 	-- local i = math.random(1,10)
 	-- if i > 5 then 
 		-- world.Execute("yandu shenzhao jing")
@@ -117,52 +114,26 @@ end
 	-- world.Execute("exert regenerate")
 	-- world.Execute("exert regenerate")
 	-- world.Execute("exert regenerate")
--- end
+end
 
 function hsxunshan_job()
 	hsxunshan_DisableAll()
-	
-	zhuahoutimes = 0
+	hsxunshantimeok = 0
 	hsxunshanpausetimes = 0
 	EnableTriggerGroup("hsxunshan2", true)
-	DoAfterSpecial (1,"s;s;wd;nd;nd;nd",10)
-end
-
-
-function hsxunshan_killok(obj)
-	if killman == obj then
-		world.Execute ("look yue buqun")
-	end
-end
-
-function hsxunshan_gohusun()
-	hsxunshan_DisableAll()
-	
-	EnableTriggerGroup("hsxunshan2", true)
-	DoAfterSpecial (3,"s;s;wd;nd;nd;nd",10)
-	
-end
-
-function hsxunshan_athusun()
-	hsxunshan_DisableAll()
-	
-	EnableTriggerGroup("hsxunshan2", true)
-
-	EnableTimer("hsxunshan1", true)
-	DoAfterSpecial (3,"/hsxunshan_Randushu()",10)
 end
 
 function hsxunshan_kill(obj)
 	killman = obj 
 	hsxunshan_DisableAll()
 	
-	EnableTriggerGroup("hsxunshan2", true)
+	EnableTriggerGroup("hsxunshan3", true)
 
 	EnableTimer("hsxunshan2", true)
 end
 
 function hsxunshan_pause()
-	if _G.endrobot > 0 then
+	if _G.EndRobot > 0 then
 		return
 	end
 	hsxunshanpausetimes = hsxunshanpausetimes + 1
@@ -178,18 +149,36 @@ function hsxunshan_pause()
 end 
 
 function hsxunshan_timerok()
+	hsxunshantimeok = 1
 	hsxunshan_DisableAll()
-	
 	EnableTriggerGroup("hsxunshan3", true)
-	EnableTimer("hsxunshan3", true)
-	world.Execute ("id")
+	EnableTimer("hsxunshan2", true)
+end
+
+function hsxunshan_nofight(txt)
+	if Common_FilterTxt(txt) == nil then
+		return
+	end 
+	hsxunshan_DisableAll()	
+	
+	if hsxunshantimeok == 1 then
+		EnableTriggerGroup("hsxunshan1", true)
+		world.Execute ("s;s;wd;nd;nd;nd;su;wu;wu;ed;nu;sd;ed;su;su;sw;wu;wu")
+		DoAfterSpecial (1,"wu;ed;ed;ed;ne;eu;ne;ne;push door;e;w;open door;w",10)
+		DoAfterSpecial (2.5,"sw;sw;sd;su;su;enter;out;nd;nd;nu;n;nw;ne;eu;wd;sw;se",10)
+		DoAfterSpecial (3,"n;ask yue about job",10)
+	else
+		EnableTriggerGroup("hsxunshan2", true)
+		hsxunshan_Randushu()
+	end
+	
 end
 
 function dohsxunshan()
 	hsxunshan_DisableAll()	
 	EnableTriggerGroup("hsxunshan1", true)
-	world.Execute ("su;wu;wu;ed;nu;sd;ed;su;su;sw;wu;wu")
-	DoAfterSpecial (1,"wu;ed;ed;ed;ne;eu;ne;ne;push door;e;open door;w",10)
+	world.Execute ("s;s;wd;nd;nd;nd;su;wu;wu;ed;nu;sd;ed;su;su;sw;wu;wu")
+	DoAfterSpecial (1,"wu;ed;ed;ed;ne;eu;ne;ne;push door;e;w;open door;w",10)
 	DoAfterSpecial (2.5,"sw;sw;sd;su;su;enter;out;nd;nd;nu;n;nw;ne;eu;wd;sw;se",10)
 	DoAfterSpecial (3,"n;ask yue about job",10)
 	
@@ -294,7 +283,7 @@ end
 --连接上后自动Robot
 function hsxunshan_OnConnect()
 	hsxunshan_DisableAll()
-	world.Execute("hp;e;s;s")
+	world.Execute("e;s;s")
 	DoAfterSpecial(1,"w;w;w;w;w;w;w;w;w;nw;w;w;w;w;w;w",10)
 	DoAfterSpecial(3,"w;w;w;w;w;w;w;n;n;nw;n;n;n;n;n;n;e;e;e;e;e",10)
 	DoAfterSpecial(5,"se;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;n",10)
@@ -324,13 +313,11 @@ end
 function hsxunshan_doxiuxi()
 	xiuxi_doxiuxi()
 	hsxunshan_chihe()
-	DoAfterSpecial(2,"s;s;ne;ne;push men;e;sleep",10)
+	DoAfterSpecial(2,"s;s;ne;ne;e;push men;e;sleep",10)
 end
 
 function hsxunshan_chihe()
 	world.Execute("hp")
-	local m = require("hy.common")
-	m.status()
 	local food = tonumber(GetVariable("food"))
 	local foodmax = tonumber(GetVariable("food_max"))
 	local water = tonumber(GetVariable("water"))
@@ -343,13 +330,9 @@ function hsxunshan_chihe()
 end
 
 function hsxunshan_xiuxi()
-	if _G.endrobot > 0 then
+	if _G.EndRobot > 0 then
 		hsxunshan_DisableAll()
 		EnableTimer("autoemote", true)
-	elseif _G.eatjindan == 1 then
-			xiuxi_complete()
-			DoAfterSpecial(1,"群仙观/;wanfu noname",10)
-			EnableTriggerGroup("common2", true)
 	else
 		hsxunshan_DisableAll()
 		xiuxi_start("hsxunshan")
@@ -368,10 +351,10 @@ function hsxunshan_xiuxicomplete()
 	local neilimax = tonumber(GetVariable("neili_max"))
 
 	if neili < neilimax then
-		DoAfterSpecial(2, "open men;w;dazuo 500", 10)
+		DoAfterSpecial(2, "w;open men;w;dazuo 500", 10)
 		xiuxi_dodazuo()
 	else
-		DoAfterSpecial(2, "open men;w;sw;sw;n;n;/hsxunshan_start()", 10)
+		DoAfterSpecial(2, "w;open men;w;sw;sw;n;n;/hsxunshan_start()", 10)
 	end
 
 end

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
-<!-- Saved on ÐÇÆÚÈý, ÈýÔÂ 01, 2017, 8:42 ÏÂÎç -->
+<!-- Saved on ÐÇÆÚÈý, ÈýÔÂ 01, 2017, 9:33 ÏÂÎç -->
 <!-- MuClient version 4.94 -->
 <!-- Written by Nick Gammon -->
 <!-- Home Page: http://www.mushclient.com/ -->
@@ -8,9 +8,9 @@
 <world
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-01 20:42:29"
+   date_saved="2017-03-01 21:33:06"
 
-   auto_log_file_name="\logs\yoka.txt"
+   auto_log_file_name="logs\yoka.txt"
    auto_say_override_prefix="-"
    auto_say_string="say "
    chat_name="Name-not-set"
@@ -112,8 +112,7 @@
    > <!-- end of general world attributes -->
   <connect_text>g
 %name%
-%password%
-y</connect_text>
+%password%</connect_text>
 
 </world>
 
@@ -122,7 +121,7 @@ y</connect_text>
 <triggers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-01 20:42:29"
+   date_saved="2017-03-01 21:33:06"
   >
 </triggers>
 
@@ -131,7 +130,7 @@ y</connect_text>
 <aliases
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-01 20:42:29"
+   date_saved="2017-03-01 21:33:06"
   >
   <alias
    name="chd_alias"
@@ -141,7 +140,8 @@ y</connect_text>
    sequence="100"
   >
   <send>drop cloth
-drop pi xue
+drop xue
+wear armor
 wear all</send>
   </alias>
   <alias
@@ -308,7 +308,7 @@ location aqing sao</send>
    send_to="10"
    sequence="100"
   >
-  <send>perform sword.yin</send>
+  <send>perform sword.jiushi</send>
   </alias>
   <alias
    name="pfmkill_alias"
@@ -429,7 +429,7 @@ sleep</send>
 <timers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-01 20:42:29"
+   date_saved="2017-03-01 21:33:06"
   >
 </timers>
 
@@ -438,7 +438,7 @@ sleep</send>
 <macros
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-01 20:42:29"
+   date_saved="2017-03-01 21:33:06"
   >
 
   <macro name="up" type="send_now" >
@@ -542,12 +542,12 @@ sleep</send>
 <variables
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-01 20:42:29"
+   date_saved="2017-03-01 21:33:06"
   >
-  <variable name="age">Ê®ËÄËêÒ»ÔÂ</variable>
-  <variable name="currstats">liaotian</variable>
-  <variable name="experi">1104164</variable>
-  <variable name="food">500</variable>
+  <variable name="age">Ê®ËÄËê¶þÔÂ</variable>
+  <variable name="currstats">hsxunshan</variable>
+  <variable name="experi">1816772</variable>
+  <variable name="food">466</variable>
   <variable name="food_max">500</variable>
   <variable name="jing">13534</variable>
   <variable name="jing_max">13534</variable>
@@ -559,19 +559,23 @@ sleep</send>
   <variable name="killlongbjtime">¶þÁãÒ»ÁãÄêÁùÔÂÊ®ÁùÈÕÊ®¾ÅÊ±ËÄÊ®·ÖÈýÊ®ÆßÃë</variable>
   <variable name="killlonghytime">Ê®Ò»Ð¡Ê±Ê®Ò»·ÖÁùÃë</variable>
   <variable name="killover">/StepWalking_NextGo()</variable>
+  <variable name="liandanpath">1</variable>
+  <variable name="liandanstep">1</variable>
   <variable name="lingyao">ÎÞ       </variable>
   <variable name="member">1</variable>
   <variable name="neili">20325</variable>
   <variable name="neili_max">16260</variable>
-  <variable name="pot">73231</variable>
-  <variable name="pot_max">725000</variable>
+  <variable name="pot">263655</variable>
+  <variable name="pot_max">892500</variable>
   <variable name="prestats"></variable>
   <variable name="putongyao">ÎÞ        </variable>
   <variable name="qi">15853</variable>
   <variable name="qi_max">15853</variable>
+  <variable name="searchcmd">wayao</variable>
+  <variable name="searchstep">0</variable>
   <variable name="shimen">»ªÉ½ÅÉ</variable>
   <variable name="targetnum">1</variable>
-  <variable name="water">500</variable>
+  <variable name="water">466</variable>
   <variable name="water_max">500</variable>
   <variable name="xingbie">ÄÐ</variable>
   <variable name="yabiaostep">29</variable>
@@ -584,7 +588,7 @@ sleep</send>
 <colours
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-01 20:42:29"
+   date_saved="2017-03-01 21:33:06"
   >
 
 <ansi>
@@ -641,7 +645,7 @@ sleep</send>
 <keypad
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-01 20:42:29"
+   date_saved="2017-03-01 21:33:06"
   >
 
   <key name="0" >
@@ -755,7 +759,7 @@ sleep</send>
 <printing
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-01 20:42:29"
+   date_saved="2017-03-01 21:33:06"
   >
 
 <ansi>
