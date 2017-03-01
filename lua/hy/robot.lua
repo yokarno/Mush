@@ -51,7 +51,8 @@ function World_Triggers()
 	Common_AddCustomerTrigger("common10", "common","^重新连线完毕。", "/World_OnReconnect()")
 	Common_AddCustomerTrigger("common11", "common","^鬼门关 \- north", "/World_Dead()")
 	Common_AddCustomerTrigger("common12", "common","^┃ 会员等级：一般玩家(.*?)", "/World_SetV11(\"%1\")")
-	Common_AddCustomerTrigger("common13", "common","^您要将另一个连线中的相同人物赶出去，取而代之吗", "/World_ReplaceLogin()")
+	
+	
 	Common_AddCustomerTrigger("common14", "common","^一股阴冷的浓雾突然出现，很快地包围了你。", "/World_OnDead()")
 	Common_AddCustomerTrigger("common15", "common","^老村长对你说道：这位(.*?)需要帮助请输入指令(.*?) - ", "/World_OnNewbie()")
 	Common_AddCustomerTrigger("common23", "common","^你的(.*?)运行完毕。身法又(.*?)", "yun wanfaguizong")
@@ -75,7 +76,6 @@ function World_Triggers()
 	
 	Common_AddCustomerTrigger("common101", "common1","^(?P<target>.*)\\((?P<targetid>.*)\\)告诉你：close robot", "/World_OnReceiveCloseRobot(\"%<target>\",\"%<targetid>\")")
 	Common_AddCustomerTrigger("common102", "common1","^(?P<target>.*)\\((?P<targetid>.*)\\)告诉你：end robot", "/World_OnReceiveEndRobot()(\"%<target>\",\"%<targetid>\")")
-	Common_AddCustomerTrigger("common103", "common1","^(?P<target>.*)\\((?P<targetid>.*)\\)告诉你：replace", "/World_OnReceiveReplaceLogin(\"%<target>\",\"%<targetid>\")")
 	Common_AddCustomerTrigger("common104", "common1","^(?P<target>.*)\\((?P<targetid>.*)\\)告诉你：go on robot", "/World_OnReceiveGoOnRobot(\"%<target>\",\"%<targetid>\")")
 	Common_AddCustomerTrigger("common105", "common1","^(?P<target>.*)\\((?P<targetid>.*)\\)告诉你：quit", "/World_OnReceiveQuit(\"%<target>\",\"%<targetid>\")")
 	
@@ -259,12 +259,6 @@ end
 
 function World_SetV11(member)
 	SetVariable("member",0)
-end
-
-function World_ReplaceLogin()
-	if _G.ReplaceLogin == 1 then
-		Common_SendToWorld("y")
-	end
 end
 
 function World_Dead()
