@@ -4,6 +4,7 @@ require("hy.materialtbl")
 require("hy.job.liaotian")
 require("hy.skill.xuexi")
 require("hy.job.liandan")
+require("hy.job.hsxunshan")
 
 EndRobot = 0
 DeadTimes = 0
@@ -33,6 +34,13 @@ function liandan()
 	World_CloseAll()
 	_G.EndRobot = 0
 	liandan_start()
+end
+
+--Ѳɽ
+function hsxunshan()
+	World_CloseAll()
+	_G.EndRobot = 0
+	hsxunshan_start()
 end
 
 --=================================================================
