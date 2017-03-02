@@ -336,7 +336,7 @@ function hsxunshan_chihe()
 	if (food > foodmax/2) and (water > watermax/2) then
 		return
 	end 
-	Common_SendToWorld("s;w;buy baozi;eat baozi;eat baozi;eat baozi;e;s;w;drink;drink;drink;e;n;n")
+	Common_SendToWorld("s;w;buy baozi;## eat baozi;e;s;w;#3 drink;e;n;n")
 end
 
 function hsxunshan_xiuxi()
