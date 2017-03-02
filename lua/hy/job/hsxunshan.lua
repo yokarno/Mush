@@ -288,11 +288,17 @@ end
 --连接上后自动Robot
 function hsxunshan_OnConnect()
 	hsxunshan_DisableAll()
-	world.Execute("e;s;s")
-	DoAfterSpecial(1,"w;w;w;w;w;w;w;w;w;nw;w;w;w;w;w;w",10)
-	DoAfterSpecial(3,"w;w;w;w;w;w;w;n;n;nw;n;n;n;n;n;n;e;e;e;e;e",10)
-	DoAfterSpecial(5,"se;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;n",10)
-	DoAfterSpecial(7,"/hsxunshan_start()",10)
+	local member = tonumber(GetVariable("member"))
+	if member == 1 then
+		Common_SendToWorld("chen hs;eu;n;n")
+		Common_SendToWorld("/hsxunshan_start()")
+	else
+		world.Execute("e;s;s")
+		DoAfterSpecial(1,"w;w;w;w;w;w;w;w;w;nw;w;w;w;w;w;w",10)
+		DoAfterSpecial(3,"w;w;w;w;w;w;w;n;n;nw;n;n;n;n;n;n;e;e;e;e;e",10)
+		DoAfterSpecial(5,"se;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;n",10)
+		DoAfterSpecial(7,"/hsxunshan_start()",10)
+	end
 end
 
 --重新连线后
@@ -330,8 +336,7 @@ function hsxunshan_chihe()
 	if (food > foodmax/2) and (water > watermax/2) then
 		return
 	end 
-	DoAfterSpecial(1,"s;w;buy baozi;eat baozi;eat baozi;eat baozi;e;s;w;drink;drink;drink;e;n;n",10)
-
+	Common_SendToWorld("s;w;buy baozi;eat baozi;eat baozi;eat baozi;e;s;w;drink;drink;drink;e;n;n")
 end
 
 function hsxunshan_xiuxi()
@@ -346,12 +351,7 @@ end
 
 function hsxunshan_xiuxicomplete()  
 	xiuxi_complete()
-		
-	if xsszj == 1 then
-		DoAfterSpecial(2, "open men;w;sw;sw;n;n;/hsxunshan_start()", 10)
-		return
-	end
-	
+
 	local neili = tonumber(GetVariable("neili"))
 	local neilimax = tonumber(GetVariable("neili_max"))
 
