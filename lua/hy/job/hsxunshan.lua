@@ -55,6 +55,7 @@ function hsxunshan_start()
 	Common_AddCustomerTrigger("hsxunshan103", "hsxunshan3","^(?P<front>.*)只能在战斗中使用", "/hsxunshan_nofight(\"%<front>\")")
 	Common_AddCustomerTrigger("hsxunshan104", "hsxunshan3","^(?P<front>.*)只能在战斗中对对手使用", "/hsxunshan_nofight(\"%<front>\")")
 	Common_AddCustomerTrigger("hsxunshan105", "hsxunshan3","^(?P<front>.*)只能对对手使用", "/hsxunshan_nofight(\"%<front>\")")
+	Common_AddCustomerTrigger("hsxunshan106", "hsxunshan3","^你的巡山任务的时间结束了。", "/hsxunshan_timerfightok()")
 	
 	Common_AddCustomerTrigger("hsxunshan151", "hsxunshan4","^你要看什么？", "/hsxunshan_chaoyang2()")
 	Common_AddCustomerTrigger("hsxunshan152", "hsxunshan4","^施戴子是岳不群的第四位弟子", "kill shi")
@@ -154,6 +155,9 @@ function hsxunshan_timerok()
 	EnableTriggerGroup("hsxunshan3", true)
 	EnableTimer("hsxunshan2", true)
 end
+
+function hsxunshan_timerfightok()
+	hsxunshantimeok = 1
 
 function hsxunshan_nofight(txt)
 	if Common_FilterTxt(txt) == nil then
