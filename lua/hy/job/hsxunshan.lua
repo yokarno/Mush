@@ -158,6 +158,7 @@ end
 
 function hsxunshan_timerfightok()
 	hsxunshantimeok = 1
+end
 
 function hsxunshan_nofight(txt)
 	if Common_FilterTxt(txt) == nil then
