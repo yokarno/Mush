@@ -19,6 +19,8 @@ function liandan_start()
 	
 	Common_AddCustomerTrigger("liandan1", "liandan1","^你向药铺伙计打听有关『job』的消息。", "/liandan_questjob()")
 	Common_AddCustomerTrigger("liandan2", "liandan1","^这里没有这个人", "/liandan_failquit()")
+	Common_AddCustomerTrigger("liandan3", "liandan1","^您先歇口气再说话吧。", "/liandan_pause()")
+	
 	
 	Common_AddCustomerTrigger("liandan51", "liandan2","^伙计给了你药锄！", "/liandan_gowayao()")
 	Common_AddCustomerTrigger("liandan52", "liandan2","^伙计对你说：你身上已有药锄了，不要这么贪心。", "/liandan_gowayao()")
@@ -132,6 +134,12 @@ function liandan_timerpause()
 		liandan_DisableAll()
 		DoAfterSpecial(10,"s;why;quit",10)
 	end
+end
+
+function liandan_pause()
+	liandan_DisableAll()
+	DoAfterSpecial(1,"ask huoji about job;give 1 silver to huoji",10)
+	EnableTriggerGroup("liandan1", true)
 end
 
 function liandan_questjob()

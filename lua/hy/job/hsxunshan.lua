@@ -45,7 +45,8 @@ function hsxunshan_start()
 	Common_AddCustomerTrigger("hsxunshan11", "hsxunshan1","^岳不群对着你说：你怎么没去舍身崖？这算巡的什么山？", "/hsxunshan_sheshen()")
 	Common_AddCustomerTrigger("hsxunshan12", "hsxunshan1","^岳不群对着你说：你休息一会再来", "/hsxunshan_xiuxi()")
 	Common_AddCustomerTrigger("hsxunshan13", "hsxunshan1","^岳不群对着你说：你巡山的时间还没过呢", "/hsxunshan_xiuxi()")
-	
+	Common_AddCustomerTrigger("hsxunshan14", "hsxunshan1","^我正在忙。", "/hsxunshan_pause()")
+	Common_AddCustomerTrigger("hsxunshan15", "hsxunshan1","^您先歇口气再说话吧。", "/hsxunshan_pause()")
 	
 	Common_AddCustomerTrigger("hsxunshan51", "hsxunshan2","^看起来(?P<target>.*)想杀死你", "/hsxunshan_kill(\"%<target>\")")
 	Common_AddCustomerTrigger("hsxunshan53", "hsxunshan2","^你的巡山任务的时间结束了。", "/hsxunshan_timerok()")
@@ -81,7 +82,7 @@ function hsxunshan_start()
 	world.Execute("chd")
 	world.Execute("pw")
 	world.Execute("wi")
-	world.Execute("ask yue about job")
+	world.Execute("ask yue buqun about job")
 end 
 
 function hsxunshan_DisableAll()
@@ -146,7 +147,7 @@ function hsxunshan_pause()
 	end
 	hsxunshan_Randushu()
 	DoAfterSpecial (3,"/hsxunshan_chihe()",10)
-	DoAfterSpecial (3,"ask yue about 巡山",10)
+	DoAfterSpecial (3,"ask yue buqun about 巡山",10)
 end 
 
 function hsxunshan_timerok()
@@ -171,7 +172,7 @@ function hsxunshan_nofight(txt)
 		world.Execute ("s;s;wd;nd;nd;nd;su;wu;wu;ed;nu;sd;ed;su;su;sw;wu;wu")
 		DoAfterSpecial (1,"wu;ed;ed;ed;ne;eu;ne;ne;push door;e;w;open door;w",10)
 		DoAfterSpecial (2.5,"sw;sw;sd;su;su;enter;out;nd;nd;nu;n;nw;ne;eu;wd;sw;se",10)
-		DoAfterSpecial (3,"n;ask yue about job",10)
+		DoAfterSpecial (3,"n;ask yue buqun about job",10)
 	else
 		EnableTriggerGroup("hsxunshan2", true)
 		hsxunshan_Randushu()
@@ -185,7 +186,7 @@ function dohsxunshan()
 	world.Execute ("s;s;wd;nd;nd;nd;su;wu;wu;ed;nu;sd;ed;su;su;sw;wu;wu")
 	DoAfterSpecial (1,"wu;ed;ed;ed;ne;eu;ne;ne;push door;e;w;open door;w",10)
 	DoAfterSpecial (2.5,"sw;sw;sd;su;su;enter;out;nd;nd;nu;n;nw;ne;eu;wd;sw;se",10)
-	DoAfterSpecial (3,"n;ask yue about job",10)
+	DoAfterSpecial (3,"n;ask yue buqun about job",10)
 	
 end
 
@@ -199,32 +200,32 @@ end
 function hsxunshan_chaoyang2()
 	hsxunshanpausetimes = 0
 	EnableTriggerGroup("hsxunshan4", false)
-	DoAfterSpecial (0.5,"eu;wd;sw;se;n;ask yue about job",10)
+	DoAfterSpecial (0.5,"eu;wd;sw;se;n;ask yue buqun about job",10)
 end
 
 function hsxunshan_siguo()
 	hsxunshanpausetimes = 0
-	DoAfterSpecial (1,"s;s;sd;su;su;nd;nd;nu;n;n;ask yue about job",10)
+	DoAfterSpecial (1,"s;s;sd;su;su;nd;nd;nu;n;n;ask yue buqun about job",10)
 end
 
 function hsxunshan_xiaozhu()
 	hsxunshanpausetimes = 0
-	DoAfterSpecial (1,"s;s;ne;ne;push men;e;open men;w;sw;sw;n;n;ask yue about job",10)
+	DoAfterSpecial (1,"s;s;ne;ne;push men;e;open men;w;sw;sw;n;n;ask yue buqun about job",10)
 end
 
 function hsxunshan_lianhua()
 	hsxunshanpausetimes = 0
-	DoAfterSpecial (1,"s;s;wd;sw;wu;wu;wu;ed;ed;ed;ne;eu;n;n;ask yue about job",10)
+	DoAfterSpecial (1,"s;s;wd;sw;wu;wu;wu;ed;ed;ed;ne;eu;n;n;ask yue buqun about job",10)
 end
 
 function hsxunshan_yuntai()
 	hsxunshanpausetimes = 0
-	DoAfterSpecial (1,"s;s;wd;nd;nd;wu;nu;sd;ed;su;su;eu;n;n;ask yue about job",10)
+	DoAfterSpecial (1,"s;s;wd;nd;nd;wu;nu;sd;ed;su;su;eu;n;n;ask yue buqun about job",10)
 end
 
 function hsxunshan_sheshen()
 	hsxunshanpausetimes = 0
-	DoAfterSpecial (1,"s;s;wd;nd;nd;wu;wu;ed;ed;su;su;eu;n;n;ask yue about job",10)
+	DoAfterSpecial (1,"s;s;wd;nd;nd;wu;wu;ed;ed;su;su;eu;n;n;ask yue buqun about job",10)
 end
 
 function hsxunshan_gomengmian()
@@ -323,12 +324,10 @@ end
 --休息
 function hsxunshan_doxiuxi()
 	xiuxi_doxiuxi()
-	hsxunshan_chihe()
-	DoAfterSpecial(2,"s;s;ne;ne;e;push men;e;sleep",10)
+	DoAfterSpecial(2, "/hsxunshan_chihe();s;s;ne;ne;e;push men;e;sleep", 10)
 end
 
 function hsxunshan_chihe()
-	world.Execute("hp")
 	local food = tonumber(GetVariable("food"))
 	local foodmax = tonumber(GetVariable("food_max"))
 	local water = tonumber(GetVariable("water"))
@@ -336,7 +335,7 @@ function hsxunshan_chihe()
 	if (food > foodmax/2) and (water > watermax/2) then
 		return
 	end 
-	Common_SendToWorld("s;w;buy baozi;## eat baozi;e;s;w;#3 drink;e;n;n")
+	Common_SendToWorld("s;w;buy baozi;#3 eat baozi;e;s;w;#3 drink;e;n;n")
 end
 
 function hsxunshan_xiuxi()
