@@ -279,12 +279,12 @@ function liandan_returnwithsilver()
 	SetVariable("liandanpath",liandanpath)
 
 	if yaocao > 0 then
-		DoAfterSpecial(1,"/liandan_liandan()",10)
+		DoAfterSpecial(1.5,"/liandan_liandan()",10)
 	else
 		if yaochu == 0 then
-			DoAfterSpecial(1,"/liandan_start()",10)
+			DoAfterSpecial(1.5,"/liandan_start()",10)
 		else
-			DoAfterSpecial(1,"/liandan_gotowayao()",10)
+			DoAfterSpecial(1.5,"/liandan_gotowayao()",10)
 		end
 	end
 end
