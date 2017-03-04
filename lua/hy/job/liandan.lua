@@ -34,7 +34,7 @@ function liandan_start()
 	Common_AddCustomerTrigger("liandan107", "liandan3","^你的身体状态太差，不能挖药！", "/liandan_dowayao()")
 	Common_AddCustomerTrigger("liandan108", "liandan3","^你刚刚才干过活,要休息一会了！", "/liandan_dowayao()")
 	Common_AddCustomerTrigger("liandan109", "liandan3","^这里的药草早已被人挖光了。", "/liandan_nextwayao()")
-	Common_AddCustomerTrigger("liandan110", "liandan3","^药草倒是挖到了，可惜药锄却不小碰坏了。", "/liandan_return()")
+	Common_AddCustomerTrigger("liandan110", "liandan3","^药草倒是挖到了，可惜药锄却不小碰坏了。", "/liandan_yaochubroken()")
 	Common_AddCustomerTrigger("liandan111", "liandan3","^一翻摸索后，草丛中似乎没有你要找的东西，你失望的叹了口气。", "/liandan_dowayao()")
 	Common_AddCustomerTrigger("liandan112", "liandan3","^只有户外才有可能有药才，请到室外找找吧。", "/liandan_nextwayao()")
 
@@ -46,7 +46,7 @@ function liandan_start()
 	Common_AddCustomerTrigger("liandan201", "liandan5","^无名居士既不属於任何门派，也没有开山立派，不能拜师", "/liandan_returngc()")
 	Common_AddCustomerTrigger("liandan202", "liandan5","^你想拜谁为师", "/liandan_failquit()")
 
-	Common_AddCustomerTrigger("liandan251", "liandan6","^你要问谁什么事？", "/liandan_goselldan()")
+	Common_AddCustomerTrigger("liandan251", "liandan6","^你要问谁什么事？", "/liandan_returnselldan()")
 	
 	Common_AddCustomerTrigger("liandan301", "liandan7","^(?P<front>.*)只能对战斗中的对手使用", "/liandan_nofight(\"%<front>\")")
 	Common_AddCustomerTrigger("liandan302", "liandan7","^(?P<front>.*)只能在战斗中使用", "/liandan_nofight(\"%<front>\")")
@@ -73,8 +73,11 @@ function liandan_start()
 
 	Common_AddCustomerTrigger("liandan701", "liandan15","^你要问谁什么事？", "/liandan_gonextwayao()")
 	
+	Common_AddCustomerTrigger("liandan751", "liandan16","^你要问谁什么事？", "/liandan_goselldan()")
 
-	Common_AddCustomerTimer("liandan1", "liandan",0, 0, 2, "liandan")
+	Common_AddCustomerTrigger("liandan801", "liandan17","^你要问谁什么事？", "/liandan_return()")
+	
+	Common_AddCustomerTimer("liandan1", "liandan",0, 0, 2, "n;liandan")
 	Common_AddCustomerTimer("liandan2", "liandan",0, 0, 1, "pfm")
 	Common_AddCustomerTimer("liandan3", "liandan",0, 0, 1, "give "..WorldName().." 9 silver")
 	Common_AddCustomerTimer("liandan4", "liandan",0, 0, 1, "ask "..WorldName())
@@ -123,6 +126,8 @@ function liandan_DisableAll()
 	EnableTriggerGroup("liandan13", false)
 	EnableTriggerGroup("liandan14", false)
 	EnableTriggerGroup("liandan15", false)
+	EnableTriggerGroup("liandan16", false)
+	EnableTriggerGroup("liandan17", false)
 	EnableTimerGroup("liandan", false)
 end
 
@@ -154,6 +159,7 @@ end
 
 function liandan_gowayao()
 	liandan_DisableAll()
+	yaochu = 1
 	Common_SendToWorld("s;w;w")
 	DoAfterSpecial(2,"/liandan_gotowayao()",10)
 end
@@ -169,9 +175,9 @@ function liandan_gotowayao()
 	end
 
 	if table.getn(liandanpath_tbl[liandanpath][liandanstep]["GoPath"]) == 1 then
-		DoAfterSpecial(1,liandanpath_tbl[liandanpath][liandanstep]["GoPath"][1]..";/stepwalking_GoTarget()",10)
+		DoAfterSpecial(1,"/Common_SendToWorld(\""..liandanpath_tbl[liandanpath][liandanstep]["GoPath"][1]..";/stepwalking_GoTarget()".."\")",10)
 	else
-		DoAfterSpecial(1,liandanpath_tbl[liandanpath][liandanstep]["GoPath"][1],10)
+		DoAfterSpecial(1,"/Common_SendToWorld(\""..liandanpath_tbl[liandanpath][liandanstep]["GoPath"][1].."\")",10)
 	end
 	EnableTriggerGroup("liandan3", true)
 end
@@ -209,6 +215,13 @@ function liandan_nextwayao()
 	EnableTriggerGroup("liandan15", true)	
 end
 
+function liandan_yaochubroken()
+	liandan_DisableAll()
+	yaochu = 0
+	EnableTimer("liandan4",true)
+	EnableTriggerGroup("liandan17", true)	
+end
+
 function liandan_gonextwayao()
 	liandan_DisableAll()
 	local liandanpath = tonumber(GetVariable("liandanpath"))
@@ -216,9 +229,9 @@ function liandan_gonextwayao()
 	liandanstep = liandanstep + 1
 	if liandanstep > table.getn(liandanpath_tbl[liandanpath]) then
 		if table.getn(liandanpath_tbl[liandanpath][table.getn(liandanpath_tbl[liandanpath])]["ReturnPath"]) == 1 then
-			DoAfterSpecial(1,liandanpath_tbl[liandanpath][table.getn(liandanpath_tbl[liandanpath])]["ReturnPath"][1]..";/stepwalking_TargetReturn()",10)
+			DoAfterSpecial(1,"/Common_SendToWorld(\""..liandanpath_tbl[liandanpath][table.getn(liandanpath_tbl[liandanpath])]["ReturnPath"][1]..";/stepwalking_TargetReturn()".."\")",10)
 		else
-			DoAfterSpecial(1,liandanpath_tbl[liandanpath][table.getn(liandanpath_tbl[liandanpath])]["ReturnPath"][1],10)
+			DoAfterSpecial(1,"/Common_SendToWorld(\""..liandanpath_tbl[liandanpath][table.getn(liandanpath_tbl[liandanpath])]["ReturnPath"][1].."\")",10)
 		end
 		liandanstep = 1
 		liandanpath = liandanpath + 1
@@ -238,11 +251,11 @@ function liandan_return()
 	liandan_DisableAll()
 	local liandanpath = tonumber(GetVariable("liandanpath"))
 	local liandanstep =  tonumber(GetVariable("liandanstep"))
-	yaochu = 1
+
 	if table.getn(liandanpath_tbl[liandanpath][liandanstep]["ReturnPath"]) == 1 then
-		DoAfterSpecial(1,liandanpath_tbl[liandanpath][liandanstep]["ReturnPath"][1]..";/stepwalking_TargetReturn()",10)
+		DoAfterSpecial(1,"/Common_SendToWorld(\""..liandanpath_tbl[liandanpath][liandanstep]["ReturnPath"][1]..";/stepwalking_TargetReturn()".."\")",10)
 	else
-		DoAfterSpecial(1,liandanpath_tbl[liandanpath][liandanstep]["ReturnPath"][1],10)
+		DoAfterSpecial(1,"/Common_SendToWorld(\""..liandanpath_tbl[liandanpath][liandanstep]["ReturnPath"][1].."\")",10)
 	end
 end
 
@@ -265,16 +278,12 @@ function liandan_returnwithsilver()
 	end
 	SetVariable("liandanpath",liandanpath)
 
-	if yaochu ==1 then
-		if yaocao > 0 then
-			DoAfterSpecial(1,"/liandan_liandan()",10)
-		else
-			DoAfterSpecial(1,"/liandan_start()",10)
-		end
+	if yaocao > 0 then
+		DoAfterSpecial(1,"/liandan_liandan()",10)
 	else
-		if yaocao > 0 then
-			DoAfterSpecial(1,"/liandan_liandan()",10)
-		else			
+		if yaochu == 0 then
+			DoAfterSpecial(1,"/liandan_start()",10)
+		else
 			DoAfterSpecial(1,"/liandan_gotowayao()",10)
 		end
 	end
@@ -317,12 +326,18 @@ function liandan_liandanover()
 	EnableTriggerGroup("liandan6", true)
 end
 
-function liandan_goselldan()
+function liandan_returnselldan()
 	liandan_DisableAll()
-	Common_SendToWorld("s;s;w;w;s;e;id;bai tang")
-	EnableTriggerGroup("liandan13", true)
+	Common_SendToWorld("s")
+	EnableTimer("liandan4",true)
+	EnableTriggerGroup("liandan16", true)	
 end
 
+function liandan_goselldan()
+	liandan_DisableAll()
+	Common_SendToWorld("s;w;w;s;e;id;bai tang")
+	EnableTriggerGroup("liandan13", true)
+end
 
 function liandan_selldan(txt,id)
 	txt = Trim(txt)
@@ -399,7 +414,7 @@ function liandan_givedan(txt)
 	for i=1,table.getn(liandan_dan_tbl[txt]) do
 		if liandan_dan_tbl[txt][i]["Color"] == nil then
 			if liandan_dan_tbl[txt][i]["Give"] == "1" then
-				Common_SendToWorld("give "..liandan_dan_tbl[txt][i]["ID"].." to ".._G.liaotianid)
+				Common_SendToWorld("give "..liandan_dan_tbl[txt][i]["ID"].." to ".._G.ChatID)
 			end
 			if liandan_dan_tbl[txt][i]["Eat"] == "1" then
 				Common_SendToWorld("eat "..liandan_dan_tbl[txt][i]["ID"])
@@ -407,7 +422,7 @@ function liandan_givedan(txt)
 		else
 			if liandan_dan_tbl[txt][i]["Color"] == dan_color_ch then
 				if liandan_dan_tbl[txt][i]["Give"] == "1" then
-					Common_SendToWorld("give "..liandan_dan_tbl[txt][i]["ID"].." to ".._G.liaotianid)
+					Common_SendToWorld("give "..liandan_dan_tbl[txt][i]["ID"].." to ".._G.ChatID)
 				end
 				if liandan_dan_tbl[txt][i]["Eat"] == "1" then
 					Common_SendToWorld("eat "..liandan_dan_tbl[txt][i]["ID"])
@@ -430,7 +445,7 @@ end
 --返回
 function liandan_OnTargetReturn()
 	liandan_DisableAll()
-	DoAfterSpecial(2,"bai noname",10)
+	DoAfterSpecial(1,"bai noname",10)
 	EnableTriggerGroup("liandan5", true)
 end
 
@@ -505,13 +520,7 @@ function liandan_chihe()
 		Common_SendToWorld ("w;n;n;n;w;w")
 		return
 	end 
-	local member = tonumber(GetVariable("member"))
-	if member == 1 then
-		Common_SendToWorld ("ci beg;he beg;w;n;n;n;w;w")
-	else
-		Common_SendToWorld ("w;s;w;buy doufu;eat doufu;eat doufu;eat doufu;drink;drink;drink;e;n;n;n;n;w;w")
-	end
-	
+	Common_SendToWorld ("w;s;w;buy doufu;eat doufu;eat doufu;eat doufu;drink;drink;drink;e;n;n;n;n;w;w")
 end
 
 function liandan_xiuxi()

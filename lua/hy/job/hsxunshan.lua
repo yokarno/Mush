@@ -78,11 +78,7 @@ function hsxunshan_start()
 	
 	mengmianstep = 1
 	mengmianpfmtimes = 0
-	world.Execute("yj")
-	world.Execute("chd")
-	world.Execute("pw")
-	world.Execute("wi")
-	world.Execute("ask yue buqun about job")
+	Common_SendToWorld("yj;chd;pw;wi;ask yue buqun about job")
 end 
 
 function hsxunshan_DisableAll()
@@ -98,7 +94,7 @@ function hsxunshan_DisableAll()
 end
 
 function hsxunshan_Randushu()
-	world.Execute("dazuo 100")
+	Common_SendToWorld("dazuo 100")
 	-- local i = math.random(1,10)
 	-- if i > 5 then 
 		-- world.Execute("yandu shenzhao jing")
@@ -146,7 +142,6 @@ function hsxunshan_pause()
 		return
 	end
 	hsxunshan_Randushu()
-	DoAfterSpecial (3,"/hsxunshan_chihe()",10)
 	DoAfterSpecial (3,"ask yue buqun about Ñ²É½",10)
 end 
 
@@ -169,7 +164,7 @@ function hsxunshan_nofight(txt)
 	
 	if hsxunshantimeok == 1 then
 		EnableTriggerGroup("hsxunshan1", true)
-		world.Execute ("s;s;wd;nd;nd;nd;su;wu;wu;ed;nu;sd;ed;su;su;sw;wu;wu")
+		Common_SendToWorld ("s;s;wd;nd;nd;nd;su;wu;wu;ed;nu;sd;ed;su;su;sw;wu;wu")
 		DoAfterSpecial (1,"wu;ed;ed;ed;ne;eu;ne;ne;push door;e;w;open door;w",10)
 		DoAfterSpecial (2.5,"sw;sw;sd;su;su;enter;out;nd;nd;nu;n;nw;ne;eu;wd;sw;se",10)
 		DoAfterSpecial (3,"n;ask yue buqun about job",10)
@@ -183,7 +178,7 @@ end
 function dohsxunshan()
 	hsxunshan_DisableAll()	
 	EnableTriggerGroup("hsxunshan1", true)
-	world.Execute ("s;s;wd;nd;nd;nd;su;wu;wu;ed;nu;sd;ed;su;su;sw;wu;wu")
+	Common_SendToWorld("s;s;wd;nd;nd;nd;su;wu;wu;ed;nu;sd;ed;su;su;sw;wu;wu")
 	DoAfterSpecial (1,"wu;ed;ed;ed;ne;eu;ne;ne;push door;e;w;open door;w",10)
 	DoAfterSpecial (2.5,"sw;sw;sd;su;su;enter;out;nd;nd;nu;n;nw;ne;eu;wd;sw;se",10)
 	DoAfterSpecial (3,"n;ask yue buqun about job",10)
@@ -237,12 +232,10 @@ function hsxunshan_gomengmian()
 		return
 	end
 	if mengmianstep > 10 then 
-		world.Execute(mengmian_tbl[10][2])
 		mengmianstep= 1
-		hsxunshan_xiuxi()
+		Common_SendToWorld(mengmian_tbl[10][2].."/hsxunshan_xiuxi()")
 	else
-		world.Execute(mengmian_tbl[mengmianstep][1])
-		world.Execute("kill "..WorldName().."-mengmian")
+		Common_SendToWorld(mengmian_tbl[mengmianstep][1].."kill "..WorldName().."-mengmian")
 		mengmianstep = mengmianstep + 1
 		EnableTriggerGroup("hsxunshan6", true)
 	end
@@ -254,7 +247,7 @@ function hsxunshan_mengmianpfm()
 		mengmianpfmtimes = 0
 		hsxunshan_mengmiancomplete()
 	else
-		world.Execute("pfm")
+		Common_SendToWorld("pfm")
 	end
 end
 
@@ -291,8 +284,7 @@ function hsxunshan_OnConnect()
 	hsxunshan_DisableAll()
 	local member = tonumber(GetVariable("member"))
 	if member == 1 then
-		Common_SendToWorld("chen hs;eu;n;n")
-		Common_SendToWorld("/hsxunshan_start()")
+		Common_SendToWorld("chen hs;eu;n;n;/hsxunshan_start()")
 	else
 		world.Execute("e;s;s")
 		DoAfterSpecial(1,"w;w;w;w;w;w;w;w;w;nw;w;w;w;w;w;w",10)
@@ -324,18 +316,7 @@ end
 --ÐÝÏ¢
 function hsxunshan_doxiuxi()
 	xiuxi_doxiuxi()
-	DoAfterSpecial(2, "/hsxunshan_chihe();s;s;ne;ne;e;push men;e;sleep", 10)
-end
-
-function hsxunshan_chihe()
-	local food = tonumber(GetVariable("food"))
-	local foodmax = tonumber(GetVariable("food_max"))
-	local water = tonumber(GetVariable("water"))
-	local watermax = tonumber(GetVariable("water_max"))
-	if (food > foodmax/2) and (water > watermax/2) then
-		return
-	end 
-	Common_SendToWorld("s;w;buy baozi;#3 eat baozi;e;s;w;#3 drink;e;n;n")
+	DoAfterSpecial(3, "s;s;ne;ne;e;push men;e;sleep", 10)
 end
 
 function hsxunshan_xiuxi()
@@ -358,7 +339,17 @@ function hsxunshan_xiuxicomplete()
 		DoAfterSpecial(2, "w;open men;w;dazuo 500", 10)
 		xiuxi_dodazuo()
 	else
-		DoAfterSpecial(2, "w;open men;w;sw;sw;n;n;/hsxunshan_start()", 10)
+	
+		local food = tonumber(GetVariable("food"))
+		local foodmax = tonumber(GetVariable("food_max"))
+		local water = tonumber(GetVariable("water"))
+		local watermax = tonumber(GetVariable("water_max"))
+		if (food > foodmax/2) and (water > watermax/2) then
+			DoAfterSpecial(2, "w;open men;w;sw;sw;n;n;/hsxunshan_start()", 10)
+		else
+			DoAfterSpecial(2, "w;open men;w;sw;sw;n;w;buy baozi;#3 eat baozi;e;s;w;#3 drink;e;n;n;/hsxunshan_start()", 10)
+		end 
+		
 	end
 
 end

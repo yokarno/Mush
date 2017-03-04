@@ -381,7 +381,7 @@ end
 
 function stepwalking_gotaohuanochuanfu()
 	stepwalking_DisableAll()
-	DoAfterSpecial(2, "#3 w;n;n;#10 w;/stepwalking_TargetFail()", 10)
+	DoAfterSpecial(2,  "/Common_SendToWorld(\"#3 w;n;n;#10 w;/stepwalking_TargetFail()\")"  , 10)
 end
 
 function stepwalking_gotaohuadokill()
