@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Saved on ÐÇÆÚÈý, ÈýÔÂ 01, 2017, 9:36 ÏÂÎç -->
+<!-- MuClient version 4.94 -->
+<!-- Written by Nick Gammon -->
+<!-- Home Page: http://www.mushclient.com/ -->
+<muclient>
+<world
+   muclient_version="4.94"
+   world_file_version="15"
+   date_saved="2017-03-01 21:36:54"
+
+   auto_log_file_name="logs\spray.txt"
+   auto_say_override_prefix="-"
+   auto_say_string="say "
+   chat_name="Name-not-set"
+   command_stack_character=";"
+   id="e1fc457d8077c18831865569"
+   input_font_name="ËÎÌå"
+   mapping_failure="Alas, you cannot go that way."
+   name="spray"
+   new_activity_sound="(No sound)"
+   on_world_connect="World_Triggers"
+   output_font_name="ËÎÌå"
+   password_base64="y"
+   password="em1razgwMDIwOA=="
+   player="spray"
+   script_editor="notepad"
+   script_filename="lua\hy\robot.lua"
+   script_language="Lua"
+   script_prefix="/"
+   site="hy.21sun.net"
+   spam_message="look"
+   speed_walk_prefix="#"
+   terminal_identification="zmud"
+
+   arrows_change_history="y"
+   auto_pause="y"
+   auto_repeat="y"
+   auto_resize_minimum_lines="1"
+   auto_resize_maximum_lines="20"
+   chat_foreground_colour="red"
+   chat_background_colour="black"
+   chat_port="4050"
+   confirm_before_replacing_typing="y"
+   confirm_on_paste="y"
+   confirm_on_send="y"
+   default_trigger_sequence="100"
+   default_alias_sequence="100"
+   detect_pueblo="y"
+   display_my_input="y"
+   echo_colour="10"
+   echo_hyperlink_in_output_window="y"
+   edit_script_with_notepad="y"
+   enable_aliases="y"
+   enable_beeps="y"
+   enable_scripts="y"
+   enable_timers="y"
+   enable_triggers="y"
+   enable_trigger_sounds="y"
+   history_lines="1000"
+   hyperlink_adds_to_command_history="y"
+   hyperlink_colour="#0080FF"
+   indent_paras="y"
+   input_background_colour="white"
+   input_font_height="9"
+   input_font_weight="400"
+   input_font_charset="134"
+   input_text_colour="black"
+   keypad_enable="y"
+   line_information="y"
+   line_spacing="16"
+   log_input="y"
+   log_notes="y"
+   log_output="y"
+   max_output_lines="5000"
+   mud_can_change_link_colour="y"
+   mud_can_change_options="y"
+   note_text_colour="#040000"
+   output_font_height="9"
+   output_font_weight="400"
+   output_font_charset="134"
+   paste_delay_per_lines="1"
+   pixel_offset="1"
+   port="1863"
+   proxy_port="1080"
+   save_world_automatically="y"
+   script_reload_option="2"
+   script_errors_to_output_window="y"
+   send_file_delay_per_lines="1"
+   send_mxp_afk_response="y"
+   show_connect_disconnect="y"
+   show_italic="y"
+   show_underline="y"
+   spam_line_count="20"
+   speed_walk_delay="20"
+   tab_completion_lines="200"
+   timestamp_input_text_colour="maroon"
+   timestamp_notes_text_colour="blue"
+   timestamp_output_text_colour="white"
+   timestamp_input_back_colour="black"
+   timestamp_notes_back_colour="black"
+   timestamp_output_back_colour="black"
+   tool_tip_visible_time="5000"
+   tool_tip_start_time="400"
+   underline_hyperlinks="y"
+   unpause_on_send="y"
+   use_custom_link_colour="y"
+   warn_if_scripting_inactive="y"
+   wrap="y"
+   wrap_column="120"
+   > <!-- end of general world attributes -->
+  <connect_text>g
+%name%
+%password%
+y</connect_text>
+
+</world>
+
+<!-- triggers -->
+
+<triggers
+   muclient_version="4.94"
+   world_file_version="15"
+   date_saved="2017-03-01 21:36:54"
+  >
+</triggers>
+
+<!-- aliases -->
+
+<aliases
+   muclient_version="4.94"
+   world_file_version="15"
+   date_saved="2017-03-01 21:36:54"
+  >
+  <alias
+   name="chd_alias"
+   match="chd"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>drop cloth
+drop xue
+wear armor
+wear all</send>
+  </alias>
+  <alias
+   name="dazuoneili_alias"
+   match="dazuoneili"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send> </send>
+  </alias>
+  <alias
+   name="dushu_alias"
+   match="dushu"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>du zhengqi_book 30
+yj
+abandon zhengqijue
+y</send>
+  </alias>
+  <alias
+   name="dushuxiuxi_alias"
+   match="dushu-xiuxi"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>w
+sleep</send>
+  </alias>
+  <alias
+   name="findbook_alias"
+   match="f *"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>findbook %1</send>
+  </alias>
+  <alias
+   name="getbook_alias"
+   match="g *"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>get %1 from corpse\nget %1</send>
+  </alias>
+  <alias
+   name="huifuneili_alias"
+   match="huifuneili"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>remove ring
+enable force taiji-shengong
+wear ring</send>
+  </alias>
+  <alias
+   name="huigc_alias"
+   match="huigc"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>whistle
+rr
+fastmove gc</send>
+  </alias>
+  <alias
+   name="jf_alias"
+   match="jf"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>jifa unarmed chousui-zhang;jifa parry douzhuan-xingyi;jifa strike yinyang-shiertian;bei yinyang-shiertian</send>
+  </alias>
+  <alias
+   name="jn_alias"
+   match="jn"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>jifa unarmed none;jifa parry none;jifa strike none;bei none</send>
+  </alias>
+  <alias
+   name="kill_alias"
+   match="k *"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>kill %1</send>
+  </alias>
+  <alias
+   name="look_alias"
+   match="lc"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>look corpse</send>
+  </alias>
+  <alias
+   name="lianxi_alias"
+   match="lianxi"
+   enabled="y"
+   expand_variables="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>lian parry 30
+yq</send>
+  </alias>
+  <alias
+   name="lianxixiuxi_alias"
+   match="lianxi-xiuxi"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>w
+sleep</send>
+  </alias>
+  <alias
+   name="lianxineili_alias"
+   match="lianxineili"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>uwi
+wield whip
+lian whip 30
+lian whip 30
+lian whip 30
+lian whip 30
+lian whip 30
+lian whip 30
+lian whip 30
+unwield whip</send>
+  </alias>
+  <alias
+   name="loc_alias"
+   match="loc"
+   enabled="y"
+   sequence="100"
+  >
+  <send>exert regenerate
+exert regenerate
+exert recover
+location aqing sao</send>
+  </alias>
+  <alias
+   name="pfm_alias"
+   match="pfm"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>perform sword.jiushi</send>
+  </alias>
+  <alias
+   name="pfmkill_alias"
+   match="pfmkill"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>perform strike.xuan</send>
+  </alias>
+  <alias
+   name="pw_alias"
+   match="pw"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>yun wanfaguizong
+jiali 1</send>
+  </alias>
+  <alias
+   name="teach_alias"
+   match="teachid"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>teach mist wuzheng-xinfa
+yj</send>
+  </alias>
+  <alias
+   name="tys_alias"
+   match="tys"
+   enabled="y"
+   sequence="100"
+  >
+  <send>perform dodge.luoyeqiufeng
+perform dodge.miaoshou</send>
+  </alias>
+  <alias
+   name="xiuxidushu_alias"
+   match="xiuxi-dushu"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>e</send>
+  </alias>
+  <alias
+   name="xiuxilianxi_alias"
+   match="xiuxi-lianxi"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>e</send>
+  </alias>
+  <alias
+   name="xiuxixuexi_alias"
+   match="xiuxi-xuexi"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>open men
+s
+w
+w
+s
+s
+s
+open door
+s</send>
+  </alias>
+  <alias
+   name="xuexi_alias"
+   match="xuexi"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>learn savignyy parry 20
+exert regenerate
+exert regenerate</send>
+  </alias>
+  <alias
+   name="xuexixiuxi_alias"
+   match="xuexi-xiuxi"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>exert regenerate
+open door
+n
+n
+n
+n
+e
+e
+push men
+n
+sleep</send>
+  </alias>
+  <alias
+   name="yanjiu_alias"
+   match="yanjiu"
+   enabled="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>yanjiu</send>
+  </alias>
+</aliases>
+
+<!-- timers -->
+
+<timers
+   muclient_version="4.94"
+   world_file_version="15"
+   date_saved="2017-03-01 21:36:54"
+  >
+</timers>
+
+<!-- macros -->
+
+<macros
+   muclient_version="4.94"
+   world_file_version="15"
+   date_saved="2017-03-01 21:36:54"
+  >
+
+  <macro name="up" type="send_now" >
+  <send>up</send>
+
+  </macro>
+
+  <macro name="down" type="send_now" >
+  <send>down</send>
+
+  </macro>
+
+  <macro name="north" type="send_now" >
+  <send>north</send>
+
+  </macro>
+
+  <macro name="south" type="send_now" >
+  <send>south</send>
+
+  </macro>
+
+  <macro name="east" type="send_now" >
+  <send>east</send>
+
+  </macro>
+
+  <macro name="west" type="send_now" >
+  <send>west</send>
+
+  </macro>
+
+  <macro name="examine" type="replace" >
+  <send>examine </send>
+
+  </macro>
+
+  <macro name="look" type="replace" >
+  <send>look </send>
+
+  </macro>
+
+  <macro name="page" type="replace" >
+  <send>page </send>
+
+  </macro>
+
+  <macro name="say" type="replace" >
+  <send>say </send>
+
+  </macro>
+
+  <macro name="whisper" type="replace" >
+  <send>whisper </send>
+
+  </macro>
+
+  <macro name="doing" type="send_now" >
+  <send>DOING</send>
+
+  </macro>
+
+  <macro name="who" type="send_now" >
+  <send>WHO</send>
+
+  </macro>
+
+  <macro name="drop" type="replace" >
+  <send>drop </send>
+
+  </macro>
+
+  <macro name="take" type="replace" >
+  <send>take </send>
+
+  </macro>
+
+  <macro name="logout" type="send_now" >
+  <send>LOGOUT</send>
+
+  </macro>
+
+  <macro name="quit" type="send_now" >
+  <send>QUIT</send>
+
+  </macro>
+
+  <macro name="Alt+S" type="send_now" >
+  <send>/CloseAll()</send>
+
+  </macro>
+
+  <macro name="F1+Ctrl" type="send_now" >
+  <send>/EndRobot()</send>
+
+  </macro>
+</macros>
+
+<!-- variables -->
+
+<variables
+   muclient_version="4.94"
+   world_file_version="15"
+   date_saved="2017-03-01 21:36:54"
+  >
+  <variable name="age">Ê®ËÄËê¶þÔÂ</variable>
+  <variable name="currstats">hsxunshan</variable>
+  <variable name="experi">1816772</variable>
+  <variable name="food">466</variable>
+  <variable name="food_max">500</variable>
+  <variable name="jing">13534</variable>
+  <variable name="jing_max">13534</variable>
+  <variable name="jingli">4100</variable>
+  <variable name="jingli_max">4100</variable>
+  <variable name="jobok">0</variable>
+  <variable name="jobpath"></variable>
+  <variable name="jobstep">1</variable>
+  <variable name="killlongbjtime">¶þÁãÒ»ÁãÄêÁùÔÂÊ®ÁùÈÕÊ®¾ÅÊ±ËÄÊ®·ÖÈýÊ®ÆßÃë</variable>
+  <variable name="killlonghytime">Ê®Ò»Ð¡Ê±Ê®Ò»·ÖÁùÃë</variable>
+  <variable name="killover">/StepWalking_NextGo()</variable>
+  <variable name="liandanpath">1</variable>
+  <variable name="liandanstep">1</variable>
+  <variable name="lingyao">ÎÞ       </variable>
+  <variable name="member">1</variable>
+  <variable name="neili">20325</variable>
+  <variable name="neili_max">16260</variable>
+  <variable name="pot">263655</variable>
+  <variable name="pot_max">892500</variable>
+  <variable name="prestats"></variable>
+  <variable name="putongyao">ÎÞ        </variable>
+  <variable name="qi">15853</variable>
+  <variable name="qi_max">15853</variable>
+  <variable name="searchcmd">wayao</variable>
+  <variable name="searchstep">0</variable>
+  <variable name="shimen">»ªÉ½ÅÉ</variable>
+  <variable name="targetnum">1</variable>
+  <variable name="water">466</variable>
+  <variable name="water_max">500</variable>
+  <variable name="xingbie">ÄÐ</variable>
+  <variable name="yabiaostep">29</variable>
+  <variable name="yaoxing">ÎÞÓÐ</variable>
+  <variable name="zhengqi">5000000</variable>
+</variables>
+
+<!-- colours -->
+
+<colours
+   muclient_version="4.94"
+   world_file_version="15"
+   date_saved="2017-03-01 21:36:54"
+  >
+
+<ansi>
+
+ <normal>
+   <colour seq="1" rgb="black" />
+   <colour seq="2" rgb="maroon" />
+   <colour seq="3" rgb="green" />
+   <colour seq="4" rgb="olive" />
+   <colour seq="5" rgb="blue" />
+   <colour seq="6" rgb="purple" />
+   <colour seq="7" rgb="darkcyan" />
+   <colour seq="8" rgb="white" />
+
+ </normal>
+
+ <bold>
+   <colour seq="1" rgb="gray" />
+   <colour seq="2" rgb="red" />
+   <colour seq="3" rgb="lime" />
+   <colour seq="4" rgb="yellow" />
+   <colour seq="5" rgb="blue" />
+   <colour seq="6" rgb="magenta" />
+   <colour seq="7" rgb="cyan" />
+   <colour seq="8" rgb="white" />
+
+ </bold>
+
+</ansi>
+
+<custom>
+  <colour seq="1" name="Custom1" text="#FF8080" back="black" />
+  <colour seq="2" name="Custom2" text="#FFFF80" back="black" />
+  <colour seq="3" name="Custom3" text="#80FF80" back="black" />
+  <colour seq="4" name="Custom4" text="#80FFFF" back="black" />
+  <colour seq="5" name="Custom5" text="#0080FF" back="black" />
+  <colour seq="6" name="Custom6" text="#FF80C0" back="black" />
+  <colour seq="7" name="Custom7" text="red" back="black" />
+  <colour seq="8" name="Custom8" text="#0080C0" back="black" />
+  <colour seq="9" name="Custom9" text="magenta" back="black" />
+  <colour seq="10" name="Custom10" text="#804040" back="black" />
+  <colour seq="11" name="Custom11" text="#FF8040" back="black" />
+  <colour seq="12" name="Custom12" text="teal" back="black" />
+  <colour seq="13" name="Custom13" text="#004080" back="black" />
+  <colour seq="14" name="Custom14" text="#FF0080" back="black" />
+  <colour seq="15" name="Custom15" text="green" back="black" />
+  <colour seq="16" name="Custom16" text="blue" back="black" />
+
+</custom>
+</colours>
+
+<!-- keypad -->
+
+<keypad
+   muclient_version="4.94"
+   world_file_version="15"
+   date_saved="2017-03-01 21:36:54"
+  >
+
+  <key name="0" >
+  <send>who</send>
+  </key>
+
+  <key name="1" >
+  <send>sw</send>
+  </key>
+
+  <key name="2" >
+  <send>south</send>
+  </key>
+
+  <key name="3" >
+  <send>se</send>
+  </key>
+
+  <key name="4" >
+  <send>west</send>
+  </key>
+
+  <key name="5" >
+  <send>look</send>
+  </key>
+
+  <key name="6" >
+  <send>east</send>
+  </key>
+
+  <key name="7" >
+  <send>nw</send>
+  </key>
+
+  <key name="8" >
+  <send>north</send>
+  </key>
+
+  <key name="9" >
+  <send>ne</send>
+  </key>
+
+  <key name="." >
+  <send>hp</send>
+  </key>
+
+  <key name="/" >
+  <send>inventory</send>
+  </key>
+
+  <key name="*" >
+  <send>score</send>
+  </key>
+
+  <key name="-" >
+  <send>up</send>
+  </key>
+
+  <key name="+" >
+  <send>down</send>
+  </key>
+
+  <key name="Ctrl+0" >
+  </key>
+
+  <key name="Ctrl+1" >
+  </key>
+
+  <key name="Ctrl+2" >
+  </key>
+
+  <key name="Ctrl+3" >
+  </key>
+
+  <key name="Ctrl+4" >
+  </key>
+
+  <key name="Ctrl+5" >
+  </key>
+
+  <key name="Ctrl+6" >
+  </key>
+
+  <key name="Ctrl+7" >
+  </key>
+
+  <key name="Ctrl+8" >
+  </key>
+
+  <key name="Ctrl+9" >
+  </key>
+
+  <key name="Ctrl+." >
+  </key>
+
+  <key name="Ctrl+/" >
+  </key>
+
+  <key name="Ctrl+*" >
+  </key>
+
+  <key name="Ctrl+-" >
+  </key>
+
+  <key name="Ctrl++" >
+  </key>
+</keypad>
+
+<!-- printing -->
+
+<printing
+   muclient_version="4.94"
+   world_file_version="15"
+   date_saved="2017-03-01 21:36:54"
+  >
+
+<ansi>
+
+ <normal>
+
+ </normal>
+
+ <bold>
+   <style seq="1" bold="y" />
+   <style seq="2" bold="y" />
+   <style seq="3" bold="y" />
+   <style seq="4" bold="y" />
+   <style seq="5" bold="y" />
+   <style seq="6" bold="y" />
+   <style seq="7" bold="y" />
+   <style seq="8" bold="y" />
+
+ </bold>
+
+</ansi>
+</printing>
+
+<!-- plugins -->
+<include name="AutoConnect.xml" plugin="y" />
+<include name="CommonCommand.xml" plugin="y" />
+</muclient>

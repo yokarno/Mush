@@ -391,12 +391,6 @@ function World_StopAll()
 	end
 end
 
-	Common_AddCustomerTrigger("common101", "common1","^(?P<target>.*)\\((?P<targetid>.*)\\)告诉你：close robot", "/World_OnReceiveCloseRobot(\"%<target>\",\"%<targetid>\")")
-	Common_AddCustomerTrigger("common102", "common1","^(?P<target>.*)\\((?P<targetid>.*)\\)告诉你：end robot", "/World_OnReceiveEndRobot()(\"%<target>\",\"%<targetid>\")")
-	Common_AddCustomerTrigger("common103", "common1","^(?P<target>.*)\\((?P<targetid>.*)\\)告诉你：replace", "/World_OnReceiveReplaceLogin(\"%<target>\",\"%<targetid>\")")
-	Common_AddCustomerTrigger("common104", "common1","^(?P<target>.*)\\((?P<targetid>.*)\\)告诉你：go on robot", "/World_OnReceiveGoOnRobot(\"%<target>\",\"%<targetid>\")")
-	Common_AddCustomerTrigger("common105", "common1","^(?P<target>.*)\\((?P<targetid>.*)\\)告诉你：quit", "/World_OnReceiveQuit(\"%<target>\",\"%<targetid>\")")
-	
 function World_OnReceiveCloseRobot(target,targetid)
 	if Common_FilterTxt(target) == nil then
 		return
