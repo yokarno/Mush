@@ -16,9 +16,15 @@ ChatID = "zhm"
 MemberChan = 0
 ReplaceLogin = 1
 
-function bredeem(nStart,nEnd)
+function bredeem(member,nStart,nEnd)
+	local tt = 0
 	for i=nStart,nEnd do
-		DoAfterSpecial(0.2,"redeem "..i,10)
+		if	member == 1 then
+			DoAfterSpecial(tt+0.2,"mredeem "..i,10)
+		else
+			DoAfterSpecial(tt+0.2,"redeem "..i,10)
+		end
+		tt = tt + 0.1
 	end
 end
 
