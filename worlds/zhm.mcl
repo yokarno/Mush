@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
-<!-- Saved on ÐÇÆÚÈý, ÈýÔÂ 01, 2017, 8:39 ÏÂÎç -->
+<!-- Saved on ÐÇÆÚÁù, ÈýÔÂ 04, 2017, 2:46 ÏÂÎç -->
 <!-- MuClient version 4.94 -->
 <!-- Written by Nick Gammon -->
 <!-- Home Page: http://www.mushclient.com/ -->
@@ -8,7 +8,7 @@
 <world
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-01 20:39:49"
+   date_saved="2017-03-04 14:46:24"
 
    auto_log_file_name="D:\MUSHclient\logs\zhm.txt"
    auto_say_override_prefix="-"
@@ -123,7 +123,7 @@ y</connect_text>
 <triggers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-01 20:39:49"
+   date_saved="2017-03-04 14:46:24"
   >
 </triggers>
 
@@ -132,7 +132,7 @@ y</connect_text>
 <aliases
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-01 20:39:49"
+   date_saved="2017-03-04 14:46:24"
   >
   <alias
    name="chd_alias"
@@ -391,7 +391,7 @@ exert regenerate</send>
 <timers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-01 20:39:49"
+   date_saved="2017-03-04 14:46:24"
   >
 </timers>
 
@@ -400,7 +400,7 @@ exert regenerate</send>
 <macros
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-01 20:39:49"
+   date_saved="2017-03-04 14:46:24"
   >
 
   <macro name="up" type="send_now" >
@@ -504,7 +504,7 @@ exert regenerate</send>
 <variables
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-01 20:39:49"
+   date_saved="2017-03-04 14:46:24"
   >
   <variable name="age">Ê®ÎåËê°ËÔÂ</variable>
   <variable name="currstats">liaotian</variable>
@@ -527,7 +527,7 @@ exert regenerate</send>
 <colours
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-01 20:39:49"
+   date_saved="2017-03-04 14:46:24"
   >
 
 <ansi>
@@ -584,7 +584,7 @@ exert regenerate</send>
 <keypad
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-01 20:39:49"
+   date_saved="2017-03-04 14:46:24"
   >
 
   <key name="0" >
@@ -698,7 +698,7 @@ exert regenerate</send>
 <printing
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-01 20:39:49"
+   date_saved="2017-03-04 14:46:24"
   >
 
 <ansi>
