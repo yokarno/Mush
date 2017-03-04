@@ -120,3 +120,13 @@ function World_StopAll()
 		activeworld = nil
 	end
 end
+
+function shuacailiao(id,material,nStart,nEnd)
+	local tt = 0
+	for i=nStart,nEnd do
+		DoAfterSpecial(tt+0.5,"setsx "..id.." pawn/"..i.." \"³¤½£\"",10)
+		DoAfterSpecial(tt+0.5,"setsx "..id.." vpawn/"..i.." 10",10)
+		DoAfterSpecial(tt+0.5,"setsx "..id.." fpawn/"..i.." \""..material.."\"",10)
+		tt = tt + 0.5
+	end	
+end

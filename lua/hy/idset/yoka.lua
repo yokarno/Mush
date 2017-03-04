@@ -6,14 +6,14 @@ AutoResearch = 0
 
 FullSkillInJob = 0
 
-Master = ""
+Master = "风清扬"
 
-MasterId = ""
+MasterId = "feng"
 
 LearnTimes = 100
 
-ResearchTimes = 100
+ResearchTimes = 300
 
-xuexi_xiuxi = ""
+ResearchSkills_tbl = {"force","dodge","parry","sword","unarmed","zixia-shengong","feiyan-huixiang","lonely-sword","huashan-neigong","huashan-sword","hunyuan-zhang","poyu-quan","chongling-jian","strike","blade","kuangfeng-jian","cuff","fanliangyi-dao"}
 
-xiuxi_xuexi = ""
+LearnSkills_tbl = {"ziyunyin","zhengqijue","force","dodge","parry","sword","unarmed","zixia-shengong","feiyan-huixiang","lonely-sword","huashan-neigong","huashan-sword","hunyuan-zhang","poyu-quan","chongling-jian","strike","blade","kuangfeng-jian","cuff","fanliangyi-dao"}

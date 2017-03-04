@@ -5,6 +5,7 @@ require("hy.job.liaotian")
 require("hy.skill.xuexi")
 require("hy.job.liandan")
 require("hy.job.hsxunshan")
+require("hy.skill.yanjiu")
 
 EndRobot = 0
 DeadTimes = 0
@@ -14,6 +15,12 @@ JobMsg = ""
 ChatID = "zhm"
 MemberChan = 0
 ReplaceLogin = 1
+
+function bredeem(nStart,nEnd)
+	for i=nStart,nEnd do
+		DoAfterSpecial(0.2,"redeem "..i,10)
+	end
+end
 
 --聊天
 function liaotian()
@@ -42,6 +49,14 @@ function hsxunshan()
 	_G.EndRobot = 0
 	hsxunshan_start()
 end
+
+--学习
+function yanjiu()
+	World_CloseAll()
+	_G.EndRobot = 0
+	yanjiu_start()
+end
+
 
 --=================================================================
 --连接上后自动Robot
