@@ -104,11 +104,7 @@ function liandan_start()
 	SetVariable("searchstep",0)
 	
 	EnableTimer("autoemote", false)
-	Common_SendToWorld("yj")
-	Common_SendToWorld("yq")
-	Common_SendToWorld("chd")
-	Common_SendToWorld("pw")
-	DoAfterSpecial(0.5,"e;e;n;ask huoji about job;give 1 silver to huoji",10)
+	Common_SendToWorld("yj;yq;chd;pw;e;e;n;ask huoji about job;give 1 silver to huoji")
 	EnableTriggerGroup("liandan1", true)
 end
 

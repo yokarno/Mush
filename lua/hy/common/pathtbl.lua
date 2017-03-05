@@ -1,6 +1,7 @@
 --module (..., package.seeall)
 
 Path_tbl = {
+["gdz"]="chen sz;s;s;s;s;s;e;eu;ed;ne;e;enter",
 ["1s"]="give 1 silver to ma fu",
 ["хавЃ"]="#8 s;#2 e;s;#2 w",
 ["хавЃ/"]="#4 e;n;w;#8 n",

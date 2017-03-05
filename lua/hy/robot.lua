@@ -1,11 +1,17 @@
 require("hy.common.common")
 require("hy.common.cmd")
 require("hy.materialtbl")
-require("hy.job.liaotian")
+
 require("hy.skill.xuexi")
+require("hy.skill.yanjiu")
+require("hy.skill.dushu")
+require("hy.skill.dazuo")
+
+require("hy.job.liaotian")
 require("hy.job.liandan")
 require("hy.job.hsxunshan")
-require("hy.skill.yanjiu")
+require("hy.job.xyzhihuan")
+
 
 EndRobot = 0
 DeadTimes = 0
@@ -16,15 +22,18 @@ ChatID = "zhm"
 MemberChan = 0
 ReplaceLogin = 1
 
-function bredeem(member,nStart,nEnd)
+function bredeem(nStart,nEnd)
 	local tt = 0
-	for i=nStart,nEnd do
-		if	member == 1 then
-			DoAfterSpecial(tt+0.2,"mredeem "..i,10)
-		else
-			DoAfterSpecial(tt+0.2,"redeem "..i,10)
+	local member = tonumber(GetVariable("member",0))
+	if member == 1 then
+		for i=nStart,nEnd do
+			if	member == 1 then
+				DoAfterSpecial(tt+0.2,"mredeem "..i,10)
+			else
+				DoAfterSpecial(tt+0.2,"redeem "..i,10)
+			end
+			tt = tt + 0.1
 		end
-		tt = tt + 0.1
 	end
 end
 
@@ -56,13 +65,33 @@ function hsxunshan()
 	hsxunshan_start()
 end
 
---学习
+--研究
 function yanjiu()
 	World_CloseAll()
 	_G.EndRobot = 0
 	yanjiu_start()
 end
 
+--读书
+function dushu()
+	World_CloseAll()
+	_G.EndRobot = 0
+	dushu_start()
+end
+
+--打坐
+function dazuo()
+	World_CloseAll()
+	_G.EndRobot = 0
+	dazuo_start()
+end
+
+--逍遥指环
+function xyzhihuan()
+	World_CloseAll()
+	_G.EndRobot = 0
+	xyzhihuan_start()
+end
 
 --=================================================================
 --连接上后自动Robot

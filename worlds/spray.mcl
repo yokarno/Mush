@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
-<!-- Saved on ÐÇÆÚÁù, ÈýÔÂ 04, 2017, 11:17 ÏÂÎç -->
+<!-- Saved on ÐÇÆÚÁù, ÈýÔÂ 04, 2017, 11:19 ÏÂÎç -->
 <!-- MuClient version 4.94 -->
 <!-- Written by Nick Gammon -->
 <!-- Home Page: http://www.mushclient.com/ -->
@@ -8,14 +8,14 @@
 <world
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-04 23:17:39"
+   date_saved="2017-03-04 23:19:31"
 
    auto_log_file_name="logs\spray.txt"
    auto_say_override_prefix="-"
    auto_say_string="say "
    chat_name="Name-not-set"
    command_stack_character=";"
-   id="e1fc457d8077c18831865569"
+   id="a163d287471dffa0148e5981"
    input_font_name="ËÎÌå"
    mapping_failure="Alas, you cannot go that way."
    name="spray"
@@ -122,7 +122,7 @@ y</connect_text>
 <triggers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-04 23:17:39"
+   date_saved="2017-03-04 23:19:31"
   >
 </triggers>
 
@@ -131,7 +131,7 @@ y</connect_text>
 <aliases
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-04 23:17:39"
+   date_saved="2017-03-04 23:19:31"
   >
   <alias
    name="chd_alias"
@@ -430,7 +430,7 @@ sleep</send>
 <timers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-04 23:17:39"
+   date_saved="2017-03-04 23:19:31"
   >
 </timers>
 
@@ -439,7 +439,7 @@ sleep</send>
 <macros
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-04 23:17:39"
+   date_saved="2017-03-04 23:19:31"
   >
 
   <macro name="up" type="send_now" >
@@ -543,7 +543,7 @@ sleep</send>
 <variables
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-04 23:17:39"
+   date_saved="2017-03-04 23:19:31"
   >
   <variable name="age">Ê®ËÄËêÒ»ÔÂ</variable>
   <variable name="currstats">liaotian</variable>
@@ -589,7 +589,7 @@ sleep</send>
 <colours
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-04 23:17:39"
+   date_saved="2017-03-04 23:19:31"
   >
 
 <ansi>
@@ -646,7 +646,7 @@ sleep</send>
 <keypad
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-04 23:17:39"
+   date_saved="2017-03-04 23:19:31"
   >
 
   <key name="0" >
@@ -760,7 +760,7 @@ sleep</send>
 <printing
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-04 23:17:39"
+   date_saved="2017-03-04 23:19:31"
   >
 
 <ansi>

@@ -141,7 +141,9 @@ function hsxunshan_pause()
 		DoAfterSpecial (3,"why;quit",10)
 		return
 	end
-	hsxunshan_Randushu()
+	if _G.ReadInJob == 1 then
+		hsxunshan_Randushu()
+	end
 	DoAfterSpecial (3,"ask yue buqun about Ѳɽ",10)
 end 
 
@@ -170,7 +172,11 @@ function hsxunshan_nofight(txt)
 		DoAfterSpecial (3,"n;ask yue buqun about job",10)
 	else
 		EnableTriggerGroup("hsxunshan2", true)
-		hsxunshan_Randushu()
+		if _G.ReadInJob == 1 then
+			hsxunshan_Randushu()
+		else
+			Common_SendToWorld("dazuo 100")
+		end
 	end
 	
 end
