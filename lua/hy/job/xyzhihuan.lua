@@ -23,6 +23,8 @@ function xyzhihuan_start()
 	Common_AddCustomerTrigger("xyzhihuan51", "xyzhihuan2","^苏星河说道：(?P<jobid>.*) 七宝指环在在『(?P<where>.*)』出现，快去吧", "/xyzhihuan_startgojob(\"%<jobid>\",\"%<where>\")")
 	Common_AddCustomerTrigger("xyzhihuan52", "xyzhihuan2","^苏星河对着你摇了摇头说：你等会再来", "/xyzhihuan_pause()")
 	Common_AddCustomerTrigger("xyzhihuan53", "xyzhihuan2","^苏星河说道：我不是给了你任务了吗？", "/xyzhihuan_fail()")
+	Common_AddCustomerTrigger("xyzhihuan53", "xyzhihuan2","^苏星河说道：(.*?)身上还有别的任务，先去完成了再来吧？", "/xyzhihuan_fail()")
+	
 	
 	Common_AddCustomerTrigger("xyzhihuan101", "xyzhihuan3","^你对着逍遥派叛徒", "/xyzhihuan_fight()")
 	Common_AddCustomerTrigger("xyzhihuan102", "xyzhihuan3","^这里没有这个人。", "/xyzhihuan_failreturn()")
@@ -121,7 +123,7 @@ end
 function xyzhihuan_pause()
 	xyzhihuan_DisableAll()
 	if _G.ReadInJob == 1 then
-		xyxunshan_Randushu()
+		xyzhihuan_Randushu()
 	end
 	if _G.EndRobot > 0 then
 		EnableTimer("timerpause", false)
@@ -400,11 +402,10 @@ function xyzhihuan_doxiuxi()
 	if member == 1 then
 		DoAfterSpecial(1,"chen gc;s;s;w;buy doufu;eat doufu;drink;drop doufu;chen mp22;w;w;w;sleep",10)
 	else
-		DoAfterSpecial(1,"chen gc;s;s;w;buy doufu;eat doufu;drink;drop doufu;chen mp22;w;w;w;sleep",10)
+		DoAfterSpecial(1,"e;e;e;e;n;w;n;n;n;n;n;n;w;buy doufu;eat doufu;drink;drop doufu",10)
+		DoAfterSpecial(2,"e;s;s;s;s;s;s;e;e;s;w;w;w;w;w;sleep",10)
 	end
 	
-	DoAfterSpecial(1,"e;e;e;e;n;w;n;n;n;n;n;n;w;buy doufu;eat doufu;drink;drop doufu",10)
-	DoAfterSpecial(2,"e;s;s;s;s;s;s;e;e;s;w;w;w;w;w;sleep",10)
 	EnableTriggerGroup("xiuxi2",true)
 end
 

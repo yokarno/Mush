@@ -10,7 +10,7 @@ Master = "逍遥子"
 
 MasterId = "zi"
 
-ReadInJob = 1
+ReadInJob = 0
 
 LearnTimes = 100
 

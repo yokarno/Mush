@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
-<!-- Saved on ÐÇÆÚÈÕ, ÈýÔÂ 05, 2017, 5:10 ÏÂÎç -->
+<!-- Saved on ÐÇÆÚÈÕ, ÈýÔÂ 05, 2017, 10:28 ÏÂÎç -->
 <!-- MuClient version 4.94 -->
 <!-- Written by Nick Gammon -->
 <!-- Home Page: http://www.mushclient.com/ -->
@@ -8,7 +8,7 @@
 <world
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-05 17:10:16"
+   date_saved="2017-03-05 22:28:36"
 
    auto_say_override_prefix="-"
    auto_say_string="say "
@@ -77,7 +77,7 @@
    output_font_charset="134"
    paste_delay_per_lines="1"
    pixel_offset="1"
-   port="1863"
+   port="1864"
    proxy_port="1080"
    save_world_automatically="y"
    script_reload_option="2"
@@ -114,7 +114,7 @@
 <triggers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-05 17:10:16"
+   date_saved="2017-03-05 22:28:36"
   >
 </triggers>
 
@@ -123,7 +123,7 @@
 <aliases
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-05 17:10:16"
+   date_saved="2017-03-05 22:28:36"
   >
   <alias
    name="chd_alias"
@@ -306,7 +306,7 @@ sleep</send>
 <timers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-05 17:10:16"
+   date_saved="2017-03-05 22:28:36"
   >
 </timers>
 
@@ -315,7 +315,7 @@ sleep</send>
 <macros
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-05 17:10:16"
+   date_saved="2017-03-05 22:28:36"
   >
 
   <macro name="up" type="send_now" >
@@ -414,13 +414,13 @@ sleep</send>
 <variables
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-05 17:10:16"
+   date_saved="2017-03-05 22:28:36"
   >
-  <variable name="age">Ê®ËÄËêÒ»ÔÂ</variable>
+  <variable name="age">¶þÊ®¶þËê¾ÅÔÂ</variable>
   <variable name="currstats">liaotian</variable>
-  <variable name="experi">0</variable>
-  <variable name="food">251</variable>
-  <variable name="food_max">280</variable>
+  <variable name="experi">203535393</variable>
+  <variable name="food">880</variable>
+  <variable name="food_max">900</variable>
   <variable name="jing">100</variable>
   <variable name="jing_max">100</variable>
   <variable name="jingli">0</variable>
@@ -428,20 +428,20 @@ sleep</send>
   <variable name="killlongbjtime">¶þÁãÁã¾ÅÄêÎåÔÂÊ®ÎåÈÕ¶þÊ®ÈýÊ±ËÄÊ®Æß·ÖÈýÃë</variable>
   <variable name="killlonghytime">Ê®ÁùÐ¡Ê±ÈýÊ®¾Å·ÖÎåÊ®ÈýÃë</variable>
   <variable name="lingyao">ÎÞ       </variable>
-  <variable name="member">0</variable>
+  <variable name="member">1</variable>
   <variable name="neili">191</variable>
   <variable name="neili_max">191</variable>
-  <variable name="pot">99</variable>
-  <variable name="pot_max">50000</variable>
+  <variable name="pot">2517893</variable>
+  <variable name="pot_max">6907500</variable>
   <variable name="putongyao">ÎÞ        </variable>
   <variable name="qi">100</variable>
   <variable name="qi_max">100</variable>
-  <variable name="shimen">ÆÕÍ¨°ÙÐÕ</variable>
-  <variable name="water">251</variable>
-  <variable name="water_max">280</variable>
-  <variable name="xingbie">ÄÐ</variable>
+  <variable name="shimen">Îå¶¾½Ì</variable>
+  <variable name="water">880</variable>
+  <variable name="water_max">900</variable>
+  <variable name="xingbie">Å®</variable>
   <variable name="yaoxing">ÎÞÓÐ</variable>
-  <variable name="zhengqi">0</variable>
+  <variable name="zhengqi">2236830</variable>
 </variables>
 
 <!-- colours -->
@@ -449,7 +449,7 @@ sleep</send>
 <colours
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-05 17:10:16"
+   date_saved="2017-03-05 22:28:36"
   >
 
 <ansi>
@@ -506,7 +506,7 @@ sleep</send>
 <keypad
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-05 17:10:16"
+   date_saved="2017-03-05 22:28:36"
   >
 
   <key name="0" >
@@ -620,7 +620,7 @@ sleep</send>
 <printing
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-05 17:10:16"
+   date_saved="2017-03-05 22:28:36"
   >
 
 <ansi>

@@ -298,11 +298,11 @@ menpaijobpath_tbl = {
 
 ["明教洪水旗大门"]= {
 	["MemberGoPath"] = {
-		"chen mj;wu;/stepwalking_SearchStep(\"mingjiao\")",
+		"chen mj;wu;/stepwalking_GoStep(\"mingjiao\")",
 		"wu;#3 nu;#3 ne;nw;nw;#5 n",
 	},
 	["GoPath"] = {
-		"gc-mj;wu;/stepwalking_SearchStep(\"mingjiao\")",
+		"gc-mj;wu;/stepwalking_GoStep(\"mingjiao\")",
 		"wu;#3 nu;#3 ne;nw;nw;#5 n",
 	},
 	["ReturnPath"] = {
@@ -314,11 +314,11 @@ menpaijobpath_tbl = {
 
 ["明教厚土旗门"]={
 	["MemberGoPath"] = {
-		"chen mj;wu;/stepwalking_SearchStep(\"mingjiao\")",
+		"chen mj;wu;/stepwalking_GoStep(\"mingjiao\")",
 		"wu;nu;nu;nu;nw;nw;nw;ne;ne;nd;enter;n;e;n",
 	},
 	["GoPath"] = {
-		"gc-mj;wu;/stepwalking_SearchStep(\"mingjiao\")",
+		"gc-mj;wu;/stepwalking_GoStep(\"mingjiao\")",
 		"wu;nu;nu;nu;nw;nw;nw;ne;ne;nd;enter;n;e;n",
 	},
 	["ReturnPath"] = {
@@ -330,11 +330,11 @@ menpaijobpath_tbl = {
 
 ["明教烈火旗后门"]={
 	["MemberGoPath"] = {
-		"chen mj;wu;/stepwalking_SearchStep(\"mingjiao\")",
+		"chen mj;wu;/stepwalking_GoStep(\"mingjiao\")",
 		"wu;nu;nu;nu;nu;enter;nu",
 	},
 	["GoPath"] = {
-		"gc-mj;wu;/stepwalking_SearchStep(\"mingjiao\")",
+		"gc-mj;wu;/stepwalking_GoStep(\"mingjiao\")",
 		"wu;nu;nu;nu;nu;enter;nu",
 	},
 	["ReturnPath"] = {
@@ -430,11 +430,11 @@ menpaijobpath_tbl = {
 
 ["华山玉女峰"]={
 	["MemberGoPath"] = {
-		"chen hs;ask gao genming about all;/stepwalking_SearchStep(\"huashan\")",
+		"chen hs;ask gao genming about all;/stepwalking_GoStep(\"huashan\")",
 		"eu",
 	},
 	["GoPath"] = {
-		"gc-hsjx;se;#2 su;#2 eu;su;#2 eu;#4 su;ask gao genming about all;/stepwalking_SearchStep(\"huashan\")",
+		"gc-hsjx;se;#2 su;#2 eu;su;#2 eu;#4 su;ask gao genming about all;/stepwalking_GoStep(\"huashan\")",
 		"eu",
 	},
 	["ReturnPath"] = {
@@ -449,7 +449,7 @@ menpaijobpath_tbl = {
 		"chen mp13;s",
 	},
 	["GoPath"] = {
-		"gc-mr;qu yanziwu;/stepwalking_SearchStep(\"murong\")",
+		"gc-mr;qu yanziwu;/stepwalking_GoStep(\"murong\")",
 		"out;s;s;e;s",
 	},
 	["ReturnPath"] = {
@@ -461,17 +461,17 @@ menpaijobpath_tbl = {
 
 ["慕容柳树林"]={
 	["MemberGoPath"] = {
-		"chen sz;s;s;s;s;s;sw;e;e;se;s;qu mr;/stepwalking_SearchStep(\"murong\")",
-		"out;s;w;w;nw;tan qin;/stepwalking_SearchStep(\"murong\")",
+		"chen sz;s;s;s;s;s;sw;e;e;se;s;qu mr;/stepwalking_GoStep(\"murong\")",
+		"out;s;w;w;nw;tan qin;/stepwalking_GoStep(\"murong\")",
 		"out;s;e;e;e;e;n",		
 	},
 	["GoPath"] = {
-		"gc-mr;qu mr;/stepwalking_SearchStep(\"murong\")",
-		"out;s;w;w;nw;tan qin;/stepwalking_SearchStep(\"murong\")",
+		"gc-mr;qu mr;/stepwalking_GoStep(\"murong\")",
+		"out;s;w;w;nw;tan qin;/stepwalking_GoStep(\"murong\")",
 		"out;s;e;e;e;e;n",
 	},
 	["ReturnPath"] = {
-		"s;w;w;w;s;s;s;qu yanziwu;/stepwalking_SearchStepReturn(\"murong\")",
+		"s;w;w;w;s;s;s;qu yanziwu;/stepwalking_GoStepReturn(\"murong\")",
 		"out;s;s;e;n;n;w;s",
 	},
 	["SearchStep"] = {"e","n","s;e","s","w","s","n;w","w","w","e;e;s","s","n;w","e;n;n"},
@@ -522,13 +522,13 @@ menpaijobpath_tbl = {
 
 ["少林寺山门殿"]={
 	["MemberGoPath"] = {
-		"chen dp;pawn;bai xiangling;/stepwalking_SearchStep(\"shaolinling\")",
+		"chen dp;pawn;bai xiangling;/stepwalking_GoStep(\"shaolinling\")",
 		"chen shl;knock gate;n;mpawn yingxiong ling",
 	},
 	["GoPath"] = {
-		"s;e;e;pawn;bai xiangling;/stepwalking_SearchStep(\"shaolinling\")",
-		"w;w;n;enter dong;say 天堂有路你不走呀;d;3;ne;ne;u;sw;e;sd;e;nu;nu;wu;nu;nu;nu;e;ask xu about all;/stepwalking_SearchStep(\"shaolin\")",
-		"eu;/stepwalking_SearchStep(\"shaolin\")",
+		"s;e;e;pawn;bai xiangling;/stepwalking_GoStep(\"shaolinling\")",
+		"w;w;n;enter dong;say 天堂有路你不走呀;d;3;ne;ne;u;sw;e;sd;e;nu;nu;wu;nu;nu;nu;e;ask xu about all;/stepwalking_GoStep(\"shaolin\")",
+		"eu;/stepwalking_GoStep(\"shaolin\")",
 		"nu;nu;nu;n;knock gate;n",
 	},
 	["ReturnPath"] = {
@@ -540,13 +540,13 @@ menpaijobpath_tbl = {
 
 ["少林寺走廊"]={
 	["MemberGoPath"] = {
-		"chen dp;pawn;bai xiangling;/stepwalking_SearchStep(\"shaolinling\")",
+		"chen dp;pawn;bai xiangling;/stepwalking_GoStep(\"shaolinling\")",
 		"chen shl;knock gate;n;mpawn yingxiong ling;n;nu;n;n;n;nu;n;n;e",
 	},
 	["GoPath"] = {
-		"s;e;e;pawn;bai xiangling;/stepwalking_SearchStep(\"shaolinling\")",
-		"w;w;n;enter dong;say 天堂有路你不走呀;d;3;ne;ne;u;sw;e;sd;e;nu;nu;wu;nu;nu;nu;e;ask xu about all;/stepwalking_SearchStep(\"shaolin\")",
-		"eu;/stepwalking_SearchStep(\"shaolin\")",
+		"s;e;e;pawn;bai xiangling;/stepwalking_GoStep(\"shaolinling\")",
+		"w;w;n;enter dong;say 天堂有路你不走呀;d;3;ne;ne;u;sw;e;sd;e;nu;nu;wu;nu;nu;nu;e;ask xu about all;/stepwalking_GoStep(\"shaolin\")",
+		"eu;/stepwalking_GoStep(\"shaolin\")",
 		"nu;nu;nu;n;knock gate;n;n;nu;n;n;n;nu;n;n;e",
 	},
 	["ReturnPath"] = {
@@ -558,13 +558,13 @@ menpaijobpath_tbl = {
 
 ["少林寺般若堂九部"]={
 	["MemberGoPath"] = {
-		"chen dp;pawn;bai xiangling;/stepwalking_SearchStep(\"shaolinling\")",
+		"chen dp;pawn;bai xiangling;/stepwalking_GoStep(\"shaolinling\")",
 		"chen shl;knock gate;n;mpawn yingxiong ling;n;nu;n;n;n;nu;n;w;w;n;n;n;n",
 	},
 	["GoPath"] = {
-		"s;e;e;pawn;bai xiangling;/stepwalking_SearchStep(\"shaolinling\")",
-		"w;w;n;enter dong;say 天堂有路你不走呀;d;3;ne;ne;u;sw;e;sd;e;nu;nu;wu;nu;nu;nu;e;ask xu about all;/stepwalking_SearchStep(\"shaolin\")",
-		"eu;/stepwalking_SearchStep(\"shaolin\")",
+		"s;e;e;pawn;bai xiangling;/stepwalking_GoStep(\"shaolinling\")",
+		"w;w;n;enter dong;say 天堂有路你不走呀;d;3;ne;ne;u;sw;e;sd;e;nu;nu;wu;nu;nu;nu;e;ask xu about all;/stepwalking_GoStep(\"shaolin\")",
+		"eu;/stepwalking_GoStep(\"shaolin\")",
 		"nu;nu;nu;n;knock gate;n;n;nu;n;n;n;nu;n;n;w;w;sd",
 	},
 	["ReturnPath"] = {
@@ -873,7 +873,7 @@ menpaijobpath_tbl = {
 		"chen mp3;nw",
 	},
 	["GoPath"] = {
-		"#10 e;ne;#5 n;#4 nu;#2 n;nu;nu;n;n;nu;nu;wu;nu;n;n;wu;wu;nw;#4 nu;/stepwalking_SearchStep(\"taishan\")",
+		"#10 e;ne;#5 n;#4 nu;#2 n;nu;nu;n;n;nu;nu;wu;nu;n;n;wu;wu;nw;#4 nu;/stepwalking_GoStep(\"taishan\")",
 		"#5 nu",
 	},
 	["ReturnPath"] = {
@@ -888,7 +888,7 @@ menpaijobpath_tbl = {
 		"chen mp3;nw",
 	},
 	["GoPath"] = {
-		"#10 e;ne;#5 n;#4 nu;#2 n;nu;nu;n;n;nu;nu;wu;nu;n;n;wu;wu;nw;#4 nu;/stepwalking_SearchStep(\"taishan\")",
+		"#10 e;ne;#5 n;#4 nu;#2 n;nu;nu;n;n;nu;nu;wu;nu;n;n;wu;wu;nw;#4 nu;/stepwalking_GoStep(\"taishan\")",
 		"#5 nu",
 	},
 	["ReturnPath"] = {
@@ -1424,11 +1424,11 @@ menpaijobpath_tbl = {
 
 ["嵩山铁梁峡"]={
 	["MemberGoPath"] = {
-		"chen shl;s;sd;sd;sd;wd;w;sd;sd;sd;ed;sd;sd;e;n;n;n;nu;ne;u;/stepwalking_SearchStep(\"songshan\")",
+		"chen shl;s;sd;sd;sd;wd;w;sd;sd;sd;ed;sd;sd;e;n;n;n;nu;ne;u;/stepwalking_GoStep(\"songshan\")",
 		"",
 	},
 	["GoPath"] = {
-		"gc-ss;#3 n;nu;ne;u;/stepwalking_SearchStep(\"songshan\")",
+		"gc-ss;#3 n;nu;ne;u;/stepwalking_GoStep(\"songshan\")",
 		"",
 	},
 	["ReturnPath"] = {
@@ -1440,11 +1440,11 @@ menpaijobpath_tbl = {
 
 ["铁梁峡"]={
 	["MemberGoPath"] = {
-		"chen shl;s;sd;sd;sd;wd;w;sd;sd;sd;ed;sd;sd;e;n;n;n;nu;ne;u;/stepwalking_SearchStep(\"songshan\")",
+		"chen shl;s;sd;sd;sd;wd;w;sd;sd;sd;ed;sd;sd;e;n;n;n;nu;ne;u;/stepwalking_GoStep(\"songshan\")",
 		"",
 	},
 	["GoPath"] = {
-		"gc-ss;#3 n;nu;ne;u;/stepwalking_SearchStep(\"songshan\")",
+		"gc-ss;#3 n;nu;ne;u;/stepwalking_GoStep(\"songshan\")",
 		"",
 	},
 	["ReturnPath"] = {
@@ -1459,7 +1459,7 @@ menpaijobpath_tbl = {
 		"chen mp4;s;sd",
 	},
 	["GoPath"] = {
-		"gc-ss;#3 n;nu;ne;u;/stepwalking_SearchStep(\"songshan\")",
+		"gc-ss;#3 n;nu;ne;u;/stepwalking_GoStep(\"songshan\")",
 		"#4 nu",
 	},
 	["ReturnPath"] = {
@@ -1474,7 +1474,7 @@ menpaijobpath_tbl = {
 		"chen mp4;s;sd",
 	},
 	["GoPath"] = {
-		"gc-ss;#3 n;nu;ne;u;/stepwalking_SearchStep(\"songshan\")",
+		"gc-ss;#3 n;nu;ne;u;/stepwalking_GoStep(\"songshan\")",
 		"#4 nu",
 	},
 	["ReturnPath"] = {
@@ -1793,29 +1793,45 @@ menpaijobpath_tbl = {
 	["SearchStepReturn"] = {"eu","su;eu","wu;su;eu","nu","nu;nu","n;nu;nu","s;n;nu;nu"},
 },
 
-["悬天崖"]={
+["明教悬天崖"]={
 	["MemberGoPath"] = {
-		"chen mj;wu;/stepwalking_SearchStep(\"mingjiao\")",
+		"chen mj;wu;/stepwalking_GoStep(\"mingjiao\")",
 		"wu;nu",
 	},
 	["GoPath"] = {
-		"gc-mj;wu;/stepwalking_SearchStep(\"mingjiao\")",
+		"gc-mj;wu;/stepwalking_GoStep(\"mingjiao\")",
 		"wu;nu",
 	},
 	["ReturnPath"] = {
 		"sd;ed;ed;mj-gc",
 	},
-	["SearchStep"] = {"u;/AutoSearch_SearchStep(\"mingjiao\",\"\")","d;sd","w","w","e;e;ed","ed","www;wu;wu;nu;nu","nu","nu","sd;nw","se;ne","sw;sd;sd"},
+	["SearchStep"] = {"u;/autosearch_SearchStep(\"mingjiao\",\"\")","d;sd","w","w","e;e;ed","ed","www;wu;wu;nu;nu","nu","nu","sd;nw","se;ne","sw;sd;sd"},
+	["SearchStepReturn"] = {"d","nu","e;nu","e;e;nu","wu;nu","wu;wu;nu","sd","sd;sd","sd;sd;sd","se;sd;sd","sw;sd;sd"},
+},
+
+["悬天崖"]={
+	["MemberGoPath"] = {
+		"chen mj;wu;/stepwalking_GoStep(\"mingjiao\")",
+		"wu;nu",
+	},
+	["GoPath"] = {
+		"gc-mj;wu;/stepwalking_GoStep(\"mingjiao\")",
+		"wu;nu",
+	},
+	["ReturnPath"] = {
+		"sd;ed;ed;mj-gc",
+	},
+	["SearchStep"] = {"u;/autosearch_SearchStep(\"mingjiao\",\"\")","d;sd","w","w","e;e;ed","ed","www;wu;wu;nu;nu","nu","nu","sd;nw","se;ne","sw;sd;sd"},
 	["SearchStepReturn"] = {"d","nu","e;nu","e;e;nu","wu;nu","wu;wu;nu","sd","sd;sd","sd;sd;sd","se;sd;sd","sw;sd;sd"},
 },
 
 ["明教烈火旗大门"]={
 	["MemberGoPath"] = {
-		"chen mj;wu;/stepwalking_SearchStep(\"mingjiao\")",
+		"chen mj;wu;/stepwalking_GoStep(\"mingjiao\")",
 		"wu;nu;nu;nu;nu",
 	},
 	["GoPath"] = {
-		"gc-mj;wu;/stepwalking_SearchStep(\"mingjiao\")",
+		"gc-mj;wu;/stepwalking_GoStep(\"mingjiao\")",
 		"wu;nu;nu;nu;nu",
 	},
 	["ReturnPath"] = {
@@ -1827,11 +1843,11 @@ menpaijobpath_tbl = {
 
 ["烈火旗大门"]={
 	["MemberGoPath"] = {
-		"chen mj;wu;/stepwalking_SearchStep(\"mingjiao\")",
+		"chen mj;wu;/stepwalking_GoStep(\"mingjiao\")",
 		"wu;nu;nu;nu;nu",
 	},
 	["GoPath"] = {
-		"gc-mj;wu;/stepwalking_SearchStep(\"mingjiao\")",
+		"gc-mj;wu;/stepwalking_GoStep(\"mingjiao\")",
 		"wu;nu;nu;nu;nu",
 	},
 	["ReturnPath"] = {
@@ -1857,11 +1873,11 @@ menpaijobpath_tbl = {
 
 ["洪水旗大门"]={
 	["MemberGoPath"] = {
-		"chen mj;wu;/stepwalking_SearchStep(\"mingjiao\")",
+		"chen mj;wu;/stepwalking_GoStep(\"mingjiao\")",
 		"wu;#3 nu;#3 ne;nw;nw;#5 n",
 	},
 	["GoPath"] = {
-		"gc-mj;wu;/stepwalking_SearchStep(\"mingjiao\")",
+		"gc-mj;wu;/stepwalking_GoStep(\"mingjiao\")",
 		"wu;nu;nu;nu;ne;ne;ne;nw;nw;n;n;n;n;n",
 	},
 	["ReturnPath"] = {
@@ -1873,11 +1889,11 @@ menpaijobpath_tbl = {
 
 ["北大街"]={
 	["MemberGoPath"] = {
-		"chen mj;wu;/stepwalking_SearchStep(\"mingjiao\")",
+		"chen mj;wu;/stepwalking_GoStep(\"mingjiao\")",
 		"wu;#3 nu;#3 ne;nw;nw;#5 n",
 	},
 	["GoPath"] = {
-		"gc-mj;wu;/stepwalking_SearchStep(\"mingjiao\")",
+		"gc-mj;wu;/stepwalking_GoStep(\"mingjiao\")",
 		"wu;nu;nu;nu;ne;ne;ne;nw;nw;n;n;n;n;n",
 	},
 	["ReturnPath"] = {
