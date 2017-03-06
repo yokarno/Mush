@@ -11,7 +11,7 @@ require("hy.job.liaotian")
 require("hy.job.liandan")
 require("hy.job.hsxunshan")
 require("hy.job.xyzhihuan")
-
+require("hy.job.huangjob")
 
 EndRobot = 0
 DeadTimes = 0
@@ -91,6 +91,13 @@ function xyzhihuan()
 	World_CloseAll()
 	_G.EndRobot = 0
 	xyzhihuan_start()
+end
+
+--ª∆»ÿjob
+function huangjob()
+	World_CloseAll()
+	_G.EndRobot = 0
+	huangjob_start()
 end
 
 --=================================================================

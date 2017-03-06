@@ -6,6 +6,8 @@ AutoResearch = 0
 
 FullSkillInJob = 0
 
+ReadShenzhaoInJob = 0
+
 Master = "逍遥子"
 
 MasterId = "zi"

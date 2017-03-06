@@ -6,9 +6,11 @@ AutoResearch = 0
 
 FullSkillInJob = 0
 
-Master = "风清扬"
+ReadShenzhaoInJob = 0
 
-MasterId = "feng"
+Master = "黄药师"
+
+MasterId = "huang"
 
 LearnTimes = 100
 

@@ -36,12 +36,6 @@ function xyzhihuan_start()
 	Common_AddCustomerTrigger("xyzhihuan156", "xyzhihuan4","^(?P<front>.*)只能在战斗中使用。", "/xyzhihuan_nofight(\"%<front>\")")
 	Common_AddCustomerTrigger("xyzhihuan157", "xyzhihuan4","^(?P<front>.*)只能在战斗中对对手使用。", "/xyzhihuan_nofight(\"%<front>\")")
 	Common_AddCustomerTrigger("xyzhihuan158", "xyzhihuan4","^(?P<front>.*)只能对对手使用", "/xyzhihuan_nofight(\"%<front>\")")
-	Common_AddCustomerTrigger("xyzhihuan159", "xyzhihuan4","^你从叛徒的身上找到了七宝指环。","/xyzhihuan_jobok()")		
-
-	Common_AddCustomerTrigger("xyzhihuan251", "xyzhihuan6","^你想拜谁为师", "/xyzhihuan_failquit()")
-	Common_AddCustomerTrigger("xyzhihuan252", "xyzhihuan6","^无名居士既不属於任何门派，也没有开山立派，不能拜师", "/xyzhihuan_goatgc()")
-	Common_AddCustomerTrigger("xyzhihuan253", "xyzhihuan6","^你要问谁什么事？", "/xyzhihuan_returnjob()")
-	Common_AddCustomerTrigger("xyzhihuan254", "xyzhihuan6","^你道了个万福", "/xyzhihuan_arrivepath()")
 
 	Common_AddCustomerTrigger("xyzhihuan301", "xyzhihuan7","^你想拜谁为师", "/xyzhihuan_failquit()")
 	Common_AddCustomerTrigger("xyzhihuan302", "xyzhihuan7","^无名居士既不属於任何门派，也没有开山立派，不能拜师", "/xyzhihuan_returnatgc()")
@@ -56,7 +50,7 @@ function xyzhihuan_start()
 	Common_AddCustomerTrigger("xyzhihuan406", "xyzhihuan9","^你的帐号上没有那多", "deposit gold;deposit silver")
 	
 	Common_AddCustomerTimer("xyzhihuan1", "xyzhihuan",0, 0, 1, "pfm")
-	Common_AddCustomerTimer("xyzhihuan2", "xyzhihuan",0, 0, 1, "ask "..WorldName())
+	--Common_AddCustomerTimer("xyzhihuan2", "xyzhihuan",0, 0, 1, "ask "..WorldName())
 	Common_AddCustomerTimer("xyzhihuan3", "xyzhihuan",0, 0, 1, "give "..WorldName().." 9 silver")
 	
 	Common_AddCustomerTimer("timerpause", "timerpause",0, 1, 0, "/xyzhihuan_timerpause()",17409)
@@ -81,7 +75,6 @@ function xyzhihuan_DisableAll()
 	EnableTriggerGroup("xyzhihuan2", false)
 	EnableTriggerGroup("xyzhihuan3", false)
 	EnableTriggerGroup("xyzhihuan4", false)
-	EnableTriggerGroup("xyzhihuan6", false)
 	EnableTriggerGroup("xyzhihuan7", false)
 	EnableTriggerGroup("xyzhihuan8", true)
 	EnableTriggerGroup("xyzhihuan9", false)
@@ -170,6 +163,12 @@ function xyzhihuan_gotojob()
 				Common_SendToWorld(menpaijobpath_tbl[jobpath]["MemberGoPath"][1])
 			end
 		else
+			if menpaijobpath_tbl[jobpath]["GoPath"] == nil then
+				DoAfterSpecial(0.5,"ask su xinghe about 失败",10)
+				EnableTriggerGroup("xyzhihuan1",true)
+				return
+			end
+			
 			if table.getn(menpaijobpath_tbl[jobpath]["GoPath"]) == 1 then
 				Common_SendToWorld("xy-gc;"..menpaijobpath_tbl[jobpath]["GoPath"][1]..";/stepwalking_GoTarget()")
 			else
@@ -183,10 +182,6 @@ function xyzhihuan_fight()
 	xyzhihuan_DisableAll()
 	EnableTimer("xyzhihuan1", true)
 	EnableTriggerGroup("xyzhihuan4",true)
-end
-
-function xyzhihuan_jobok()
-	--SetVariable("jobok",1)
 end
 
 function xyzhihuan_nofight(txt)
@@ -209,15 +204,6 @@ function xyzhihuan_nofight(txt)
 			Common_SendToWorld(menpaijobpath_tbl[jobpath]["ReturnPath"][1])
 		end
 	end
-	
-	-- local jobok = tonumber(GetVariable("jobok",0))
-	-- if jobok == 1 then
-		-- EnableTimer("xyzhihuan2", true)
-		-- EnableTriggerGroup("xyzhihuan6",true)		
-	-- else
-		-- xyzhihuan_nextstep()
-		-- EnableTriggerGroup("xyzhihuan3",true)	
-	-- end
 end
 
 function xyzhihuan_stepnofight()
@@ -282,16 +268,20 @@ function xyzhihuan_returnatgc()
 end
 
 function xyzhihuan_Randushu()
-	local i = math.random(1,10)
-	if i > 5 then 
-		Common_SendToWorld("yandu shenzhao jing")
-		Common_SendToWorld("yandu shenzhao jing")
+	if _G.ReadShenzhaoInJob == 1 then
+		local i = math.random(1,10)
+		if i > 5 then 
+			Common_SendToWorld("yandu shenzhao jing")
+			Common_SendToWorld("yandu shenzhao jing")
+		else
+			Common_SendToWorld("yandu shenzhao jing")
+			Common_SendToWorld("yandu shenzhao jing")
+		end
+		Common_SendToWorld("exert regenerate")
+		Common_SendToWorld("exert regenerate")
 	else
-		Common_SendToWorld("yandu shenzhao jing")
-		Common_SendToWorld("yandu shenzhao jing")
+		Common_SendToWorld("yq;dazuo 10")
 	end
-	Common_SendToWorld("exert regenerate")
-	Common_SendToWorld("exert regenerate")
 end
 
 --================================================================
@@ -405,8 +395,6 @@ function xyzhihuan_doxiuxi()
 		DoAfterSpecial(1,"e;e;e;e;n;w;n;n;n;n;n;n;w;buy doufu;eat doufu;drink;drop doufu",10)
 		DoAfterSpecial(2,"e;s;s;s;s;s;s;e;e;s;w;w;w;w;w;sleep",10)
 	end
-	
-	EnableTriggerGroup("xiuxi2",true)
 end
 
 function xyzhihuan_xiuxi()

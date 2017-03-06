@@ -541,7 +541,7 @@ menpaijobpath_tbl = {
 ["少林寺走廊"]={
 	["MemberGoPath"] = {
 		"chen dp;pawn;bai xiangling;/stepwalking_GoStep(\"shaolinling\")",
-		"chen shl;knock gate;n;mpawn yingxiong ling;n;nu;n;n;n;nu;n;n;e",
+		"chen shl;knock gate;n;n;nu;n;n;n;nu;n;n;e;mpawn yingxiong ling",
 	},
 	["GoPath"] = {
 		"s;e;e;pawn;bai xiangling;/stepwalking_GoStep(\"shaolinling\")",
@@ -559,7 +559,7 @@ menpaijobpath_tbl = {
 ["少林寺般若堂九部"]={
 	["MemberGoPath"] = {
 		"chen dp;pawn;bai xiangling;/stepwalking_GoStep(\"shaolinling\")",
-		"chen shl;knock gate;n;mpawn yingxiong ling;n;nu;n;n;n;nu;n;w;w;n;n;n;n",
+		"chen shl;knock gate;n;n;nu;n;n;n;nu;n;w;w;n;n;n;n;mpawn yingxiong ling",
 	},
 	["GoPath"] = {
 		"s;e;e;pawn;bai xiangling;/stepwalking_GoStep(\"shaolinling\")",

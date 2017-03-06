@@ -6,6 +6,8 @@ AutoResearch = 0
 
 FullSkillInJob = 0
 
+ReadShenzhaoInJob = 0
+
 Master = "风清扬"
 
 MasterId = "feng"
