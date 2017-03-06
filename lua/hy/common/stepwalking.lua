@@ -262,6 +262,10 @@ function stepwalking_start()
 	Common_AddCustomerTrigger("stepwalking_gomeizhuang2", "stepwalking_gomeizhuang","^你走上前去将门上铜环敲了三下。", "/stepwalking_gomeizhuangnotdizi()")
 	Common_AddCustomerTrigger("stepwalking_gomeizhuang3", "stepwalking_gomeizhuang","^大天井 - north、south", "/stepwalking_gomeizhuanggateopen()")
 	
+	--慕容包不同
+	Common_AddCustomerTrigger("stepwalking_gomurongbao1", "stepwalking_gomurongbao","^包不同拦住你说道：(.*?)请放下兵刃。为了表示对姑俗慕容的景仰，请放下兵仞进入姑俗慕容。", "/stepwalking_gomurongbaoweapon()")
+	Common_AddCustomerTrigger("stepwalking_gomurongbao2", "stepwalking_gomurongbao","^小径 - east、west", "/stepwalking_NextGo()")
+	
 	Common_AddCustomerTimer("stepwalking1", "stepwalking",0, 0, 1, "pfmkill")
 	stepwalking_DisableAll()
 end
@@ -321,6 +325,7 @@ function stepwalking_DisableAll()
 	EnableTriggerGroup("stepwalking_goemqingong", false)
 	EnableTriggerGroup("stepwalking_gojinan", false)
 	EnableTriggerGroup("stepwalking_gomeizhuang", false)
+	EnableTriggerGroup("stepwalking_gomurongbao", false)
 	
 	EnableTimerGroup("stepwalking", false)
 end
@@ -613,7 +618,7 @@ function stepwalking_gomingjiaopaifang()
 end
 
 function stepwalking_gomingjiaoweapon()
-	Common_SendToWorld("uwi;wu")
+	Common_SendToWorld("uwi;wu;wi")
 end
 
 function stepwalking_gotaishanlongmen()
@@ -653,7 +658,7 @@ function stepwalking_goshaolindokill()
 end
 
 function stepwalking_goshaolinweapon()
-	Common_SendToWorld("uwi;eu")
+	Common_SendToWorld("uwi;eu;wi")
 end
 
 function stepwalking_redeemling(ling)
@@ -754,6 +759,10 @@ end
 function stepwalking_gomeizhuanggateopen()
 	stepwalking_DisableAll()
 	Common_SendToWorld("#3 n;/stepwalking_NextGo()")
+end
+
+function stepwalking_gomurongbaoweapon()
+	Common_SendToWorld("uwi;w;wi")
 end
 
 --================================================================
