@@ -36,7 +36,8 @@ function huangjob_start()
 	Common_AddCustomerTrigger("huangjob156", "huangjob4","^(?P<front>.*)只能在战斗中使用。", "/huangjob_nofight(\"%<front>\")")
 	Common_AddCustomerTrigger("huangjob157", "huangjob4","^(?P<front>.*)只能在战斗中对对手使用。", "/huangjob_nofight(\"%<front>\")")
 	Common_AddCustomerTrigger("huangjob158", "huangjob4","^(?P<front>.*)只能对对手使用", "/huangjob_nofight(\"%<front>\")")
-
+	Common_AddCustomerTrigger("huangjob159", "huangjob4","^你只能对战斗中的对手使用(?P<front>.*)", "/huangjob_nofight(\"%<front>\")")
+	
 	Common_AddCustomerTrigger("huangjob301", "huangjob7","^你想拜谁为师", "/huangjob_fail()")
 	Common_AddCustomerTrigger("huangjob302", "huangjob7","^无名居士既不属於任何门派，也没有开山立派，不能拜师", "/huangjob_returnatgc()")
 

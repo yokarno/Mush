@@ -52,7 +52,7 @@ function liandan_start()
 	Common_AddCustomerTrigger("liandan302", "liandan7","^(?P<front>.*)只能在战斗中使用", "/liandan_nofight(\"%<front>\")")
 	Common_AddCustomerTrigger("liandan303", "liandan7","^(?P<front>.*)只能在战斗中对对手使用", "/liandan_nofight(\"%<front>\")")
 	Common_AddCustomerTrigger("liandan304", "liandan7","^(?P<front>.*)只能对对手使用", "/liandan_nofight(\"%<front>\")")
-
+	Common_AddCustomerTrigger("liandan305", "liandan7","^你只能对战斗中的对手使用(?P<front>.*)", "/liandan_nofight(\"%<front>\")")
 
 	Common_AddCustomerTrigger("liandan451", "liandan10","^你给(.*?)一些白银。", "/liandan_returnwithsilver()")
 	Common_AddCustomerTrigger("liandan452", "liandan10","^这样东西不能随便给人。", "drop 1 silver")

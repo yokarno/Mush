@@ -7,7 +7,8 @@ function autosearch_Start(cmd)
 	Common_AddCustomerTrigger("autosearch_fight2", "autosearch_fight","^(?P<front>.*)只能在战斗中使用。", "/autosearch_stepnofight(\"%<front>\")")
 	Common_AddCustomerTrigger("autosearch_fight3", "autosearch_fight","^(?P<front>.*)只能在战斗中对对手使用。", "/autosearch_stepnofight(\"%<front>\")")
 	Common_AddCustomerTrigger("autosearch_fight4", "autosearch_fight","^(?P<front>.*)只能对对手使用。", "/autosearch_stepnofight(\"%<front>\")")
-
+	Common_AddCustomerTrigger("autosearch_fight5", "autosearch_fight","^你只能对战斗中的对手使用(?P<front>.*)", "/autosearch_stepnofight(\"%<front>\")")
+	
 	--明教
 	Common_AddCustomerTrigger("autosearch_mingjiao1", "autosearch_mingjiao","^你一不小心脚下踏了个空", "/autosearch_mingjiaopaifang()")
 	Common_AddCustomerTrigger("autosearch_mingjiao2", "autosearch_mingjiao","^栈道 - northup、southdown", "/autosearch_nextgo()")

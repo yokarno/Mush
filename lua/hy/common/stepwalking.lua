@@ -11,6 +11,7 @@ function stepwalking_start()
 	Common_AddCustomerTrigger("stepwalking3", "stepwalking1","^(?P<front>.*)只能在战斗中对对手使用。", "/stepwalking_stepnofight(\"%<front>\")")
 	Common_AddCustomerTrigger("stepwalking4", "stepwalking1","^(?P<front>.*)只能对对手使用。", "/stepwalking_stepnofight(\"%<front>\")")
 	Common_AddCustomerTrigger("stepwalking5", "stepwalking1","^你要对谁施展这一招(?P<front>.*)", "/stepwalking_stepnofight(\"%<front>\")")
+	Common_AddCustomerTrigger("stepwalking6", "stepwalking1","^你只能对战斗中的对手使用(?P<front>.*)", "/stepwalking_stepnofight(\"%<front>\")")
 
 
 	--关外去

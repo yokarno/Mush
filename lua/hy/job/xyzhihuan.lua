@@ -36,6 +36,7 @@ function xyzhihuan_start()
 	Common_AddCustomerTrigger("xyzhihuan156", "xyzhihuan4","^(?P<front>.*)只能在战斗中使用。", "/xyzhihuan_nofight(\"%<front>\")")
 	Common_AddCustomerTrigger("xyzhihuan157", "xyzhihuan4","^(?P<front>.*)只能在战斗中对对手使用。", "/xyzhihuan_nofight(\"%<front>\")")
 	Common_AddCustomerTrigger("xyzhihuan158", "xyzhihuan4","^(?P<front>.*)只能对对手使用", "/xyzhihuan_nofight(\"%<front>\")")
+	Common_AddCustomerTrigger("xyzhihuan159", "xyzhihuan4","^你只能对战斗中的对手使用(?P<front>.*)", "/xyzhihuan_nofight(\"%<front>\")")
 
 	Common_AddCustomerTrigger("xyzhihuan301", "xyzhihuan7","^你想拜谁为师", "/xyzhihuan_failquit()")
 	Common_AddCustomerTrigger("xyzhihuan302", "xyzhihuan7","^无名居士既不属於任何门派，也没有开山立派，不能拜师", "/xyzhihuan_returnatgc()")
