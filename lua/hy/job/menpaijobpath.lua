@@ -462,13 +462,13 @@ menpaijobpath_tbl = {
 ["Ä½ÈÝÁøÊ÷ÁÖ"]={
 	["MemberGoPath"] = {
 		"chen sz;s;s;s;s;s;sw;e;e;se;s;qu mr;/stepwalking_GoStep(\"murong\")",
-		"out;s;w;/stepwalking_GoStep(\"murongbao\")"
+		"out;s;w;/stepwalking_GoStep(\"murongbao\")",
 		"w;nw;tan qin;/stepwalking_GoStep(\"murong\")",
 		"out;s;e;e;e;e;n",		
 	},
 	["GoPath"] = {
 		"gc-mr;qu mr;/stepwalking_GoStep(\"murong\")",
-		"out;s;w;/stepwalking_GoStep(\"murongbao\")"
+		"out;s;w;/stepwalking_GoStep(\"murongbao\")",
 		"w;nw;tan qin;/stepwalking_GoStep(\"murong\")",
 		"out;s;e;e;e;e;n",		
 	},
