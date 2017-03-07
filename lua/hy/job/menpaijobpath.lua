@@ -449,7 +449,7 @@ menpaijobpath_tbl = {
 		"chen mp13;s",
 	},
 	["GoPath"] = {
-		"gc-mr;qu yanziwu;/stepwalking_GoStep(\"murongbao\")",
+		"gc-mr;qu yanziwu;/stepwalking_GoStep(\"murong\")",
 		"out;s;s;e;s",
 	},
 	["ReturnPath"] = {
@@ -461,17 +461,19 @@ menpaijobpath_tbl = {
 
 ["Ä½ÈÝÁøÊ÷ÁÖ"]={
 	["MemberGoPath"] = {
-		"chen sz;s;s;s;s;s;sw;e;e;se;s;qu mr;/stepwalking_GoStep(\"murongbao\")",
-		"out;s;w;w;nw;tan qin;/stepwalking_GoStep(\"murongbao\")",
+		"chen sz;s;s;s;s;s;sw;e;e;se;s;qu mr;/stepwalking_GoStep(\"murong\")",
+		"out;s;w;/stepwalking_GoStep(\"murongbao\")"
+		"w;nw;tan qin;/stepwalking_GoStep(\"murong\")",
 		"out;s;e;e;e;e;n",		
 	},
 	["GoPath"] = {
-		"gc-mr;qu mr;/stepwalking_GoStep(\"murongbao\")",
-		"out;s;w;w;nw;tan qin;/stepwalking_GoStep(\"murongbao\")",
-		"out;s;e;e;e;e;n",
+		"gc-mr;qu mr;/stepwalking_GoStep(\"murong\")",
+		"out;s;w;/stepwalking_GoStep(\"murongbao\")"
+		"w;nw;tan qin;/stepwalking_GoStep(\"murong\")",
+		"out;s;e;e;e;e;n",		
 	},
 	["ReturnPath"] = {
-		"s;w;w;w;s;s;s;qu yanziwu;/stepwalking_GoStepReturn(\"murongbao\")",
+		"s;w;w;w;s;s;s;qu yanziwu;/stepwalking_GoStepReturn(\"murongreturn\")",
 		"out;s;s;e;n;n;w;s",
 	},
 	["SearchStep"] = {"e","n","s;e","s","w","s","n;w","w","w","e;e;s","s","n;w","e;n;n"},
