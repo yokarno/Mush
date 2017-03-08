@@ -113,7 +113,7 @@ end
 function liaotian_DisableAll()
 	EnableTriggerGroup("liaotian1",false)
 	EnableTriggerGroup("liaotian2",false)
-	EnableTriggerGroup("liaotian3",true)
+	EnableTriggerGroup("liaotian3",false)
 	EnableTriggerGroup("liaotian4",false)
 	EnableTriggerGroup("liaotian5",true)
 	EnableTriggerGroup("liaotian6",false)
