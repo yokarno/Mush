@@ -138,12 +138,10 @@ function World_Triggers()
 	Common_AddCustomerTrigger("common40", "common","^┃【门派】(.*?)┃","/World_SetV7(\"%1\")")
 	Common_AddCustomerTrigger("common42", "common","^┃【年龄】(.*?)┃", "/World_SetV8(\"%1\")")
 	Common_AddCustomerTrigger("common43", "common","^只见一道红光飞进你的体内，你的人物等级提升(.*?)", "sc")
+	Common_AddCustomerTrigger("common44", "common","^您要将另一个连线中的相同人物赶出去(.*?)", "/World_ReplaceLogin()")
 	
-	Common_AddCustomerTrigger("common101", "common1","^(?P<target>.*)\\((?P<targetid>.*)\\)告诉你：close robot", "/World_OnReceiveCloseRobot(\"%<target>\",\"%<targetid>\")")
-	Common_AddCustomerTrigger("common102", "common1","^(?P<target>.*)\\((?P<targetid>.*)\\)告诉你：end robot", "/World_OnReceiveEndRobot()(\"%<target>\",\"%<targetid>\")")
-	Common_AddCustomerTrigger("common104", "common1","^(?P<target>.*)\\((?P<targetid>.*)\\)告诉你：go on robot", "/World_OnReceiveGoOnRobot(\"%<target>\",\"%<targetid>\")")
-	Common_AddCustomerTrigger("common105", "common1","^(?P<target>.*)\\((?P<targetid>.*)\\)告诉你：quit", "/World_OnReceiveQuit(\"%<target>\",\"%<targetid>\")")
-	
+	Common_AddCustomerTrigger("common101", "common1","^(?P<target>.*)\\((?P<targetid>.*)\\)告诉你：(.*?)", "/World_OnReceiveMessage(\"%<target>\",\"%<targetid>\",\"%<ccmd>\")")
+
 	Common_AddCustomerTrigger("common551", "common6","^(?P<daoju>.*) = (?P<daojuid>.*)", "/World_getdaoju(\"%<daoju>\")")
 	Common_AddCustomerTrigger("common552", "common6","^告诉自己？", "/World_daojucomplete()")
 	
@@ -211,6 +209,12 @@ end
 
 function World_ContinueRobot()
 	_G.EndRobot = 0
+end
+
+function World_ReplaceLogin()
+	if _G.ReplaceLogin ~= 0 then
+		Common_SendToWorld("y")
+	end
 end
 
 function World_OnJindan()
@@ -433,81 +437,36 @@ function World_StopAll()
 	end
 end
 
-function World_OnReceiveCloseRobot(target,targetid)
+function World_OnReceiveMessage(target,targetid,ccmd)
 	if Common_FilterTxt(target) == nil then
 		return
 	end 
 
 	if targetid == _G.ChatID then
-		World_CloseAll()
+		World_DoReceiveMessage(ccmd)
 		return
 	end
 	
 	if targetid == "spraydew" then
-		World_CloseAll()
+		World_DoReceiveMessage(ccmd)
 		return
 	end
 end
 
-function World_OnReceiveEndRobot(target,targetid)
-	if Common_FilterTxt(target) == nil then
-		return
-	end 
-
-	if targetid == _G.ChatID then
+function World_DoReceiveMessage(ccmd)
+	if ccmd == "end reboot" then
 		_G.EndRobot = 1
 		return
-	end
-	
-	if targetid == "spraydew" then
-		_G.EndRobot = 1
+	elseif ccmd == "stop reboot" then
+		World_CloseAll()
 		return
-	end
-end
-
-function World_OnReceiveReplaceLogin(target,targetid)
-	if Common_FilterTxt(target) == nil then
-		return
-	end 
-
-	if targetid == _G.ChatID then
+	elseif ccmd == "replace" then
 		_G.ReplaceLogin = 0
 		return
-	end
-	
-	if targetid == "spraydew" then
-		_G.ReplaceLogin = 0
-		return
-	end
-end
-
-function World_OnReceiveGoOnRobot(target,targetid)
-	if Common_FilterTxt(target) == nil then
-		return
-	end 
-
-	if targetid == _G.ChatID then
+	elseif ccmd == "goon rebot" then
 		_G.EndRobot = 0
 		return
-	end
-	
-	if targetid == "spraydew" then
-		_G.EndRobot = 0
-		return
-	end
-end
-
-function World_OnReceiveQuit(target,targetid)
-	if Common_FilterTxt(target) == nil then
-		return
-	end 
-
-	if targetid == _G.ChatID then
-		DoAfterSpecial(5, "quit", 10)	
-		return
-	end
-	
-	if targetid == "spraydew" then
+	elseif ccmd == "quit" then
 		DoAfterSpecial(5, "quit", 10)	
 		return
 	end

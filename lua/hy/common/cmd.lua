@@ -2,9 +2,12 @@ require("wait")
 require("hy.common.pathtbl")
 
 function Common_SendToWorld(str)
-	wait.make(function()
-		send_cmd(str)
-	end)
+	if GetInfo (227) == 8 then
+		wait.make(function()
+			send_cmd(str)
+		end)
+	end
+	
 end
 
 function send_cmd(str)

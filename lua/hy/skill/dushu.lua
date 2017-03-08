@@ -81,7 +81,7 @@ function dushu_chihe()
 	if (food > foodmax/2) and (water > watermax/2) then
 		return
 	end 
-	world.Execute ("e;s;s;s;s;w;buy doufu;eat doufu;drink;drop doufu;e;n;n;n;n;w")
+	Common_SendToWorld ("e;s;s;s;s;w;buy doufu;eat doufu;drink;drop doufu;e;n;n;n;n;w")
 end
 
 function dushu_xiuxi()

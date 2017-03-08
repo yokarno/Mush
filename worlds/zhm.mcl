@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
-<!-- Saved on ÐÇÆÚÁù, ÈýÔÂ 04, 2017, 2:46 ÏÂÎç -->
+<!-- Saved on ÐÇÆÚÈý, ÈýÔÂ 08, 2017, 7:32 ÏÂÎç -->
 <!-- MuClient version 4.94 -->
 <!-- Written by Nick Gammon -->
 <!-- Home Page: http://www.mushclient.com/ -->
@@ -8,9 +8,8 @@
 <world
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-04 14:46:24"
+   date_saved="2017-03-08 19:32:20"
 
-   auto_log_file_name="D:\MUSHclient\logs\zhm.txt"
    auto_say_override_prefix="-"
    auto_say_string="say "
    chat_name="Name-not-set"
@@ -20,7 +19,7 @@
    mapping_failure="Alas, you cannot go that way."
    name="zhm"
    new_activity_sound="(No sound)"
-   on_world_open="World_Triggers"
+   on_world_connect="World_Triggers"
    output_font_name="ËÎÌå"
    password_base64="y"
    password="em1razgwMDIwOA=="
@@ -45,6 +44,7 @@
    confirm_before_replacing_typing="y"
    confirm_on_paste="y"
    confirm_on_send="y"
+   connect_method="1"
    default_trigger_sequence="100"
    default_alias_sequence="100"
    detect_pueblo="y"
@@ -70,9 +70,6 @@
    keypad_enable="y"
    line_information="y"
    line_spacing="16"
-   log_input="y"
-   log_notes="y"
-   log_output="y"
    max_output_lines="5000"
    mud_can_change_link_colour="y"
    mud_can_change_options="y"
@@ -113,8 +110,7 @@
    > <!-- end of general world attributes -->
   <connect_text>g
 %name%
-%password%
-y</connect_text>
+%password%</connect_text>
 
 </world>
 
@@ -123,7 +119,7 @@ y</connect_text>
 <triggers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-04 14:46:24"
+   date_saved="2017-03-08 19:32:20"
   >
 </triggers>
 
@@ -132,7 +128,7 @@ y</connect_text>
 <aliases
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-04 14:46:24"
+   date_saved="2017-03-08 19:32:20"
   >
   <alias
    name="chd_alias"
@@ -391,7 +387,7 @@ exert regenerate</send>
 <timers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-04 14:46:24"
+   date_saved="2017-03-08 19:32:20"
   >
 </timers>
 
@@ -400,7 +396,7 @@ exert regenerate</send>
 <macros
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-04 14:46:24"
+   date_saved="2017-03-08 19:32:20"
   >
 
   <macro name="up" type="send_now" >
@@ -504,16 +500,16 @@ exert regenerate</send>
 <variables
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-04 14:46:24"
+   date_saved="2017-03-08 19:32:20"
   >
-  <variable name="age">Ê®ÎåËê°ËÔÂ</variable>
+  <variable name="age">¶þÊ®ËêÎåÔÂ</variable>
   <variable name="currstats">liaotian</variable>
-  <variable name="experi">1716134</variable>
+  <variable name="experi">2043947</variable>
   <variable name="food">500</variable>
   <variable name="food_max">500</variable>
   <variable name="member">1</variable>
-  <variable name="pot">172539</variable>
-  <variable name="pot_max">871000</variable>
+  <variable name="pot">472175</variable>
+  <variable name="pot_max">937500</variable>
   <variable name="shimen">åÐÒ£ÅÉ</variable>
   <variable name="water">500</variable>
   <variable name="water_max">500</variable>
@@ -527,7 +523,7 @@ exert regenerate</send>
 <colours
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-04 14:46:24"
+   date_saved="2017-03-08 19:32:20"
   >
 
 <ansi>
@@ -584,7 +580,7 @@ exert regenerate</send>
 <keypad
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-04 14:46:24"
+   date_saved="2017-03-08 19:32:20"
   >
 
   <key name="0" >
@@ -698,7 +694,7 @@ exert regenerate</send>
 <printing
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-04 14:46:24"
+   date_saved="2017-03-08 19:32:20"
   >
 
 <ansi>

@@ -34,7 +34,7 @@ function dazuo_DisableAll()
 end
 
 function dazuo_timerpause()
-	world.Execute("sigh5")
+	Common_SendToWorld("sigh5")
 	pausetimes = pausetimes + 1
 	if pausetimes > 5 then
 		pausetimes = 0
@@ -50,14 +50,14 @@ function dodazuo()
 		EnableTimer("autoemote", true)
 	else
 		pausetimes = 0
-		world.Execute("dazuo 10")
+		Common_SendToWorld("dazuo 10")
 	end
 end
 
 --=================================================================
 --连接上后自动Robot
 function dazuo_OnConnect()
-	world.Execute("e;s;s;#6 w;n;#5 w;u")
+	Common_SendToWorld("e;s;s;#6 w;n;#5 w;u")
 	DoAfterSpecial(1, "/dazuo_start()", 10)
 end
 

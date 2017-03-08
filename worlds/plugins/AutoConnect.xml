@@ -32,7 +32,7 @@ AutoConnect on disconnect
 <!--  Timers  -->
 
 <timers>
-  <timer name="conn" enabled="y" second="10.00" offset_second="0.00"    send_to="12"
+  <timer name="conn" enabled="y" second="5.00" offset_second="0.00"    send_to="12"
 active_closed="y" >
   <send>Connect()</send>
 
@@ -45,7 +45,23 @@ active_closed="y" >
 <script>
 <![CDATA[
 function OnDisconnect() 
+	local activeworld = nil
+	
+	for k, v in pairs (GetWorldList()) do 
+		activeworld = GetWorld (v)
+		info = activeworld: GetInfo(113)
+		if info then
+			break
+		end
+		activeworld = nil
+	end
+  Activate()
   EnableTimer("conn", true)
+  
+  if activeworld == nil then
+    return
+  end
+	activeworld: Activate()
 end
 ]]>
 </script>

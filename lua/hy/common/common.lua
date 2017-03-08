@@ -20,8 +20,12 @@ function Common_RandomEmote(name1,name2,name3)
 	local obj= {"",name1,name2,name3}
 	local i = math.random(1,table.getn(Emote_tbl))
 	local j = math.random(1,table.getn(obj))
+
+	if GetInfo (227) == 8 then
+		world.Execute(Emote_tbl[i] .. " " .. obj[j])
+	end
 	
-	Common_SendToWorld(Emote_tbl[i] .. " " .. obj[j])
+	
 end
 
 function Common_FilterTxt(txt)

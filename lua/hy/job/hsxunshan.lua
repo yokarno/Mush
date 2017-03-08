@@ -98,21 +98,21 @@ function hsxunshan_Randushu()
 	Common_SendToWorld("dazuo 100")
 	-- local i = math.random(1,10)
 	-- if i > 5 then 
-		-- world.Execute("yandu shenzhao jing")
-		-- world.Execute("yandu shenzhao jing")
-		-- world.Execute("yandu shenzhao jing")
-		-- world.Execute("yandu shenzhao jing")
-		-- world.Execute("yandu shenzhao jing")
+		-- Common_SendToWorld("yandu shenzhao jing")
+		-- Common_SendToWorld("yandu shenzhao jing")
+		-- Common_SendToWorld("yandu shenzhao jing")
+		-- Common_SendToWorld("yandu shenzhao jing")
+		-- Common_SendToWorld("yandu shenzhao jing")
 	-- else
-		-- world.Execute("yandu shenzhao jing")
-		-- world.Execute("yandu shenzhao jing")
-		-- world.Execute("yandu shenzhao jing")
-		-- world.Execute("yandu shenzhao jing")
-		-- world.Execute("yandu shenzhao jing")
+		-- Common_SendToWorld("yandu shenzhao jing")
+		-- Common_SendToWorld("yandu shenzhao jing")
+		-- Common_SendToWorld("yandu shenzhao jing")
+		-- Common_SendToWorld("yandu shenzhao jing")
+		-- Common_SendToWorld("yandu shenzhao jing")
 	-- end
-	-- world.Execute("exert regenerate")
-	-- world.Execute("exert regenerate")
-	-- world.Execute("exert regenerate")
+	-- Common_SendToWorld("exert regenerate")
+	-- Common_SendToWorld("exert regenerate")
+	-- Common_SendToWorld("exert regenerate")
 end
 
 function hsxunshan_job()
@@ -232,7 +232,6 @@ end
 
 function hsxunshan_gomengmian()
 	hsxunshan_DisableAll()
-	world.Execute("hp")
 	local exp = tonumber(GetVariable("experi"))
 	if exp<= 500000000 then
 		hsxunshan_xiuxi()
@@ -280,7 +279,7 @@ end
 
 function hsxunshan_mengmianfanhui()
 	hsxunshan_DisableAll()
-	world.Execute(mengmian_tbl[mengmianstep - 1][2])
+	Common_SendToWorld(mengmian_tbl[mengmianstep - 1][2])
 	mengmianstep = 1
 	DoAfterSpecial (0.5,"/hsxunshan_xiuxi()",10)
 end
@@ -293,7 +292,7 @@ function hsxunshan_OnConnect()
 	if member == 1 then
 		Common_SendToWorld("chen hs;eu;n;n;/hsxunshan_start()")
 	else
-		world.Execute("e;s;s")
+		Common_SendToWorld("e;s;s")
 		DoAfterSpecial(1,"w;w;w;w;w;w;w;w;w;nw;w;w;w;w;w;w",10)
 		DoAfterSpecial(3,"w;w;w;w;w;w;w;n;n;nw;n;n;n;n;n;n;e;e;e;e;e",10)
 		DoAfterSpecial(5,"se;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;n",10)
