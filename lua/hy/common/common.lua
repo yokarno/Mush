@@ -2,8 +2,6 @@ require("hy.common.emotetbl")
 require("hy.common.pathtbl")
 --module (..., package.seeall)
 
-CurrentLines = 0
-
 function Common_CloseAll()
 	DeleteTemporaryTriggers()
 	DeleteTemporaryTimers()
@@ -95,13 +93,4 @@ function Common_AddCustomerAlias(AliasName,AliasText,SendText,SendTo)
 	else
 		SetAliasOption(AliasName,"send_to",SendTo)
 	end
-end
-
-function Plugins_Reconnect()
-	if GetInfo(227) == 8 then
-		return
-	end
-	
-	world.ResetIP()
-	world.Connect()
 end
