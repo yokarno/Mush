@@ -32,9 +32,14 @@ AutoConnect on disconnect
 <!--  Timers  -->
 
 <timers>
-  <timer name="conn" enabled="y" second="5.00" offset_second="0.00"    send_to="12"
+  <timer name="conn" enabled="y" second="5.10" offset_second="0.00"    send_to="10"
 active_closed="y" >
-  <send>Connect()</send>
+  <send>/Plugins_Reconnect()</send>
+
+  </timer>
+  <timer name="checkline" enabled="y" second="20" offset_second="0.00"    send_to="10"
+active_closed="y" >
+  <send>/Plugins_CheckLines()</send>
 
   </timer>
 </timers>
@@ -44,25 +49,12 @@ active_closed="y" >
 
 <script>
 <![CDATA[
+require("hy.common.common")
+
 function OnDisconnect() 
-	local activeworld = nil
-	
-	for k, v in pairs (GetWorldList()) do 
-		activeworld = GetWorld (v)
-		info = activeworld: GetInfo(113)
-		if info then
-			break
-		end
-		activeworld = nil
-	end
-  Activate()
   EnableTimer("conn", true)
-  
-  if activeworld == nil then
-    return
-  end
-	activeworld: Activate()
 end
+
 ]]>
 </script>
 
