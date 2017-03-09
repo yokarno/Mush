@@ -37,11 +37,6 @@ active_closed="y" >
   <send>/Plugins_Reconnect()</send>
 
   </timer>
-  <timer name="checkline" enabled="y" second="20" offset_second="0.00"    send_to="10"
-active_closed="y" >
-  <send>/Plugins_CheckLines()</send>
-
-  </timer>
 </timers>
 
 <!--  Script  -->
