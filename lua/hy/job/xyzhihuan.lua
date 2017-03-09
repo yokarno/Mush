@@ -115,14 +115,21 @@ function xyzhihuan_failquit()
 end
 
 function xyzhihuan_pause()
-	xyzhihuan_DisableAll()
-	if _G.ReadInJob == 1 then
-		xyzhihuan_Randushu()
-	end
+	xyzhihuan_DisableAll()	
 	if _G.EndRobot > 0 then
 		EnableTimer("timerpause", false)
 		EnableTimer("autoemote", true)
 	else
+		if _G.ReadShenzhaoInJob == 1 then
+			xyzhihuan_Randushu()
+		end
+		
+		if _G.FullSkillInJob == 1 then
+			local i = math.random(1,table.getn(_G.ResearchSkills_tbl))
+			Common_SendToWorld("w;w;w;yanjiu ".._G.ResearchSkills_tbl[i].." ".._G.ResearchTimes..";yj")
+			DoAfterSpecial(1.5,"e;e;e",10)
+		end
+		
 		DoAfterSpecial(2,"ask su xinghe about job",10)
 		SetVariable("searchstep",0)
 		EnableTriggerGroup("xyzhihuan1", true)

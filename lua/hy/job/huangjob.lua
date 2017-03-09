@@ -88,6 +88,7 @@ function huangjob_timerpause()
 	if _G.EndRobot > 0 then
 		return
 	end
+	
 	Common_SendToWorld("why")
 	pausetimes = pausetimes + 1
 	if pausetimes > 8 then 
@@ -114,11 +115,20 @@ end
 
 function huangjob_pause()
 	huangjob_DisableAll()
-	huangjob_Randushu()
 	if _G.EndRobot > 0 then
 		EnableTimer("timerpause", false)
 		EnableTimer("autoemote", true)
 	else
+		if _G.ReadShenzhaoInJob == 1 then
+			huangjob_Randushu()
+		end
+		
+		if _G.FullSkillInJob == 1 then
+			local i = math.random(1,table.getn(_G.ResearchSkills_tbl))
+			Common_SendToWorld("w;yanjiu ".._G.ResearchSkills_tbl[i].." ".._G.ResearchTimes..";yj")
+			DoAfterSpecial(1.5,"e",10)
+		end
+
 		DoAfterSpecial(2,"ask huang rong about job",10)
 		SetVariable("searchstep",0)
 		EnableTriggerGroup("huangjob1", true)

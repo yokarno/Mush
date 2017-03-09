@@ -2,9 +2,9 @@
 
 FullSkill = 1
 
-AutoResearch = 0
+AutoResearch = 1
 
-FullSkillInJob = 0
+FullSkillInJob = 1
 
 ReadShenzhaoInJob = 0
 

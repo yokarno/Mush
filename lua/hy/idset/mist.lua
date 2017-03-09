@@ -2,9 +2,9 @@
 
 FullSkill = 1
 
-AutoResearch = 0
+AutoResearch = 1
 
-FullSkillInJob = 0
+FullSkillInJob = 1
 
 ReadShenzhaoInJob = 0
 
@@ -18,6 +18,48 @@ LearnTimes = 100
 
 ResearchTimes = 300
 
-ResearchSkills_tbl = {"force","dodge","parry","sword","unarmed","zixia-shengong","feiyan-huixiang","lonely-sword","huashan-neigong","huashan-sword","hunyuan-zhang","poyu-quan","chongling-jian","strike","blade","kuangfeng-jian","cuff","fanliangyi-dao"}
+ResearchSkills_tbl = {
+"force",
+"dodge",
+"parry",
+"sword",
+"unarmed",
+"blade",
+"strike",
+"hand",
+"bahuang-gong",
+"lingboweibu",
+"beiming-shengong",
+"tianyu-qijian",
+"liuyang-zhang",
+"zhemei-shou",
+"ruyi-dao",
+"yueying-wubu",
+"wuzhan-mei",
+"liuyue-jian",
+"panyang-zhang"
+}
 
-LearnSkills_tbl = {"ziyunyin","zhengqijue","force","dodge","parry","sword","unarmed","zixia-shengong","feiyan-huixiang","lonely-sword","huashan-neigong","huashan-sword","hunyuan-zhang","poyu-quan","chongling-jian","strike","blade","kuangfeng-jian","cuff","fanliangyi-dao"}
+LearnSkills_tbl = {
+"yangyanshu",
+"force",
+"dodge",
+"parry",
+"sword",
+"unarmed",
+"blade",
+"strike",
+"hand",
+"bahuang-gong",
+"lingboweibu",
+"beiming-shengong",
+"tianyu-qijian",
+"liuyang-zhang",
+"zhemei-shou",
+"ruyi-dao",
+"yueying-wubu",
+"wuzhan-mei",
+"liuyue-jian",
+"panyang-zhang"
+}
+

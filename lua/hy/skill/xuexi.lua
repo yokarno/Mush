@@ -34,7 +34,6 @@ function xuexi_start()
 	Common_AddCustomerTrigger("xuexi18", "xuexi","^你的内力太弱，无法练一阳指。", "/xuexi_xiuxi()")
 	Common_AddCustomerTrigger("xuexi19", "xuexi","^学(.*?)，要心狠手辣，奸恶歹毒，你可做得不够呀！", "/xuexi_addlist1()")
 	Common_AddCustomerTrigger("xuexi20", "xuexi","^你的潜能不够", "/xuexi_addlist1()")
-	Common_AddCustomerTrigger("xuexi21", "xuexi","^你的潜能不够", "/xuexi_nopot()")
 	
 	Common_AddCustomerTimer("timerpause", "timerpause",0, 1, 0, "/xuexi_timerpause()",17409)
 

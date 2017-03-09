@@ -95,24 +95,23 @@ function hsxunshan_DisableAll()
 end
 
 function hsxunshan_Randushu()
-	Common_SendToWorld("dazuo 100")
-	-- local i = math.random(1,10)
-	-- if i > 5 then 
-		-- Common_SendToWorld("yandu shenzhao jing")
-		-- Common_SendToWorld("yandu shenzhao jing")
-		-- Common_SendToWorld("yandu shenzhao jing")
-		-- Common_SendToWorld("yandu shenzhao jing")
-		-- Common_SendToWorld("yandu shenzhao jing")
-	-- else
-		-- Common_SendToWorld("yandu shenzhao jing")
-		-- Common_SendToWorld("yandu shenzhao jing")
-		-- Common_SendToWorld("yandu shenzhao jing")
-		-- Common_SendToWorld("yandu shenzhao jing")
-		-- Common_SendToWorld("yandu shenzhao jing")
-	-- end
-	-- Common_SendToWorld("exert regenerate")
-	-- Common_SendToWorld("exert regenerate")
-	-- Common_SendToWorld("exert regenerate")
+	local i = math.random(1,10)
+	if i > 5 then 
+		Common_SendToWorld("yandu shenzhao jing")
+		Common_SendToWorld("yandu shenzhao jing")
+		Common_SendToWorld("yandu shenzhao jing")
+		Common_SendToWorld("yandu shenzhao jing")
+		Common_SendToWorld("yandu shenzhao jing")
+	else
+		Common_SendToWorld("yandu shenzhao jing")
+		Common_SendToWorld("yandu shenzhao jing")
+		Common_SendToWorld("yandu shenzhao jing")
+		Common_SendToWorld("yandu shenzhao jing")
+		Common_SendToWorld("yandu shenzhao jing")
+	end
+	Common_SendToWorld("exert regenerate")
+	Common_SendToWorld("exert regenerate")
+	Common_SendToWorld("exert regenerate")
 end
 
 function hsxunshan_job()
@@ -142,9 +141,11 @@ function hsxunshan_pause()
 		DoAfterSpecial (3,"why;quit",10)
 		return
 	end
-	if _G.ReadInJob == 1 then
+
+	if _G.ReadShenzhaoInJob == 1 then
 		hsxunshan_Randushu()
 	end
+	
 	DoAfterSpecial (3,"ask yue buqun about Ѳɽ",10)
 end 
 
@@ -350,10 +351,24 @@ function hsxunshan_xiuxicomplete()
 		local foodmax = tonumber(GetVariable("food_max"))
 		local water = tonumber(GetVariable("water"))
 		local watermax = tonumber(GetVariable("water_max"))
+		local delay = 0.2
 		if (food > foodmax/2) and (water > watermax/2) then
-			DoAfterSpecial(2, "w;open men;w;sw;sw;n;n;/hsxunshan_start()", 10)
+			if _G.FullSkillInJob == 1 then
+				for i=1,table.getn(_G.ResearchSkills_tbl) do
+					DoAfterSpecial(0.1+delay,"yanjiu ".._G.ResearchSkills_tbl[i].." ".._G.ResearchTimes..";yj",10)
+					delay = delay + 0.2
+				end
+			end
+	
+			DoAfterSpecial(2+delay, "w;open men;w;sw;sw;n;n;/hsxunshan_start()", 10)
 		else
-			DoAfterSpecial(2, "w;open men;w;sw;sw;n;w;buy baozi;#3 eat baozi;e;s;w;#3 drink;e;n;n;/hsxunshan_start()", 10)
+			if _G.FullSkillInJob == 1 then
+				for i=1,table.getn(_G.ResearchSkills_tbl) do
+					DoAfterSpecial(0.1+delay,"yanjiu ".._G.ResearchSkills_tbl[i].." ".._G.ResearchTimes..";yj",10)
+					delay = delay + 0.2
+				end
+			end
+			DoAfterSpecial(2+delay, "w;open men;w;sw;sw;n;w;buy baozi;#3 eat baozi;e;s;w;#3 drink;e;n;n;/hsxunshan_start()", 10)
 		end 
 		
 	end
