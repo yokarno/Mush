@@ -34,8 +34,7 @@ AutoConnect on disconnect
 <timers>
   <timer name="conn" enabled="y" second="5.20" offset_second="0.00"    send_to="12"
 active_closed="y" >
-  <send>ResetIP()
-  Connect()</send>
+  <send>Connect()</send>
 
   </timer>
 </timers>

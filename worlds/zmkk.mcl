@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
-<!-- Saved on ÐÇÆÚËÄ, ÈýÔÂ 09, 2017, 6:54 ÏÂÎç -->
+<!-- Saved on ÐÇÆÚÎå, ÈýÔÂ 10, 2017, 3:16 ÏÂÎç -->
 <!-- MuClient version 4.94 -->
 <!-- Written by Nick Gammon -->
 <!-- Home Page: http://www.mushclient.com/ -->
@@ -8,7 +8,7 @@
 <world
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-09 18:54:53"
+   date_saved="2017-03-10 15:16:05"
 
    auto_log_file_name="logs\yoka.txt"
    auto_say_override_prefix="-"
@@ -122,7 +122,7 @@
 <triggers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-09 18:54:53"
+   date_saved="2017-03-10 15:16:05"
   >
 </triggers>
 
@@ -131,7 +131,7 @@
 <aliases
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-09 18:54:53"
+   date_saved="2017-03-10 15:16:05"
   >
   <alias
    name="chd_alias"
@@ -431,7 +431,7 @@ sleep</send>
 <timers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-09 18:54:53"
+   date_saved="2017-03-10 15:16:05"
   >
 </timers>
 
@@ -440,7 +440,7 @@ sleep</send>
 <macros
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-09 18:54:53"
+   date_saved="2017-03-10 15:16:05"
   >
 
   <macro name="up" type="send_now" >
@@ -544,12 +544,12 @@ sleep</send>
 <variables
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-09 18:54:53"
+   date_saved="2017-03-10 15:16:05"
   >
-  <variable name="age">Ê®ÎåËê¾ÅÔÂ</variable>
+  <variable name="age">Ê®ÁùËê¶þÔÂ</variable>
   <variable name="currstats">huangjob</variable>
-  <variable name="experi">1594409</variable>
-  <variable name="food">478</variable>
+  <variable name="experi">1675738</variable>
+  <variable name="food">501</variable>
   <variable name="food_max">500</variable>
   <variable name="jing">13534</variable>
   <variable name="jing_max">13534</variable>
@@ -567,8 +567,8 @@ sleep</send>
   <variable name="member">1</variable>
   <variable name="neili">20325</variable>
   <variable name="neili_max">16260</variable>
-  <variable name="pot">319103</variable>
-  <variable name="pot_max">845000</variable>
+  <variable name="pot">176010</variable>
+  <variable name="pot_max">862500</variable>
   <variable name="prestats"></variable>
   <variable name="putongyao">ÎÞ        </variable>
   <variable name="qi">15853</variable>
@@ -577,7 +577,7 @@ sleep</send>
   <variable name="searchstep">0</variable>
   <variable name="shimen">ÌÒ»¨µº</variable>
   <variable name="targetnum">1</variable>
-  <variable name="water">268</variable>
+  <variable name="water">321</variable>
   <variable name="water_max">500</variable>
   <variable name="xingbie">Å®</variable>
   <variable name="yabiaostep">29</variable>
@@ -590,7 +590,7 @@ sleep</send>
 <colours
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-09 18:54:53"
+   date_saved="2017-03-10 15:16:05"
   >
 
 <ansi>
@@ -647,7 +647,7 @@ sleep</send>
 <keypad
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-09 18:54:53"
+   date_saved="2017-03-10 15:16:05"
   >
 
   <key name="0" >
@@ -761,7 +761,7 @@ sleep</send>
 <printing
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-09 18:54:53"
+   date_saved="2017-03-10 15:16:05"
   >
 
 <ansi>
