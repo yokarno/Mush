@@ -355,12 +355,12 @@ function World_getdaoju(txt)
 	if txt == "Öì¾¦±ùó¸ÓÍ" then
 		_G.MemberChan = 1
 		Common_SendToWorld("mpawn chan")
-	elseif txt == "¼³È¡Ñ«ÕÂ" then
-		_G.MemberDaoju = 1
-		Common_SendToWorld("mpawn emblem")
-	elseif txt == "Ñ§Ï°Ñ«ÕÂ" then
-		_G.MemberDaoju = 1
-		Common_SendToWorld("mpawn emblem")
+	-- elseif txt == "¼³È¡Ñ«ÕÂ" then
+		-- _G.MemberDaoju = 1
+		-- Common_SendToWorld("mpawn emblem")
+	-- elseif txt == "Ñ§Ï°Ñ«ÕÂ" then
+		-- _G.MemberDaoju = 1
+		-- Common_SendToWorld("mpawn emblem")
 	end
 end
 
