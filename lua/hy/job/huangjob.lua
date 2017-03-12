@@ -126,10 +126,10 @@ function huangjob_pause()
 		if _G.FullSkillInJob == 1 then
 			local i = math.random(1,table.getn(_G.ResearchSkills_tbl))
 			Common_SendToWorld("w;yanjiu ".._G.ResearchSkills_tbl[i].." ".._G.ResearchTimes..";yj")
-			DoAfterSpecial(1.5,"e",10)
+			DoAfterSpecial(2.5,"e",10)
 		end
 
-		DoAfterSpecial(2,"ask huang rong about job",10)
+		DoAfterSpecial(3,"ask huang rong about job",10)
 		SetVariable("searchstep",0)
 		EnableTriggerGroup("huangjob1", true)
 	end
