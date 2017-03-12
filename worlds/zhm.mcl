@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
-<!-- Saved on ÐÇÆÚÎå, ÈýÔÂ 10, 2017, 7:47 ÉÏÎç -->
-<!-- MuClient version 4.94 -->
+<!-- Saved on ÐÇÆÚÈÕ, ÈýÔÂ 12, 2017, 9:07 ÉÏÎç -->
+<!-- MuClient version 5.05 -->
 <!-- Written by Nick Gammon -->
 <!-- Home Page: http://www.mushclient.com/ -->
 <muclient>
 <world
-   muclient_version="4.94"
+   muclient_version="5.05"
    world_file_version="15"
-   date_saved="2017-03-10 07:47:24"
+   date_saved="2017-03-12 09:07:39"
 
    auto_say_override_prefix="-"
    auto_say_string="say "
@@ -117,18 +117,18 @@
 <!-- triggers -->
 
 <triggers
-   muclient_version="4.94"
+   muclient_version="5.05"
    world_file_version="15"
-   date_saved="2017-03-10 07:47:24"
+   date_saved="2017-03-12 09:07:39"
   >
 </triggers>
 
 <!-- aliases -->
 
 <aliases
-   muclient_version="4.94"
+   muclient_version="5.05"
    world_file_version="15"
-   date_saved="2017-03-10 07:47:24"
+   date_saved="2017-03-12 09:07:39"
   >
   <alias
    name="chd_alias"
@@ -385,18 +385,18 @@ exert regenerate</send>
 <!-- timers -->
 
 <timers
-   muclient_version="4.94"
+   muclient_version="5.05"
    world_file_version="15"
-   date_saved="2017-03-10 07:47:24"
+   date_saved="2017-03-12 09:07:39"
   >
 </timers>
 
 <!-- macros -->
 
 <macros
-   muclient_version="4.94"
+   muclient_version="5.05"
    world_file_version="15"
-   date_saved="2017-03-10 07:47:24"
+   date_saved="2017-03-12 09:07:39"
   >
 
   <macro name="up" type="send_now" >
@@ -498,32 +498,33 @@ exert regenerate</send>
 <!-- variables -->
 
 <variables
-   muclient_version="4.94"
+   muclient_version="5.05"
    world_file_version="15"
-   date_saved="2017-03-10 07:47:24"
+   date_saved="2017-03-12 09:07:39"
   >
-  <variable name="age">¶þÊ®ËêÁùÔÂ</variable>
+  <variable name="age">¶þÊ®Ëê°ËÔÂ</variable>
   <variable name="currstats">liaotian</variable>
-  <variable name="experi">2094438</variable>
+  <variable name="experi">2205982</variable>
   <variable name="food">500</variable>
   <variable name="food_max">500</variable>
   <variable name="member">1</variable>
-  <variable name="pot">518566</variable>
-  <variable name="pot_max">947000</variable>
+  <variable name="pot">617304</variable>
+  <variable name="pot_max">968000</variable>
   <variable name="shimen">åÐÒ£ÅÉ</variable>
   <variable name="water">500</variable>
   <variable name="water_max">500</variable>
+  <variable name="world_address">hy.21sun.net</variable>
   <variable name="xingbie">ÄÐ</variable>
   <variable name="yaoxing">ÎÞÓÐ</variable>
-  <variable name="zhengqi">0</variable>
+  <variable name="zhengqi">5000</variable>
 </variables>
 
 <!-- colours -->
 
 <colours
-   muclient_version="4.94"
+   muclient_version="5.05"
    world_file_version="15"
-   date_saved="2017-03-10 07:47:24"
+   date_saved="2017-03-12 09:07:39"
   >
 
 <ansi>
@@ -578,9 +579,9 @@ exert regenerate</send>
 <!-- keypad -->
 
 <keypad
-   muclient_version="4.94"
+   muclient_version="5.05"
    world_file_version="15"
-   date_saved="2017-03-10 07:47:24"
+   date_saved="2017-03-12 09:07:39"
   >
 
   <key name="0" >
@@ -692,9 +693,9 @@ exert regenerate</send>
 <!-- printing -->
 
 <printing
-   muclient_version="4.94"
+   muclient_version="5.05"
    world_file_version="15"
-   date_saved="2017-03-10 07:47:24"
+   date_saved="2017-03-12 09:07:39"
   >
 
 <ansi>

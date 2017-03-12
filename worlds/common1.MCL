@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
-<!-- Saved on ÐÇÆÚ¶þ, ÈýÔÂ 07, 2017, 1:24 ÏÂÎç -->
+<!-- Saved on ÐÇÆÚÈÕ, ÈýÔÂ 12, 2017, 8:26 ÉÏÎç -->
 <!-- MuClient version 4.94 -->
 <!-- Written by Nick Gammon -->
 <!-- Home Page: http://www.mushclient.com/ -->
@@ -8,7 +8,7 @@
 <world
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-07 13:24:55"
+   date_saved="2017-03-12 08:26:55"
 
    auto_say_override_prefix="-"
    auto_say_string="say "
@@ -26,7 +26,7 @@
    script_filename="lua\hy\Robot.lua"
    script_language="Lua"
    script_prefix="/"
-   site="hy.21sun.net"
+   site="0.0.0.0"
    spam_message="look"
    speed_walk_prefix="#"
    terminal_identification="zmud"
@@ -114,7 +114,7 @@
 <triggers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-07 13:24:55"
+   date_saved="2017-03-12 08:26:55"
   >
 </triggers>
 
@@ -123,7 +123,7 @@
 <aliases
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-07 13:24:55"
+   date_saved="2017-03-12 08:26:55"
   >
   <alias
    name="chd_alias"
@@ -306,7 +306,7 @@ sleep</send>
 <timers
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-07 13:24:55"
+   date_saved="2017-03-12 08:26:55"
   >
 </timers>
 
@@ -315,7 +315,7 @@ sleep</send>
 <macros
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-07 13:24:55"
+   date_saved="2017-03-12 08:26:55"
   >
 
   <macro name="up" type="send_now" >
@@ -414,7 +414,7 @@ sleep</send>
 <variables
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-07 13:24:55"
+   date_saved="2017-03-12 08:26:55"
   >
   <variable name="age">¶þÊ®¶þËêÊ®ÔÂ</variable>
   <variable name="currstats">liaotian</variable>
@@ -439,6 +439,7 @@ sleep</send>
   <variable name="shimen">Îå¶¾½Ì</variable>
   <variable name="water">1611</variable>
   <variable name="water_max">900</variable>
+  <variable name="world_address">hy.21sun.net</variable>
   <variable name="xingbie">Å®</variable>
   <variable name="yaoxing">ÎÞÓÐ</variable>
   <variable name="zhengqi">2236830</variable>
@@ -449,7 +450,7 @@ sleep</send>
 <colours
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-07 13:24:55"
+   date_saved="2017-03-12 08:26:55"
   >
 
 <ansi>
@@ -506,7 +507,7 @@ sleep</send>
 <keypad
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-07 13:24:55"
+   date_saved="2017-03-12 08:26:55"
   >
 
   <key name="0" >
@@ -620,7 +621,7 @@ sleep</send>
 <printing
    muclient_version="4.94"
    world_file_version="15"
-   date_saved="2017-03-07 13:24:55"
+   date_saved="2017-03-12 08:26:55"
   >
 
 <ansi>
@@ -645,6 +646,6 @@ sleep</send>
 </printing>
 
 <!-- plugins -->
-<include name="AutoConnect.xml" plugin="y" />
 <include name="CommonCommand.xml" plugin="y" />
+<include name="AutoConnect.xml" plugin="y" />
 </muclient>

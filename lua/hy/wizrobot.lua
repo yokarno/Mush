@@ -27,21 +27,12 @@ end
 
 function World_OnConnect()
 	Common_SendToWorld("home")
+	EnableTimer("autoemote", true)
 end
 
 function World_OnReconnect()
 	Common_SendToWorld("home")
-end
-
-function World_OnDisconnect()
-	DoAfterSpecial(1, "world.Connect()", 12)
-end
-
-function World_OnJindan()
-	local yaoxing = GetVariable("yaoxing")
-	if yaoxing == "ÎÞÓÐ" then
-		Common_SendToWorld("eat jin dan")
-	end
+	EnableTimer("autoemote", true)
 end
 
 function World_CloseAll()

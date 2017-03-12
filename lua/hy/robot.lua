@@ -103,6 +103,7 @@ end
 --=================================================================
 --连接上后自动Robot
 function World_Triggers()
+
 	require("hy.idset."..WorldName())
 	Common_AddCustomerTrigger("common1", "common","^【 精  气 】(.+?)\/(.+?)\((.+?)【 精  力 】(.+?)\/(.+?)\((.*?)", "/World_SetV1(%1,%2,%4,%5)")
 	Common_AddCustomerTrigger("common2", "common","^【 气  血 】(.+?)\/(.+?)\((.+?)【 内  力 】(.+?)\/(.+?)\((.*?)", "/World_SetV2(%1,%2,%4,%5)")

@@ -32,7 +32,7 @@ AutoConnect on disconnect
 <!--  Timers  -->
 
 <timers>
-  <timer name="conn" enabled="y" second="5.20" offset_second="0.00"    send_to="12"
+  <timer name="conn" enabled="y" second="15.50" offset_second="0.00"    send_to="12"
 active_closed="y" >
   <send>Connect()</send>
 
@@ -44,6 +44,7 @@ active_closed="y" >
 
 <script>
 <![CDATA[
+
 function OnDisconnect() 
 	local activeworld = nil
 	
@@ -56,6 +57,8 @@ function OnDisconnect()
 		activeworld = nil
 	end
   Activate()
+  DeleteTemporaryTriggers()
+  DeleteTemporaryTimers()
   EnableTimer("conn", true)
   
   if activeworld == nil then
@@ -63,6 +66,7 @@ function OnDisconnect()
   end
 	activeworld: Activate()
 end
+
 ]]>
 </script>
 
