@@ -357,13 +357,13 @@ function hsxunshan_xiuxicomplete()
 				Common_SendToWorld("yanjiu ".._G.ResearchSkills_tbl[i].." ".._G.ResearchTimes..";yj")
 			end
 	
-			DoAfterSpecial(2, "w;open men;w;sw;sw;n;n;/hsxunshan_start()", 10)
+			DoAfterSpecial(3, "w;open men;w;sw;sw;n;n;/hsxunshan_start()", 10)
 		else
 			if _G.FullSkillInJob == 1 then
 				local i = math.random(1,table.getn(_G.ResearchSkills_tbl))
 				Common_SendToWorld("w;yanjiu ".._G.ResearchSkills_tbl[i].." ".._G.ResearchTimes..";yj")
 			end
-			DoAfterSpecial(2, "open men;w;sw;sw;n;w;buy baozi;#3 eat baozi;e;s;w;#3 drink;e;n;n;/hsxunshan_start()", 10)
+			DoAfterSpecial(3, "open men;w;sw;sw;n;w;buy baozi;#3 eat baozi;e;s;w;#3 drink;e;n;n;/hsxunshan_start()", 10)
 		end 
 		
 	end
