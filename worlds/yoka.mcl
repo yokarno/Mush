@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE muclient>
-<!-- Saved on ÐÇÆÚÎå, ÈýÔÂ 10, 2017, 5:30 ÏÂÎç -->
-<!-- MuClient version 4.94 -->
+<!-- Saved on ÐÇÆÚ¶þ, ÈýÔÂ 14, 2017, 1:40 ÏÂÎç -->
+<!-- MuClient version 5.05 -->
 <!-- Written by Nick Gammon -->
 <!-- Home Page: http://www.mushclient.com/ -->
 <muclient>
 <world
-   muclient_version="4.94"
+   muclient_version="5.05"
    world_file_version="15"
-   date_saved="2017-03-10 17:30:44"
+   date_saved="2017-03-14 13:40:04"
 
    auto_log_file_name="logs\yoka.txt"
    auto_say_override_prefix="-"
@@ -21,6 +21,8 @@
    name="yoka"
    new_activity_sound="(No sound)"
    on_world_connect="World_Triggers"
+   on_world_disconnect="World_OnDisconnect"
+   on_world_open="World_OnOpen"
    output_font_name="ËÎÌå"
    password_base64="y"
    password="em1razgwMDIwOA=="
@@ -120,18 +122,18 @@
 <!-- triggers -->
 
 <triggers
-   muclient_version="4.94"
+   muclient_version="5.05"
    world_file_version="15"
-   date_saved="2017-03-10 17:30:44"
+   date_saved="2017-03-14 13:40:04"
   >
 </triggers>
 
 <!-- aliases -->
 
 <aliases
-   muclient_version="4.94"
+   muclient_version="5.05"
    world_file_version="15"
-   date_saved="2017-03-10 17:30:44"
+   date_saved="2017-03-14 13:40:04"
   >
   <alias
    name="chd_alias"
@@ -143,7 +145,8 @@
   <send>drop cloth
 drop xue
 wear head
-wear all</send>
+wear all
+wi</send>
   </alias>
   <alias
    name="dazuoneili_alias"
@@ -428,18 +431,18 @@ sleep</send>
 <!-- timers -->
 
 <timers
-   muclient_version="4.94"
+   muclient_version="5.05"
    world_file_version="15"
-   date_saved="2017-03-10 17:30:44"
+   date_saved="2017-03-14 13:40:04"
   >
 </timers>
 
 <!-- macros -->
 
 <macros
-   muclient_version="4.94"
+   muclient_version="5.05"
    world_file_version="15"
-   date_saved="2017-03-10 17:30:44"
+   date_saved="2017-03-14 13:40:04"
   >
 
   <macro name="up" type="send_now" >
@@ -541,21 +544,21 @@ sleep</send>
 <!-- variables -->
 
 <variables
-   muclient_version="4.94"
+   muclient_version="5.05"
    world_file_version="15"
-   date_saved="2017-03-10 17:30:44"
+   date_saved="2017-03-14 13:40:04"
   >
-  <variable name="age">¶þÊ®¶þËêÒ»ÔÂ</variable>
-  <variable name="currstats">hsxunshan</variable>
-  <variable name="experi">3082058</variable>
-  <variable name="food">300</variable>
+  <variable name="age">¶þÊ®ÎåËêÊ®Ò»ÔÂ</variable>
+  <variable name="currstats">huangjob</variable>
+  <variable name="experi">3658732</variable>
+  <variable name="food">503</variable>
   <variable name="food_max">500</variable>
   <variable name="jing">13534</variable>
   <variable name="jing_max">13534</variable>
   <variable name="jingli">4100</variable>
   <variable name="jingli_max">4100</variable>
   <variable name="jobok">0</variable>
-  <variable name="jobpath"></variable>
+  <variable name="jobpath">çÎç¿·åÉ½½Å</variable>
   <variable name="jobstep">1</variable>
   <variable name="killlongbjtime">¶þÁãÒ»ÁãÄêÁùÔÂÊ®ÁùÈÕÊ®¾ÅÊ±ËÄÊ®·ÖÈýÊ®ÆßÃë</variable>
   <variable name="killlonghytime">Ê®Ò»Ð¡Ê±Ê®Ò»·ÖÁùÃë</variable>
@@ -566,30 +569,30 @@ sleep</send>
   <variable name="member">1</variable>
   <variable name="neili">20325</variable>
   <variable name="neili_max">16260</variable>
-  <variable name="pot">473837</variable>
-  <variable name="pot_max">1115000</variable>
+  <variable name="pot">686043</variable>
+  <variable name="pot_max">1199500</variable>
   <variable name="prestats"></variable>
   <variable name="putongyao">ÎÞ        </variable>
   <variable name="qi">15853</variable>
   <variable name="qi_max">15853</variable>
-  <variable name="searchcmd">wayao</variable>
+  <variable name="searchcmd">kill yoka tufei</variable>
   <variable name="searchstep">0</variable>
   <variable name="shimen">»ªÉ½ÅÉ</variable>
   <variable name="targetnum">1</variable>
-  <variable name="water">300</variable>
+  <variable name="water">202</variable>
   <variable name="water_max">500</variable>
   <variable name="xingbie">ÄÐ</variable>
   <variable name="yabiaostep">29</variable>
   <variable name="yaoxing">ÎÞÓÐ</variable>
-  <variable name="zhengqi">5020800</variable>
+  <variable name="zhengqi">5025800</variable>
 </variables>
 
 <!-- colours -->
 
 <colours
-   muclient_version="4.94"
+   muclient_version="5.05"
    world_file_version="15"
-   date_saved="2017-03-10 17:30:44"
+   date_saved="2017-03-14 13:40:04"
   >
 
 <ansi>
@@ -644,9 +647,9 @@ sleep</send>
 <!-- keypad -->
 
 <keypad
-   muclient_version="4.94"
+   muclient_version="5.05"
    world_file_version="15"
-   date_saved="2017-03-10 17:30:44"
+   date_saved="2017-03-14 13:40:04"
   >
 
   <key name="0" >
@@ -758,9 +761,9 @@ sleep</send>
 <!-- printing -->
 
 <printing
-   muclient_version="4.94"
+   muclient_version="5.05"
    world_file_version="15"
-   date_saved="2017-03-10 17:30:44"
+   date_saved="2017-03-14 13:40:04"
   >
 
 <ansi>

@@ -32,9 +32,8 @@ AutoConnect on disconnect
 <!--  Timers  -->
 
 <timers>
-  <timer name="conn" enabled="y" second="15.50" offset_second="0.00"    send_to="12"
-active_closed="y" >
-  <send>Connect()</send>
+  <timer name="PluginConnectTimer" enabled="y" second="15.50" offset_second="0.00"  script="OnTimerConnecting" 
+  active_closed="y" >
 
   </timer>
 </timers>
@@ -45,7 +44,11 @@ active_closed="y" >
 <script>
 <![CDATA[
 
-function OnDisconnect() 
+function OnTimerConnecting()
+	world.Connect()
+end
+
+function OnPluginDisconnect() 
 	local activeworld = nil
 	
 	for k, v in pairs (GetWorldList()) do 
@@ -56,14 +59,13 @@ function OnDisconnect()
 		end
 		activeworld = nil
 	end
-  Activate()
-  DeleteTemporaryTriggers()
-  DeleteTemporaryTimers()
-  EnableTimer("conn", true)
+	Activate()
+
+	EnableTimer("PluginConnectTimer", true)
   
-  if activeworld == nil then
-    return
-  end
+	if activeworld == nil then
+		return
+	end
 	activeworld: Activate()
 end
 

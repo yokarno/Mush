@@ -22,6 +22,14 @@ ChatID = "zhm"
 MemberChan = 0
 ReplaceLogin = 1
 
+function sclient()
+	SetVariable("IsSlient",1)
+end
+
+function nosclient()
+	SetVariable("IsSlient",0)
+end
+
 function bredeem(nStart,nEnd)
 	local tt = 0
 	local member = tonumber(GetVariable("member",0))
@@ -171,6 +179,7 @@ function World_Triggers()
 end
 
 function World_OnConnect()
+	Common_GetWorldAddress()
 	_G.EndRobot = 0
 	_G.ReplaceLogin = 1
 	EnableTriggerGroup("common6", true)
@@ -178,6 +187,7 @@ function World_OnConnect()
 end
 
 function World_OnReconnect()
+	Common_GetWorldAddress()
 	local currstats = GetVariable("currstats")
 	if currstats == nil then 
 		return
@@ -189,7 +199,13 @@ function World_OnReconnect()
 end
 
 function World_OnDisconnect()
-	DoAfterSpecial(5,"world.Connect()",12)
+	Common_CloseAll()
+	local IsSlient = world.GetVariable("IsSlient") or 0
+	if IsSlient ~= 0 then
+		Common_ClearWorldAddress()
+		world.DoAfterSpecial(10,"Common_SetWorldAddress()",12)
+	end
+	
 end
 
 function World_OnEvent()
@@ -474,7 +490,13 @@ function World_DoReceiveMessage(ccmd)
 end
 
 function World_OnOpen()
-	--world.Open("E:/MUSHclient/worlds/zhWorld_mcl")
+	if(world.WorldAddress() == nil) then
+		world.SetAlphaOption("site","hy.21sun.net")
+	end
+	
+	if(world.WorldAddress() == "0.0.0.0") then
+		world.SetAlphaOption("site","hy.21sun.net")
+	end
 end
 
 function World_RefreshStatus()

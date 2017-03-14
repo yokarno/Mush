@@ -94,3 +94,19 @@ function Common_AddCustomerAlias(AliasName,AliasText,SendText,SendTo)
 		SetAliasOption(AliasName,"send_to",SendTo)
 	end
 end
+
+function Common_SetWorldAddress()
+	local address=world.GetVariable("WorldSite") or world.WorldAddress()
+	world.SetAlphaOption("site",address)
+end
+
+function Common_GetWorldAddress()
+	local address=world.WorldAddress()
+	world.SetVariable("WorldSite",address)
+end
+
+function Common_ClearWorldAddress()
+	world.SetAlphaOption("site","0.0.0.0")
+end
+
+
