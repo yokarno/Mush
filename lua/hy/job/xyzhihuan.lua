@@ -127,7 +127,7 @@ function xyzhihuan_pause()
 		if _G.FullSkillInJob == 1 then
 			local i = math.random(1,table.getn(_G.ResearchSkills_tbl))
 			Common_SendToWorld("w;w;w;yanjiu ".._G.ResearchSkills_tbl[i].." ".._G.ResearchTimes..";yj")
-			DoAfterSpecial(2,"e;e;e",10)
+			DoAfterSpecial(3,"e;e;e",10)
 		end
 		
 		DoAfterSpecial(3,"ask su xinghe about job",10)
