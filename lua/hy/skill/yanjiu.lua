@@ -143,7 +143,7 @@ end
 --=================================================================
 --连接上后自动Robot
 function yanjiu_OnConnect()
-	Common_SendToWorld("e;s;s;#6 w;n;#5 w;/yanjiu_start()")
+	Common_SendToWorld("w;/yanjiu_start()")
 end
 
 --重新连线后
