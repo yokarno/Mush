@@ -49,24 +49,7 @@ function OnTimerConnecting()
 end
 
 function OnPluginDisconnect() 
-	local activeworld = nil
-	
-	for k, v in pairs (GetWorldList()) do 
-		activeworld = GetWorld (v)
-		info = activeworld: GetInfo(113)
-		if info then
-			break
-		end
-		activeworld = nil
-	end
-	Activate()
-
 	EnableTimer("PluginConnectTimer", true)
-  
-	if activeworld == nil then
-		return
-	end
-	activeworld: Activate()
 end
 
 ]]>
