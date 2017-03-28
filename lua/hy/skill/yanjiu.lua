@@ -80,17 +80,21 @@ function yanjiu_addlist()
 	yanjiu_maxexp[yanjiu_listindex] = 1
 
 	local count = yanjiu_getmaxcount()
-	if count >= table.getn(_G.ResearchSkills_tbl) - 1   then
+	if count >= table.getn(_G.ResearchSkills_tbl) then
 		EnableTimer("timerpause", false)
 		Common_SendToWorld("tell ".._G.ChatID.." 研究学习完了")
 		yanjiu_listindex = 1
 		yanjiu_maxexp = {}
 		local preStats = GetVariable("prestats")
-		if preStats ~= "" then 
-			SetVariable("prestats","")
-			SetVariable("currstats",preStats)
-			DoAfterSpecial(2, "e;e;e;e;e;quit", 10)
+		if preStats == nil then
+			return
 		end
+		if preStats == "" then
+			return
+		end
+		SetVariable("prestats","")
+		SetVariable("currstats",preStats)
+		DoAfterSpecial(2, "e;e;e;e;e;quit", 10)
 		return
 	end
 	
@@ -100,7 +104,7 @@ function yanjiu_addlist()
 end
 
 function yanjiu_addlist2(txt)
-	if FilterTxt(txt) == nil then
+	if Common_FilterTxt(txt) == nil then
 		return
 	end
 	yanjiu_addlist() 
@@ -113,11 +117,16 @@ function yanjiu_nopot()
 	yanjiu_maxexp = {} 
 	EnableTimer("timerpause", false)
 	local preStats = GetVariable("prestats")
-	if preStats ~= "" then 
-		SetVariable("prestats","")
-		SetVariable("currstats",preStats)
-		DoAfterSpecial(2, "e;e;e;e;e;quit", 10)
+	if preStats == nil then
+		return
 	end
+	if preStats == "" then
+		return
+	end
+	SetVariable("prestats","")
+	SetVariable("currstats",preStats)
+	DoAfterSpecial(2, "e;e;e;e;e;quit", 10)
+	return
 end
 
 function yanjiu_getmaxcount()
@@ -134,7 +143,7 @@ end
 --=================================================================
 --连接上后自动Robot
 function yanjiu_OnConnect()
-	Common_SendToWorld("e;s;s;#6 w;n;#5 w;/yanjiu_start()")
+	Common_SendToWorld("w;/yanjiu_start()")
 end
 
 --重新连线后
