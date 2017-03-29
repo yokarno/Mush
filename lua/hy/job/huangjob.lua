@@ -24,7 +24,7 @@ function huangjob_start()
 	Common_AddCustomerTrigger("huangjob51", "huangjob2","^黄蓉说道：(.*?)我掐指算出有人在『(?P<where>.*)』一带行凶作恶", "/huangjob_startgojob(\"%<where>\")")
 	Common_AddCustomerTrigger("huangjob52", "huangjob2","^黄蓉说道：(.*?)现在我可没有给你的任务，等会再来吧", "/huangjob_pause()")
 	Common_AddCustomerTrigger("huangjob53", "huangjob2","^黄蓉说道：我看(.*?)需要休息一会", "/huangjob_pause()")
-	Common_AddCustomerTrigger("huangjob54", "huangjob2","^黄蓉说道：(.*?)你上一次的任务还没完成", "/huangjob_pause()")
+	Common_AddCustomerTrigger("huangjob54", "huangjob2","^黄蓉说道：(.*?)你上一次的任务还没完成", "/huangjob_fangqi()")
 
 	Common_AddCustomerTrigger("huangjob101", "huangjob3","^你对着(.*?)喝道", "/huangjob_fight()")
 	Common_AddCustomerTrigger("huangjob102", "huangjob3","^这里没有这个人。", "/huangjob_failreturn()")
@@ -37,6 +37,12 @@ function huangjob_start()
 	Common_AddCustomerTrigger("huangjob157", "huangjob4","^(?P<front>.*)只能在战斗中对对手使用。", "/huangjob_nofight(\"%<front>\")")
 	Common_AddCustomerTrigger("huangjob158", "huangjob4","^(?P<front>.*)只能对对手使用", "/huangjob_nofight(\"%<front>\")")
 	Common_AddCustomerTrigger("huangjob159", "huangjob4","^你只能对战斗中的对手使用(?P<front>.*)", "/huangjob_nofight(\"%<front>\")")
+	
+	Common_AddCustomerTrigger("huangjob201", "huangjob5","^(?P<front>.*)只能对战斗中的对手使用。", "/huangjob_killok(\"%<front>\")")
+	Common_AddCustomerTrigger("huangjob202", "huangjob5","^(?P<front>.*)只能在战斗中使用。", "/huangjob_killok(\"%<front>\")")
+	Common_AddCustomerTrigger("huangjob203", "huangjob5","^(?P<front>.*)只能在战斗中对对手使用。", "/huangjob_killok(\"%<front>\")")
+	Common_AddCustomerTrigger("huangjob204", "huangjob5","^(?P<front>.*)只能对对手使用", "/huangjob_killok(\"%<front>\")")
+	Common_AddCustomerTrigger("huangjob205", "huangjob5","^你只能对战斗中的对手使用(?P<front>.*)", "/huangjob_killok(\"%<front>\")")
 	
 	Common_AddCustomerTrigger("huangjob301", "huangjob7","^你想拜谁为师", "/huangjob_fail()")
 	Common_AddCustomerTrigger("huangjob302", "huangjob7","^无名居士既不属於任何门派，也没有开山立派，不能拜师", "/huangjob_returnatgc()")
@@ -76,6 +82,7 @@ function huangjob_DisableAll()
 	EnableTriggerGroup("huangjob2", false)
 	EnableTriggerGroup("huangjob3", false)
 	EnableTriggerGroup("huangjob4", false)
+	EnableTriggerGroup("huangjob5", false)
 	EnableTriggerGroup("huangjob6", false)
 	EnableTriggerGroup("huangjob7", false)
 	EnableTriggerGroup("huangjob8", true)
@@ -100,11 +107,13 @@ end
 
 function huangjob_questjob()
 	huangjob_DisableAll()
+	pausetimes = 0
 	EnableTriggerGroup("huangjob2", true)
 end
 
 function huangjob_fail()
 	huangjob_DisableAll()
+	pausetimes = 0
 	DoAfterSpecial(5,"why;quit",10)
 end
 
@@ -115,6 +124,7 @@ end
 
 function huangjob_pause()
 	huangjob_DisableAll()
+	pausetimes = 0
 	if _G.EndRobot > 0 then
 		EnableTimer("timerpause", false)
 		EnableTimer("autoemote", true)
@@ -133,6 +143,13 @@ function huangjob_pause()
 		SetVariable("searchstep",0)
 		EnableTriggerGroup("huangjob1", true)
 	end
+end
+
+function huangjob_fangqi()
+	huangjob_DisableAll()
+	pausetimes = 0
+	DoAfterSpecial(1,"ask huang rong about 放弃",10)
+	EnableTriggerGroup("huangjob1", true)
 end
 
 function huangjob_startgojob(didian)
@@ -187,6 +204,18 @@ function huangjob_fight(txt)
 end
 
 function huangjob_nofight(txt)
+  	if Common_FilterTxt(txt) == nil then
+		return
+	end 
+	
+	huangjob_DisableAll()
+	Common_SendToWorld("kill "..WorldName().." tufei")
+	DoAfterSpecial(2,"EnableTimer(\"huangjob1\",true)",12)
+	EnableTriggerGroup("huangjob5",true)
+end
+
+
+function huangjob_killok(txt)
   	if Common_FilterTxt(txt) == nil then
 		return
 	end 
@@ -392,12 +421,13 @@ function huangjob_doxiuxi()
 	end 
 	
 	DoAfterSpecial(1.5,"s;s;s;s;e;s;s;e;buy baozi;eat baozi;eat baozi;eat baozi;drop baozi",10)
-	DoAfterSpecial(3,"buy jiudai;drink jiudai;drink jiudai;drink jiudai;drop jiudai;w;n;n",10)
+	DoAfterSpecial(3.5,"buy jiudai;drink jiudai;drink jiudai;drink jiudai;drop jiudai;w;n;n",10)
 	DoAfterSpecial(5,"w;n;n;n;n;w;sleep",10)
 	EnableTriggerGroup("xiuxi2",true)
 end
 
 function huangjob_xiuxi()
+	pausetimes = 0
 	if _G.EndRobot > 0 then
 		huangjob_DisableAll()
 		EnableTimer("timerpause", false)
