@@ -6,7 +6,7 @@ AutoResearch = 1
 
 FullSkillInJob = 1
 
-ReadShenzhaoInJob = 0
+ReadShenzhaoInJob = 1
 
 Master = "逍遥子"
 
