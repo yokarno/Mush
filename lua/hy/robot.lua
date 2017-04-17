@@ -12,6 +12,7 @@ require("hy.job.liandan")
 require("hy.job.hsxunshan")
 require("hy.job.xyzhihuan")
 require("hy.job.huangjob")
+require("hy.job.guobaohu")
 
 EndRobot = 0
 DeadTimes = 0
@@ -106,6 +107,13 @@ function huangjob()
 	World_CloseAll()
 	_G.EndRobot = 0
 	huangjob_start()
+end
+
+--¹ù¾¸±£»¤job
+function guobaohu()
+	World_CloseAll()
+	_G.EndRobot = 0
+	guobaohu_start()
 end
 
 --=================================================================

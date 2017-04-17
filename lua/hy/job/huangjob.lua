@@ -157,11 +157,17 @@ function huangjob_startgojob(didian)
 	local jobpath = didian
 	SetVariable("jobpath",jobpath)
 	SetVariable("jobstep",1)
-	_G.JobMsg = "黄蓉job 地点："..jobpath
+	_G.JobMsg = "黄蓉任务 地点："..jobpath
 	World_RefreshStatus()
 	
 	pausetimes = 0
-		
+	
+	if menpaijobpath_tbl[jobpath] == nil then
+		DoAfterSpecial(0.5,"ask huang rong about 放弃",10)
+		EnableTriggerGroup("huangjob1",true)
+		return
+	end
+	
 	EnableTimer("huangjob3",true)
 	EnableTriggerGroup("huangjob9",true)	
 end
@@ -170,31 +176,31 @@ function huangjob_gotojob()
 	huangjob_DisableAll()
 	local jobpath = GetVariable("jobpath")
 	
-	if menpaijobpath_tbl[jobpath]== nil then
-		DoAfterSpecial(0.5,"ask huang rong about 放弃",10)
-		EnableTriggerGroup("huangjob1",true)
-	else
-		local member = tonumber(GetVariable("member",0))
-		if member == 1 then
+	local member = tonumber(GetVariable("member",0))
+	if member == 1 then
+		if menpaijobpath_tbl[jobpath]["MemberGoPath"] ~= nil then
 			if table.getn(menpaijobpath_tbl[jobpath]["MemberGoPath"]) == 1 then
 				Common_SendToWorld(menpaijobpath_tbl[jobpath]["MemberGoPath"][1]..";/stepwalking_GoTarget()")
 			else
 				Common_SendToWorld(menpaijobpath_tbl[jobpath]["MemberGoPath"][1])
 			end
-		else
-			if menpaijobpath_tbl[jobpath]["GoPath"] == nil then
-				DoAfterSpecial(0.5,"ask huang rong about 放弃",10)
-				EnableTriggerGroup("huangjob1",true)
-				return
-			end
 			
-			if table.getn(menpaijobpath_tbl[jobpath]["GoPath"]) == 1 then
-				Common_SendToWorld("#4 s;e;xi-gc;"..menpaijobpath_tbl[jobpath]["GoPath"][1]..";/stepwalking_GoTarget()")
-			else
-				Common_SendToWorld("#4 s;e;xi-gc;"..menpaijobpath_tbl[jobpath]["GoPath"][1])
-			end
+			return
 		end
-	end		
+	end
+
+	if menpaijobpath_tbl[jobpath]["GoPath"] == nil then
+		DoAfterSpecial(0.5,"ask huang rong about 放弃",10)
+		EnableTriggerGroup("huangjob1",true)
+		return
+	end
+	
+	if table.getn(menpaijobpath_tbl[jobpath]["GoPath"]) == 1 then
+		Common_SendToWorld("#4 s;e;xi-gc;"..menpaijobpath_tbl[jobpath]["GoPath"][1]..";/stepwalking_GoTarget()")
+	else
+		Common_SendToWorld("#4 s;e;xi-gc;"..menpaijobpath_tbl[jobpath]["GoPath"][1])
+	end
+
 end
 
 function huangjob_fight(txt)
@@ -312,8 +318,6 @@ function huangjob_Randushu()
 		end
 		Common_SendToWorld("exert regenerate")
 		Common_SendToWorld("exert regenerate")
-	else
-		Common_SendToWorld("yq;dazuo 10")
 	end
 end
 

@@ -187,8 +187,6 @@ function stepwalking_start()
 	--去泰山
 	Common_AddCustomerTrigger("stepwalking_gotaishan1", "stepwalking_gotaishan","^你一不小心脚下踏了个空", "/stepwalking_gotaishanlongmen()")
 	Common_AddCustomerTrigger("stepwalking_gotaishan2", "stepwalking_gotaishan","^龙门 - northup、southdown", "/stepwalking_NextGo()")
-	Common_AddCustomerTrigger("stepwalking_gotaishan3", "stepwalking_gotaishan","^你向天门道人打听有关『all』的消息。", "/stepwalking_gotaishandokill()")
-	Common_AddCustomerTrigger("stepwalking_gotaishan4", "stepwalking_gotaishan","^这里没有这个人", "/stepwalking_NextGo()")
 
 	--去华山
 	Common_AddCustomerTrigger("stepwalking_gohuashan1", "stepwalking_gohuashan","^你向高根明打听有关『all』的消息。", "/stepwalking_gohuashandokill()")
@@ -624,19 +622,6 @@ end
 
 function stepwalking_gotaishanlongmen()
 	DoAfterSpecial(1,"yj;yq;#4 nu;#2 n;nu;nu;n;n;nu;nu;wu;nu;n;n;wu;wu;n;n;nw;#4 nu",10)
-end
-
-function stepwalking_gotaishandokill()
-	local exp = tonumber(GetVariable("experi"))
-	if exp > 40000000 then 
-		SetVariable("killover","/stepwalking_NextGo()")
-		Common_SendToWorld("kill tianmen daoren")
-		EnableTriggerGroup("stepwalking1", true)
-		EnableTimer("stepwalking1",true)
-		return
-	end
-	SetVariable("jobstep",0)
-	stepwalking_NextReturn()
 end
 
 function stepwalking_gohuashandokill()
