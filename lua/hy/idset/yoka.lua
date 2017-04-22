@@ -1,6 +1,6 @@
 --module (..., package.seeall)
 
-FullSkill = 1
+FullSkill = 0
 
 AutoResearch = 1
 
@@ -16,6 +16,76 @@ LearnTimes = 100
 
 ResearchTimes = 300
 
-ResearchSkills_tbl = {"force","dodge","parry","sword","unarmed","zixia-shengong","feiyan-huixiang","lonely-sword","huashan-neigong","huashan-sword","hunyuan-zhang","poyu-quan","chongling-jian","strike","blade","kuangfeng-jian","cuff","fanliangyi-dao"}
+ResearchSkills_tbl = {
+"blade",
+"cuff",
+"dodge",
+"finger",
+"force",
+"parry",
+"staff",
+"strike",
+"sword",
+"unarmed",
+"chongling-jian",
+"duanjia-sword",
+"fanliangyi-dao",
+"feifeng-whip",
+"feixian-sword",
+"feiyan-huixiang",
+"huashan-neigong",
+"huashan-sword",
+"hunyuan-zhang",
+"jinyu-quan",
+"kuangfeng-jian",
+"kurong-changong",
+"lonely-sword",
+"luohua-jian",
+"poyu-quan",
+"six-finger",
+"sun-finger",
+"tiannan-step",
+"wuluo-zhang",
+"xuantian-zhi",
+"yiyang-zhi",
+"zijinbagua-dao",
+"zixia-shengong",
+}
 
-LearnSkills_tbl = {"ziyunyin","zhengqijue","force","dodge","parry","sword","unarmed","zixia-shengong","feiyan-huixiang","lonely-sword","huashan-neigong","huashan-sword","hunyuan-zhang","poyu-quan","chongling-jian","strike","blade","kuangfeng-jian","cuff","fanliangyi-dao"}
+LearnSkills_tbl = {
+"blade",
+"cuff",
+"dodge",
+"finger",
+"force",
+"parry",
+"staff",
+"strike",
+"sword",
+"unarmed",
+"chongling-jian",
+"duanjia-sword",
+"fanliangyi-dao",
+"feifeng-whip",
+"feixian-sword",
+"feiyan-huixiang",
+"huashan-neigong",
+"huashan-sword",
+"hunyuan-zhang",
+"jinyu-quan",
+"kuangfeng-jian",
+"kurong-changong",
+"lonely-sword",
+"luohua-jian",
+"poyu-quan",
+"six-finger",
+"sun-finger",
+"tiannan-step",
+"wuluo-zhang",
+"xuantian-zhi",
+"yiyang-zhi",
+"zijinbagua-dao",
+"zixia-shengong",
+}
+
+--TestHuangJobDelay = 120

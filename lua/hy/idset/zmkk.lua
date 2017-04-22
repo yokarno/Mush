@@ -1,6 +1,6 @@
 --module (..., package.seeall)
 
-FullSkill = 1
+FullSkill = 0
 
 AutoResearch = 1
 

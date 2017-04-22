@@ -1,6 +1,6 @@
 --module (..., package.seeall)
 
-FullSkill = 1
+FullSkill = 0
 
 AutoResearch = 1
 
@@ -19,47 +19,74 @@ LearnTimes = 100
 ResearchTimes = 300
 
 ResearchSkills_tbl = {
-"force",
+"blade",
+"cuff",
 "dodge",
+"finger",
+"force",
+"hand",
 "parry",
+"staff",
+"strike",
 "sword",
 "unarmed",
-"blade",
-"strike",
-"hand",
 "bahuang-gong",
-"lingboweibu",
 "beiming-shengong",
-"tianyu-qijian",
+"duanjia-sword",
+"feifeng-whip",
+"jinyu-quan",
+"kurong-changong",
+"lingboweibu",
 "liuyang-zhang",
-"zhemei-shou",
-"ruyi-dao",
-"yueying-wubu",
-"wuzhan-mei",
 "liuyue-jian",
-"panyang-zhang"
+"luohua-jian",
+"panyang-zhang",
+"ruyi-dao",
+"shenzhao-jing",
+"six-finger",
+"sun-finger",
+"tiannan-step",
+"tianyu-qijian",
+"wuluo-zhang",
+"wuzhan-mei",
+"yiyang-zhi",
+"yueying-wubu",
+"zhemei-shou"
 }
 
 LearnSkills_tbl = {
-"yangyanshu",
-"force",
+"blade",
+"cuff",
 "dodge",
+"finger",
+"force",
+"hand",
 "parry",
+"staff",
+"strike",
 "sword",
 "unarmed",
-"blade",
-"strike",
-"hand",
 "bahuang-gong",
-"lingboweibu",
 "beiming-shengong",
-"tianyu-qijian",
+"duanjia-sword",
+"feifeng-whip",
+"jinyu-quan",
+"kurong-changong",
+"lingboweibu",
 "liuyang-zhang",
-"zhemei-shou",
-"ruyi-dao",
-"yueying-wubu",
-"wuzhan-mei",
 "liuyue-jian",
-"panyang-zhang"
+"luohua-jian",
+"panyang-zhang",
+"ruyi-dao",
+"shenzhao-jing",
+"six-finger",
+"sun-finger",
+"tiannan-step",
+"tianyu-qijian",
+"wuluo-zhang",
+"wuzhan-mei",
+"yiyang-zhi",
+"yueying-wubu",
+"zhemei-shou"
 }
 
