@@ -34,7 +34,9 @@ ResearchSkills_tbl = {
 "yinsuo-jinling",
 "yunv-jian",
 "yunv-shenfa",
-"yunv-xinfa"
+"yunv-xinfa",
+"strike",
+"luohua-jian"
 }
 
 LearnSkills_tbl = {

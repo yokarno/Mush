@@ -37,7 +37,9 @@ ResearchSkills_tbl = {
 "luoying-zhang",
 "tanzhi-shentong",
 "xuanfeng-leg",
-"yuxiao-jian"
+"yuxiao-jian",
+"luohua-jian",
+"zijinbagua-dao"
 }
 
 LearnSkills_tbl = {
