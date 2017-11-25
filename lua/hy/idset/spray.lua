@@ -36,7 +36,15 @@ ResearchSkills_tbl = {
 "yunv-shenfa",
 "yunv-xinfa",
 "strike",
-"luohua-jian"
+"biye-wu",
+"biyun-xinfa",
+"dusha-zhang",
+"lansha-shou",
+"liuxing-biao",
+"pili-biao",
+"qiulinshiye",
+"zhuihun-biao",
+"zimu-zhen"
 }
 
 LearnSkills_tbl = {

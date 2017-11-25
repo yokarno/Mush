@@ -38,8 +38,16 @@ ResearchSkills_tbl = {
 "tanzhi-shentong",
 "xuanfeng-leg",
 "yuxiao-jian",
-"luohua-jian",
-"zijinbagua-dao"
+"chilian-shenzhang",
+"dusha-zhang",
+"jueqing-bian",
+"lansha-shou",
+"qianzhu-wandushou",
+"ruanhong-zhusuo",
+"shedu-qiqiao",
+"wudu-goufa",
+"wudu-shengong",
+"wudu-yanluobu"
 }
 
 LearnSkills_tbl = {
